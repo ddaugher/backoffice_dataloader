@@ -1,0 +1,537 @@
+--host --url https://backofficestaging.gigalixirapp.com
+--login --username superuser@augustwenty.com --password Eiswein87!
+--tenant_mapping --domain testdouble.com --tenant testdouble
+--create_tenant --name testdouble
+--registration --user admin@TestDouble.com --pass 123123123 --api_access true --role admin --tenant testdouble
+--registration --user User@TestDouble.com --pass 123123123 --api_access true --role user --tenant testdouble
+--login --username admin@TestDouble.com --password 123123123
+--region --name All
+--daily_expense_type --name Meals
+--daily_expense_type --name Parking
+--daily_expense_type --name Per Diem
+--daily_expense_type --name Hotel
+--daily_expense_type --name Mileage
+--monthly_expense_type --name Computer
+--monthly_expense_type --name Parking
+--monthly_expense_type --name Mileage
+--monthly_expense_type --name Meals
+--employee_type --name 1099 --is_employee false --is_utilized false
+--employee_type --name Hourly --is_employee false --is_utilized false
+--employee_type --name Corp2Corp --is_employee false --is_utilized false
+--employee_type --name W2 --is_employee true --is_utilized true
+--work_exception_type --name PTO
+--work_exception_type --name Bereavement
+--work_exception_type --name Holiday
+--work_exception_type --name UPTO
+--work_exception_type --name Client Visit
+--work_exception_type --name Conference
+--work_exception_type --name Training
+--holiday --date 2021-01-01 --description New Year's Day --hours 8 --work_exception_type_id 3
+--holiday --date 2021-01-18 --description Martin Luther King Day --hours 8 --work_exception_type_id 3
+--holiday --date 2021-05-31 --description Memorial Day --hours 8 --work_exception_type_id 3
+--holiday --date 2021-06-19 --description Juneteenth --hours 8 --work_exception_type_id 3
+--holiday --date 2021-07-04 --description July 4th --hours 8 --work_exception_type_id 3
+--holiday --date 2021-09-06 --description Labor Day --hours 8 --work_exception_type_id 3
+--holiday --date 2021-11-25 --description Thanksgiving Day --hours 8 --work_exception_type_id 3
+--holiday --date 2021-12-24 --description Christmas Eve --hours 8 --work_exception_type_id 3
+--holiday --date 2021-12-27 --description Christmas --hours 8 --work_exception_type_id 3
+--holiday --date 2021-12-31 --description New Year's Eve --hours 8 --work_exception_type_id 3
+--position_type --name Dev
+--position_type --name Angular
+--position_type --name C#
+--position_type --name Clojure/other
+--position_type --name Cypress
+--position_type --name DART
+--position_type --name Design
+--position_type --name DevOps
+--position_type --name Django
+--position_type --name Docker
+--position_type --name Elixir
+--position_type --name Elm
+--position_type --name ember.js
+--position_type --name Eng Mgmt
+--position_type --name Enzyme
+--position_type --name Express
+--position_type --name Front-End Javascript
+--position_type --name Gatsby
+--position_type --name Go
+--position_type --name GoLang
+--position_type --name GraphQL
+--position_type --name Hotwire
+--position_type --name Infrastructure
+--position_type --name Java
+--position_type --name Java Native
+--position_type --name JavaScript
+--position_type --name Jest
+--position_type --name Kafka
+--position_type --name Koa
+--position_type --name Kubernetes
+--position_type --name Laravel
+--position_type --name MySQL
+--position_type --name Node
+--position_type --name Node.js
+--position_type --name Objective C
+--position_type --name pg-promise
+--position_type --name Phoenix
+--position_type --name PHP
+--position_type --name Python
+--position_type --name React
+--position_type --name Ruby
+--position_type --name Ruby on Rails
+--position_type --name Rust
+--position_type --name Swift
+--position_type --name Typescript
+--position_type --name Vanilla
+--position_type --name Vue
+--position_type --name Vue.js
+--customer --name a16z_ --is_active true
+--customer --name Betterment --is_active true
+--customer --name Bold Penguin --is_active true
+--customer --name Clever --is_active true
+--customer --name Fast Radius --is_active true
+--customer --name Flexe --is_active true
+--customer --name Funding University --is_active true
+--customer --name GitHub --is_active true
+--customer --name Gusto --is_active true
+--customer --name Handshake --is_active true
+--customer --name Hendrick --is_active true
+--customer --name Lob__ --is_active true
+--customer --name Mednax --is_active true
+--customer --name Olive --is_active true
+--customer --name Pathstream --is_active true
+--customer --name PGA of America --is_active true
+--customer --name Root_ --is_active true
+--customer --name TED__ --is_active true
+--customer --name Trane --is_active true
+--customer --name Zendesk --is_active true
+--customer --name ZipRecruiter --is_active true
+--project --name FirmOps --customer_id 1 --region_id 1 --status Booked
+--project --name Talent --customer_id 1 --region_id 1 --status Booked
+--project --name Betterment for Business --customer_id 2 --region_id 1 --status Booked
+--project --name Broker-Dealer --customer_id 2 --region_id 1 --status Booked
+--project --name Feature Delivery --customer_id 2 --region_id 1 --status Booked
+--project --name Angular Features --customer_id 3 --region_id 1 --status Booked
+--project --name Data Team --customer_id 3 --region_id 1 --status Booked
+--project --name Feature Delivery --customer_id 3 --region_id 1 --status Booked
+--project --name Rails Features --customer_id 3 --region_id 1 --status Booked
+--project --name Go Features --customer_id 4 --region_id 1 --status Booked
+--project --name Infra --customer_id 4 --region_id 1 --status Booked
+--project --name Sales Experience --customer_id 5 --region_id 1 --status Booked
+--project --name Refactoring --customer_id 6 --region_id 1 --status Booked
+--project --name Development Lifecycle --customer_id 8 --region_id 1 --status Booked
+--project --name Idea to Code --customer_id 8 --region_id 1 --status Booked
+--project --name Onboarding Bootcamp --customer_id 8 --region_id 1 --status Booked
+--project --name Platform Health --customer_id 8 --region_id 1 --status Booked
+--project --name UI Platform --customer_id 8 --region_id 1 --status Booked
+--project --name 401k_ --customer_id 9 --region_id 1 --status Booked
+--project --name Benefits --customer_id 9 --region_id 1 --status Booked
+--project --name Short-term Project --customer_id 7 --region_id 1 --status Booked
+--project --name Danger Zone Rails Upgrades --customer_id 9 --region_id 1 --status Booked
+--project --name Integration --customer_id 9 --region_id 1 --status Booked
+--project --name Knowledge Base --customer_id 9 --region_id 1 --status Booked
+--project --name Rails Upgrades --customer_id 9 --region_id 1 --status Booked
+--project --name State Tax Registration --customer_id 9 --region_id 1 --status Booked
+--project --name Tax Submission --customer_id 9 --region_id 1 --status Booked
+--project --name Accessibility --customer_id 10 --region_id 1 --status Booked
+--project --name Integrations --customer_id 10 --region_id 1 --status Booked
+--project --name Hendrick --customer_id 11 --region_id 1 --status Booked
+--project --name Node + Go --customer_id 12 --region_id 1 --status Booked
+--project --name Feature Delivery --customer_id 13 --region_id 1 --status Booked
+--project --name Sidekick Development --customer_id 14 --region_id 1 --status Booked
+--project --name DevOps --customer_id 15 --region_id 1 --status Booked
+--project --name Coach Tools --customer_id 16 --region_id 1 --status Booked
+--project --name Rails Refactor --customer_id 17 --region_id 1 --status Booked
+--project --name Feature Delivery --customer_id 18 --region_id 1 --status Booked
+--project --name TED.com --customer_id 18 --region_id 1 --status Booked
+--project --name Nexia Web Services --customer_id 18 --region_id 1 --status Booked
+--project --name Proteus --customer_id 18 --region_id 1 --status Booked
+--project --name Classic --customer_id 19 --region_id 1 --status Booked
+--project --name Core Services --customer_id 19 --region_id 1 --status Booked
+--project --name Core Services React --customer_id 19 --region_id 1 --status Booked
+--project --name SP&P_ --customer_id 19 --region_id 1 --status Booked
+--project --name Squonk --customer_id 19 --region_id 1 --status Booked
+--project --name Workflow and Growth --customer_id 19 --region_id 1 --status Booked
+--project --name Front End --customer_id 13 --region_id 1 --status Booked
+--project --name Rails Architecture --customer_id 13 --region_id 1 --status Booked
+--project --name Broker-Dealer Extension --customer_id 2 --region_id 1 --status Forecasted
+--project --name Feature Delivery Extension --customer_id 2 --region_id 1 --status Forecasted
+--project --name Refactoring Extension --customer_id 6 --region_id 1 --status Forecasted
+--project --name UI Platform Extension --customer_id 8 --region_id 1 --status Forecasted
+--project --name 401k Extension --customer_id 9 --region_id 1 --status Forecasted
+--project --name Benefits Extension --customer_id 9 --region_id 1 --status Forecasted
+--project --name Integration Extension --customer_id 9 --region_id 1 --status Forecasted
+--project --name Knowledge Base Extension --customer_id 9 --region_id 1 --status Forecasted
+--project --name Accessibility Extension --customer_id 10 --region_id 1 --status Forecasted
+--project --name Sidekick Development Extension --customer_id 14 --region_id 1 --status Forecasted
+--project --name Coach Tools Extension --customer_id 16 --region_id 1 --status Forecasted
+--project --name Rails Refactor Extension --customer_id 17 --region_id 1 --status Forecasted
+--project --name TED.com Extension --customer_id 18 --region_id 1 --status Forecasted
+--project --name Nexia Web Services Extension --customer_id 18 --region_id 1 --status Forecasted
+--project --name Classic Extension --customer_id 19 --region_id 1 --status Forecasted
+--project --name SP&P Extension --customer_id 19 --region_id 1 --status Forecasted
+--project --name Squonk Extension --customer_id 19 --region_id 1 --status Forecasted
+--project --name Workflow and Growth Extension --customer_id 19 --region_id 1 --status Forecasted
+--project --name FirmOps 2022 Draft --customer_id 1 --region_id 1 --status Draft
+--project --name Talent 2022 Draft --customer_id 1 --region_id 1 --status Draft
+--project --name Betterment for Business 2022 Draft --customer_id 2 --region_id 1 --status Draft
+--project --name Broker-Dealer 2022 Draft --customer_id 2 --region_id 1 --status Draft
+--project --name Feature Delivery 2022 Draft --customer_id 2 --region_id 1 --status Draft
+--project --name Angular Features 2022 Draft --customer_id 3 --region_id 1 --status Draft
+--project --name Data Team 2022 Draft --customer_id 3 --region_id 1 --status Draft
+--project --name Feature Delivery 2022 Draft --customer_id 3 --region_id 1 --status Draft
+--project --name Rails Features 2022 Draft --customer_id 3 --region_id 1 --status Draft
+--project --name Go Features 2022 Draft --customer_id 4 --region_id 1 --status Draft
+--project --name Infra 2022 Draft --customer_id 4 --region_id 1 --status Draft
+--project --name Sales Experience 2022 Draft --customer_id 5 --region_id 1 --status Draft
+--project --name Development Lifecycle 2022 Draft --customer_id 8 --region_id 1 --status Draft
+--project --name Idea to Code 2022 Draft --customer_id 8 --region_id 1 --status Draft
+--project --name Onboarding Bootcamp 2022 Draft --customer_id 8 --region_id 1 --status Draft
+--project --name Platform Health 2022 Draft --customer_id 8 --region_id 1 --status Draft
+--project --name UI Platform 2022 Draft --customer_id 8 --region_id 1 --status Draft
+--project --name 401k 2022 Draft --customer_id 9 --region_id 1 --status Draft
+--project --name Benefits 2022 Draft --customer_id 9 --region_id 1 --status Draft
+--project --name Danger Zone Rails Upgrades 2022 Draft --customer_id 9 --region_id 1 --status Draft
+--project --name Integration 2022 Draft --customer_id 9 --region_id 1 --status Draft
+--project --name Knowledge Base 2022 Draft --customer_id 9 --region_id 1 --status Draft
+--project --name Rails Upgrades 2022 Draft --customer_id 9 --region_id 1 --status Draft
+--project --name State Tax Registration 2022 Draft --customer_id 9 --region_id 1 --status Draft
+--project --name Tax Submission 2022 Draft --customer_id 9 --region_id 1 --status Draft
+--project --name Accessibility 2022 Draft --customer_id 10 --region_id 1 --status Draft
+--project --name Hendrick 2022 Draft --customer_id 11 --region_id 1 --status Draft
+--project --name Feature Delivery 2022 Draft --customer_id 13 --region_id 1 --status Draft
+--project --name Coach Tools 2022 Draft --customer_id 16 --region_id 1 --status Draft
+--project --name Rails Refactor 2022 Draft --customer_id 17 --region_id 1 --status Draft
+--project --name Feature Delivery 2022 Draft --customer_id 18 --region_id 1 --status Draft
+--project --name Nexia Web Services 2022 Draft --customer_id 18 --region_id 1 --status Draft
+--project --name Proteus  2022 Draft --customer_id 18 --region_id 1 --status Draft
+--project --name Classic 2022 Draft --customer_id 19 --region_id 1 --status Draft
+--project --name Core Services 2022 Draft --customer_id 19 --region_id 1 --status Draft
+--project --name Core Services React 2022 Draft --customer_id 19 --region_id 1 --status Draft
+--project --name SP&P 2022 Draft --customer_id 19 --region_id 1 --status Draft
+--project --name Squonk 2022 Draft --customer_id 19 --region_id 1 --status Draft
+--project --name Workflow and Growth 2022 Draft --customer_id 19 --region_id 1 --status Draft
+--project --name Front End 2022 Draft --customer_id 13 --region_id 1 --status Draft
+--project --name Rails Architecture 2022 Draft --customer_id 13 --region_id 1 --status Draft
+--project --name Rails API --customer_id 12 --region_id 1 --status Forecasted
+--project --name React/Node --customer_id 1 --region_id 1 --status Forecasted
+--project --name Jon Grenning Backfill --customer_id 3 --region_id 1 --status Forecasted
+--employee --first_name Kyle --last_name Adams --email Adams@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nichol --last_name Alexander --email Alexander@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jason --last_name Allen --email Allen@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Rick --last_name Allen --email Allen@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Daniel --last_name Ashcraft --email Ashcraft@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name River --last_name Bailey --email Bailey@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Raelyn --last_name Bangel --email Bangel@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Kevin --last_name Baribeau --email Baribeau@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nathan --last_name Bertram --email Bertram@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Jack --last_name Boberg --email Boberg@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Kenneth --last_name Bogner --email Bogner@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ryan --last_name Bradburn --email Bradburn@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ross --last_name Brandes --email Brandes@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Chris --last_name Caragianis --email Caragianis@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Michael --last_name Chase --email Chase@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Ben --last_name Chodoroff --email Chodoroff@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Fabio --last_name Cirone --email Cirone@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Alexander --last_name Clarke --email Clarke@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Zach --last_name Dennis --email Dennis@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Mike --last_name Doel --email Doel@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Eileen --last_name Duffner --email Duffner@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Joé --last_name Dupuis --email Dupuis@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nate --last_name Eizenga --email Eizenga@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Jacob --last_name Ela --email Ela@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Jeremy --last_name Fairbank --email Fairbank@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Dylan --last_name Fitzgerald --email Fitzgerald@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Daniel --last_name Flynn --email Flynn@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Cory --last_name Foy --email Foy@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Aaron --last_name Frerichs --email Frerichs@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jim --last_name Gay --email Gay@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Landon --last_name Gray --email Gray@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jon --last_name Grenning --email Grenning@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Tommy --last_name Groshong --email Groshong@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jason --last_name Grosz --email Grosz@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Tyler --last_name Guillen --email Guillen@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Pam-Marie --last_name Guzzo --email Guzzo@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jordan --last_name Hammond --email Hammond@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Glenn --last_name Harmon --email Harmon@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nora --last_name Harris --email Harris@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name George --last_name Harwood --email Harwood@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name AJ --last_name Hekman --email Hekman@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Andrew --last_name Herr --email Herr@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Tim --last_name Hogg --email Hogg@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ali --last_name Ibrahim --email Ibrahim@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Steve --last_name Jackson --email Jackson@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Matt --last_name Jones --email Jones@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nate --last_name Kandler --email Kandler@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jason --last_name Karns --email Karns@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Dale --last_name Karp --email Karp@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Mitch --last_name Kett --email Kett@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Josh --last_name Klina --email Klina@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Levi --last_name Klingler --email Klingler@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Attila --last_name Komaromi --email Komaromi@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Robert --last_name Komaromi --email Komaromi@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Andrew --last_name Lechowicz --email Lechowicz@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Minnie --last_name Lee --email Lee@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Neal --last_name Lindsay --email Lindsay@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Joseph --last_name Lozano --email Lozano@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Alex --last_name MacDonald --email MacDonald@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Katie --last_name Macke --email Macke@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Alex --last_name Martin --email Martin@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Cory --last_name Mathis --email Mathis@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Keith --last_name McCanless --email McCanless@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Kevin --last_name Munc --email Munc@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Eric --last_name Newbury --email Newbury@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Hoang --last_name Nguyen --email Nguyen@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Tom --last_name Nightingale --email Nightingale@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Dayton --last_name Nolan --email Nolan@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jesse --last_name OBrien --email OBrien@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Cody --last_name Palmer --email Palmer@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Kenn --last_name Pascascio --email Pascascio@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Viral --last_name Patel --email Patel@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Camilo --last_name Payan --email Payan@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Shehan --last_name Perera --email Perera@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jamie --last_name Phelps --email Phelps@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Cliff --last_name Pruitt --email Pruitt@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jessie --last_name Puls --email Puls@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Lee --last_name Quarella --email Quarella@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nathan --last_name Rockhold --email Rockhold@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Roger --last_name Roelofs --email Roelofs@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Justin --last_name Schoen --email Schoen@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Don --last_name Schrimsher --email Schrimsher@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Rich --last_name Seviora --email Seviora@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Aji --last_name Slater --email Slater@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Richard --last_name Steen --email Steen@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Dan --last_name Thompson --email Thompson@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Robby --last_name Thompson --email Thompson@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ed --last_name Toro --email Toro@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Kevin --last_name Truong --email Truong@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Stephen --last_name Vance --email Vance@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Andrew --last_name Walker --email Walker@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name James --last_name Walker --email Walker@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Meagan --last_name Waller --email Waller@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Brent --last_name Yoder --email Yoder@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Mike --last_name Zornek --email Zornek@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--open_position --name Dev 1 --start_date 2021-10-01 --end_date 2022-03-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 34 --position_type_id 1
+--open_position --name Dev 2 --start_date 2021-10-01 --end_date 2022-03-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 34 --position_type_id 1
+--open_position --name Dev 1 --start_date 2021-10-01 --end_date 2021-11-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 108 --position_type_id 1
+--open_position --name Dev 2 --start_date 2021-10-01 --end_date 2021-11-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 108 --position_type_id 1
+--open_position --name Dev 1 --start_date 2021-10-01 --end_date 2021-12-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 109 --position_type_id 1
+--open_position --name Dev 2 --start_date 2021-10-01 --end_date 2021-12-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 109 --position_type_id 1
+--open_position --name Dev 1 --start_date 2021-10-01 --end_date 2022-03-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 31 --position_type_id 1
+--open_position --name Dev 2 --start_date 2021-10-01 --end_date 2022-03-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 31 --position_type_id 1
+--open_position --name Dev 1 --start_date 2021-10-01 --end_date 2021-12-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 110 --position_type_id 1
+--open_position --name Dev 1 --start_date 2021-10-01 --end_date 2022-03-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 46 --position_type_id 1
+--open_position --name Dev 2 --start_date 2021-10-01 --end_date 2022-03-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 46 --position_type_id 1
+--open_position --name Dev 3 --start_date 2021-10-01 --end_date 2022-03-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 46 --position_type_id 1
+--position_with_employee --name Dev 1 --start_date 2020-01-07 --end_date 2021-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 1 --position_type_id 1 --employee_id 47
+--position_with_employee --name Dev 1 --start_date 2021-05-10 --end_date 2021-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 2 --position_type_id 1 --employee_id 16
+--position_with_employee --name Dev 2 --start_date 2020-08-04 --end_date 2021-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 2 --position_type_id 1 --employee_id 67
+--position_with_employee --name Dev 1 --start_date 2021-09-13 --end_date 2021-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 3 --position_type_id 1 --employee_id 62
+--position_with_employee --name Dev 2 --start_date 2021-09-13 --end_date 2021-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 3 --position_type_id 1 --employee_id 70
+--position_with_employee --name Dev 1 --start_date 2021-08-09 --end_date 2021-10-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 18
+--position_with_employee --name Dev 2 --start_date 2021-08-09 --end_date 2021-10-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 74
+--position_with_employee --name Dev 1 --start_date 2021-07-26 --end_date 2021-10-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 4
+--position_with_employee --name Dev 2 --start_date 2021-08-02 --end_date 2021-10-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 60
+--position_with_employee --name Dev 2 --start_date 2021-07-12 --end_date 2021-10-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 75
+--position_with_employee --name Dev 2 --start_date 2021-07-12 --end_date 2021-10-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 81
+--position_with_employee --name Dev 1 --start_date 2021-04-12 --end_date 2021-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 6 --position_type_id 1 --employee_id 73
+--position_with_employee --name Dev 1 --start_date 2021-04-12 --end_date 2021-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 69
+--position_with_employee --name Dev 1 --start_date 2021-01-20 --end_date 2021-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 1
+--position_with_employee --name Dev 1 --start_date 2021-03-01 --end_date 2021-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 9 --position_type_id 1 --employee_id 72
+--position_with_employee --name Dev 1 --start_date 2021-02-18 --end_date 2021-11-01 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 10 --position_type_id 1 --employee_id 45
+--position_with_employee --name Dev 1 --start_date 2021-02-18 --end_date 2021-12-31 --bill_rate 156 --cost 100 --daily_billable_hours 8 --project_id 11 --position_type_id 1 --employee_id 79
+--position_with_employee --name Dev 1 --start_date 2021-03-22 --end_date 2021-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 12 --position_type_id 1 --employee_id 37
+--position_with_employee --name Dev 2 --start_date 2021-04-13 --end_date 2021-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 12 --position_type_id 1 --employee_id 58
+--position_with_employee --name Dev 1 --start_date 2021-04-28 --end_date 2021-11-01 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 13 --position_type_id 1 --employee_id 3
+--position_with_employee --name Dev 2 --start_date 2021-04-28 --end_date 2021-09-30 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 13 --position_type_id 1 --employee_id 44
+--position_with_employee --name Dev 1 --start_date 2021-07-19 --end_date 2021-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 14 --position_type_id 1 --employee_id 17
+--position_with_employee --name Dev 2 --start_date 2021-03-08 --end_date 2021-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 14 --position_type_id 1 --employee_id 63
+--position_with_employee --name Dev 3 --start_date 2021-03-08 --end_date 2021-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 14 --position_type_id 1 --employee_id 77
+--position_with_employee --name Dev 1 --start_date 2021-04-26 --end_date 2021-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 15 --position_type_id 1 --employee_id 82
+--position_with_employee --name Dev 1 --start_date 2021-04-13 --end_date 2021-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 16 --position_type_id 1 --employee_id 29
+--position_with_employee --name Dev 2 --start_date 2019-02-14 --end_date 2021-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 16 --position_type_id 1 --employee_id 76
+--position_with_employee --name Dev 1 --start_date 2019-06-03 --end_date 2022-01-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 17 --position_type_id 1 --employee_id 13
+--position_with_employee --name Dev 1 --start_date 2021-05-01 --end_date 2021-09-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 18 --position_type_id 1 --employee_id 78
+--position_with_employee --name Dev 2 --start_date 2020-07-13 --end_date 2021-10-15 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 18 --position_type_id 1 --employee_id 51
+--position_with_employee --name Dev 1 --start_date 2021-02-22 --end_date 2021-10-01 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 19 --position_type_id 1 --employee_id 6
+--position_with_employee --name Dev 2 --start_date 2021-02-18 --end_date 2021-10-01 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 19 --position_type_id 1 --employee_id 88
+--position_with_employee --name Dev 1 --start_date 2021-02-22 --end_date 2021-10-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 20 --position_type_id 1 --employee_id 93
+--position_with_employee --name Dev 1 --start_date 2021-10-18 --end_date 2021-10-28 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 21 --position_type_id 1 --employee_id 12
+--position_with_employee --name Dev 1 --start_date 2021-11-01 --end_date 2022-05-01 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 22 --position_type_id 1 --employee_id 26
+--position_with_employee --name Dev 1 --start_date 2021-05-03 --end_date 2021-10-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 23 --position_type_id 1 --employee_id 20
+--position_with_employee --name Dev 2 --start_date 2020-09-16 --end_date 2021-10-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 23 --position_type_id 1 --employee_id 22
+--position_with_employee --name Dev 3 --start_date 2021-06-14 --end_date 2021-10-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 23 --position_type_id 1 --employee_id 35
+--position_with_employee --name Dev 1 --start_date 2021-07-19 --end_date 2021-09-17 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 24 --position_type_id 1 --employee_id 39
+--position_with_employee --name Dev 1 --start_date 2019-08-19 --end_date 2021-10-01 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 25 --position_type_id 1 --employee_id 27
+--position_with_employee --name Dev 1 --start_date 2021-06-07 --end_date 2022-01-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 26 --position_type_id 1 --employee_id 21
+--position_with_employee --name Dev 2 --start_date 2021-06-07 --end_date 2022-01-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 26 --position_type_id 1 --employee_id 84
+--position_with_employee --name Dev 1 --start_date 2021-10-25 --end_date 2022-03-25 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 27 --position_type_id 1 --employee_id 32
+--position_with_employee --name Dev 2 --start_date 2021-10-25 --end_date 2022-03-25 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 27 --position_type_id 1 --employee_id 59
+--position_with_employee --name Dev 1 --start_date 2020-09-27 --end_date 2021-10-05 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 28 --position_type_id 1 --employee_id 5
+--position_with_employee --name Dev 2 --start_date 2021-10-11 --end_date 2021-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 28 --position_type_id 1 --employee_id 49
+--position_with_employee --name Dev 3 --start_date 2021-10-11 --end_date 2021-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 28 --position_type_id 1 --employee_id 65
+--position_with_employee --name Dev 4 --start_date 2021-02-08 --end_date 2021-10-05 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 28 --position_type_id 1 --employee_id 71
+--position_with_employee --name Dev 1 --start_date 2020-11-09 --end_date 2021-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 29 --position_type_id 1 --employee_id 61
+--position_with_employee --name Dev 1 --start_date 2020-07-14 --end_date 2021-12-31 --bill_rate 138 --cost 100 --daily_billable_hours 8 --project_id 30 --position_type_id 1 --employee_id 8
+--position_with_employee --name Dev 2 --start_date 2021-05-24 --end_date 2021-12-31 --bill_rate 125 --cost 100 --daily_billable_hours 8 --project_id 30 --position_type_id 1 --employee_id 31
+--position_with_employee --name Dev 3 --start_date 2014-07-28 --end_date 2021-12-31 --bill_rate 138 --cost 100 --daily_billable_hours 8 --project_id 30 --position_type_id 1 --employee_id 86
+--position_with_employee --name Dev 1 --start_date 2021-11-01 --end_date 2022-05-01 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 31 --position_type_id 1 --employee_id 11
+--position_with_employee --name Dev 1 --start_date 2021-07-12 --end_date 2021-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 14
+--position_with_employee --name Dev 2 --start_date 2021-07-12 --end_date 2021-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 36
+--position_with_employee --name Dev 1 --start_date 2020-08-05 --end_date 2021-09-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 33 --position_type_id 1 --employee_id 83
+--position_with_employee --name Dev 1 --start_date 2021-09-13 --end_date 2021-10-22 --bill_rate 225 --cost 100 --daily_billable_hours 8 --project_id 34 --position_type_id 1 --employee_id 91
+--position_with_employee --name Dev 1 --start_date 2020-11-16 --end_date 2021-10-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 35 --position_type_id 1 --employee_id 43
+--position_with_employee --name Dev 2 --start_date 2020-11-09 --end_date 2021-10-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 35 --position_type_id 1 --employee_id 48
+--position_with_employee --name Dev 3 --start_date 2020-03-23 --end_date 2021-10-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 35 --position_type_id 1 --employee_id 64
+--position_with_employee --name Dev 1 --start_date 2021-06-21 --end_date 2021-09-30 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 36 --position_type_id 1 --employee_id 28
+--position_with_employee --name Dev 2 --start_date 2021-07-06 --end_date 2021-09-30 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 36 --position_type_id 1 --employee_id 46
+--position_with_employee --name Dev 1 --start_date 2021-03-22 --end_date 2022-03-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 9
+--position_with_employee --name Dev 2 --start_date 2021-03-22 --end_date 2022-03-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 66
+--position_with_employee --name Dev 1 --start_date 2021-07-06 --end_date 2022-03-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 38 --position_type_id 1 --employee_id 33
+--position_with_employee --name Dev 2 --start_date 2021-07-06 --end_date 2022-03-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 38 --position_type_id 1 --employee_id 54
+--position_with_employee --name Dev 1 --start_date 2021-07-19 --end_date 2021-10-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 39 --position_type_id 1 --employee_id 10
+--position_with_employee --name Dev 2 --start_date 2020-03-16 --end_date 2021-10-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 39 --position_type_id 1 --employee_id 34
+--position_with_employee --name Dev 1 --start_date 2021-10-13 --end_date 2022-06-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 40 --position_type_id 1 --employee_id 52
+--position_with_employee --name Dev 2 --start_date 2021-10-26 --end_date 2022-06-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 40 --position_type_id 1 --employee_id 53
+--position_with_employee --name Dev 1 --start_date 2021-07-12 --end_date 2021-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 41 --position_type_id 1 --employee_id 7
+--position_with_employee --name Dev 2 --start_date 2019-08-26 --end_date 2021-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 41 --position_type_id 1 --employee_id 30
+--position_with_employee --name Dev 3 --start_date 2020-10-05 --end_date 2021-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 41 --position_type_id 1 --employee_id 41
+--position_with_employee --name Dev 4 --start_date 2021-07-12 --end_date 2021-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 41 --position_type_id 1 --employee_id 56
+--position_with_employee --name Dev 5 --start_date 2021-07-26 --end_date 2021-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 41 --position_type_id 1 --employee_id 57
+--position_with_employee --name Dev 1 --start_date 2021-08-09 --end_date 2022-02-22 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 42 --position_type_id 1 --employee_id 15
+--position_with_employee --name Dev 2 --start_date 2021-08-09 --end_date 2022-02-22 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 42 --position_type_id 1 --employee_id 38
+--position_with_employee --name Dev 3 --start_date 2021-07-19 --end_date 2022-02-22 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 42 --position_type_id 1 --employee_id 55
+--position_with_employee --name Dev 4 --start_date 2021-08-09 --end_date 2022-02-22 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 42 --position_type_id 1 --employee_id 80
+--position_with_employee --name Dev 5 --start_date 2021-08-09 --end_date 2022-02-22 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 42 --position_type_id 1 --employee_id 85
+--position_with_employee --name Dev 1 --start_date 2021-08-09 --end_date 2022-02-22 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 43 --position_type_id 1 --employee_id 25
+--position_with_employee --name Dev 2 --start_date 2021-08-09 --end_date 2022-02-22 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 43 --position_type_id 1 --employee_id 40
+--position_with_employee --name Dev 1 --start_date 2020-01-13 --end_date 2021-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 44 --position_type_id 1 --employee_id 19
+--position_with_employee --name Dev 2 --start_date 2020-10-05 --end_date 2021-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 44 --position_type_id 1 --employee_id 50
+--position_with_employee --name Dev 1 --start_date 2021-03-29 --end_date 2021-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 45 --position_type_id 1 --employee_id 23
+--position_with_employee --name Dev 1 --start_date 2020-11-09 --end_date 2021-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 46 --position_type_id 1 --employee_id 24
+--position_with_employee --name Dev 2 --start_date 2020-11-16 --end_date 2021-09-30 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 46 --position_type_id 1 --employee_id 89
+--position_with_employee --name Dev 1 --start_date 2021-06-14 --end_date 2021-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 47 --position_type_id 1 --employee_id 90
+--position_with_employee --name Dev 2 --start_date 2021-06-14 --end_date 2021-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 47 --position_type_id 1 --employee_id 92
+--position_with_employee --name Dev 1 --start_date 2021-05-10 --end_date 2021-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 48 --position_type_id 1 --employee_id 2
+--position_with_employee --name Dev 2 --start_date 2021-08-23 --end_date 2021-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 48 --position_type_id 1 --employee_id 42
+--position_with_employee --name Dev 3 --start_date 2021-05-10 --end_date 2021-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 48 --position_type_id 1 --employee_id 68
+--position_with_employee --name Dev 1 --start_date 2021-11-01 --end_date 2021-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 49 --position_type_id 1 --employee_id 18
+--position_with_employee --name Dev 2 --start_date 2021-11-01 --end_date 2021-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 49 --position_type_id 1 --employee_id 74
+--position_with_employee --name Dev 1 --start_date 2021-11-01 --end_date 2021-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 50 --position_type_id 1 --employee_id 4
+--position_with_employee --name Dev 2 --start_date 2021-11-01 --end_date 2021-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 50 --position_type_id 1 --employee_id 60
+--position_with_employee --name Dev 2 --start_date 2021-11-01 --end_date 2021-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 50 --position_type_id 1 --employee_id 75
+--position_with_employee --name Dev 2 --start_date 2021-11-01 --end_date 2021-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 50 --position_type_id 1 --employee_id 81
+--position_with_employee --name Dev 2 --start_date 2021-10-01 --end_date 2022-01-17 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 51 --position_type_id 1 --employee_id 44
+--position_with_employee --name Dev 1 --start_date 2021-10-01 --end_date 2021-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 52 --position_type_id 1 --employee_id 78
+--position_with_employee --name Dev 2 --start_date 2021-10-16 --end_date 2022-01-15 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 52 --position_type_id 1 --employee_id 51
+--position_with_employee --name Dev 1 --start_date 2021-10-02 --end_date 2021-11-01 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 53 --position_type_id 1 --employee_id 6
+--position_with_employee --name Dev 2 --start_date 2021-10-02 --end_date 2021-11-01 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 53 --position_type_id 1 --employee_id 88
+--position_with_employee --name Dev 1 --start_date 2021-11-01 --end_date 2021-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 54 --position_type_id 1 --employee_id 93
+--position_with_employee --name Dev 1 --start_date 2021-10-31 --end_date 2021-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 55 --position_type_id 1 --employee_id 20
+--position_with_employee --name Dev 2 --start_date 2021-10-31 --end_date 2022-02-01 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 55 --position_type_id 1 --employee_id 22
+--position_with_employee --name Dev 3 --start_date 2021-10-31 --end_date 2021-12-21 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 55 --position_type_id 1 --employee_id 35
+--position_with_employee --name Dev 1 --start_date 2021-09-18 --end_date 2022-01-03 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 56 --position_type_id 1 --employee_id 39
+--position_with_employee --name Dev 1 --start_date 2021-10-06 --end_date 2021-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 57 --position_type_id 1 --employee_id 5
+--position_with_employee --name Dev 4 --start_date 2021-10-06 --end_date 2021-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 57 --position_type_id 1 --employee_id 71
+--position_with_employee --name Dev 1 --start_date 2021-10-01 --end_date 2021-11-12 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 58 --position_type_id 1 --employee_id 83
+--position_with_employee --name Dev 1 --start_date 2021-11-01 --end_date 2021-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 59 --position_type_id 1 --employee_id 43
+--position_with_employee --name Dev 2 --start_date 2021-11-01 --end_date 2021-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 59 --position_type_id 1 --employee_id 48
+--position_with_employee --name Dev 3 --start_date 2021-11-01 --end_date 2021-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 59 --position_type_id 1 --employee_id 64
+--position_with_employee --name Dev 1 --start_date 2021-10-01 --end_date 2021-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 60 --position_type_id 1 --employee_id 28
+--position_with_employee --name Dev 2 --start_date 2021-10-01 --end_date 2021-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 60 --position_type_id 1 --employee_id 46
+--position_with_employee --name Dev 1 --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 50 --position_type_id 1 --employee_id 9
+--position_with_employee --name Dev 2 --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 50 --position_type_id 1 --employee_id 66
+--position_with_employee --name Dev 1 --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 61 --position_type_id 1 --employee_id 33
+--position_with_employee --name Dev 2 --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 61 --position_type_id 1 --employee_id 54
+--position_with_employee --name Dev 1 --start_date 2021-11-01 --end_date 2022-06-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 62 --position_type_id 1 --employee_id 10
+--position_with_employee --name Dev 2 --start_date 2021-11-01 --end_date 2022-06-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 62 --position_type_id 1 --employee_id 34
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 63 --position_type_id 1 --employee_id 7
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 63 --position_type_id 1 --employee_id 30
+--position_with_employee --name Dev 3 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 63 --position_type_id 1 --employee_id 41
+--position_with_employee --name Dev 4 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 63 --position_type_id 1 --employee_id 56
+--position_with_employee --name Dev 5 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 63 --position_type_id 1 --employee_id 57
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 64 --position_type_id 1 --employee_id 19
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 64 --position_type_id 1 --employee_id 50
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-03-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 65 --position_type_id 1 --employee_id 23
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-03-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 66 --position_type_id 1 --employee_id 24
+--position_with_employee --name Dev 2 --start_date 2021-10-01 --end_date 2022-03-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 66 --position_type_id 1 --employee_id 89
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 67 --position_type_id 1 --employee_id 47
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 68 --position_type_id 1 --employee_id 16
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 68 --position_type_id 1 --employee_id 67
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 69 --position_type_id 1 --employee_id 62
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 69 --position_type_id 1 --employee_id 70
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 70 --position_type_id 1 --employee_id 18
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 70 --position_type_id 1 --employee_id 74
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 71 --position_type_id 1 --employee_id 4
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 71 --position_type_id 1 --employee_id 60
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 71 --position_type_id 1 --employee_id 75
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 71 --position_type_id 1 --employee_id 81
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 72 --position_type_id 1 --employee_id 73
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 73 --position_type_id 1 --employee_id 69
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 71 --position_type_id 1 --employee_id 1
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 75 --position_type_id 1 --employee_id 72
+--position_with_employee --name Dev 1 --start_date 2021-11-02 --end_date 2022-03-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 76 --position_type_id 1 --employee_id 45
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-03-31 --bill_rate 156 --cost 100 --daily_billable_hours 8 --project_id 77 --position_type_id 1 --employee_id 79
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-03-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 78 --position_type_id 1 --employee_id 37
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-03-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 78 --position_type_id 1 --employee_id 58
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 79 --position_type_id 1 --employee_id 17
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 79 --position_type_id 1 --employee_id 63
+--position_with_employee --name Dev 3 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 79 --position_type_id 1 --employee_id 77
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 80 --position_type_id 1 --employee_id 82
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 81 --position_type_id 1 --employee_id 29
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 81 --position_type_id 1 --employee_id 76
+--position_with_employee --name Dev 1 --start_date 2022-02-01 --end_date 2022-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 82 --position_type_id 1 --employee_id 13
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 83 --position_type_id 1 --employee_id 78
+--position_with_employee --name Dev 2 --start_date 2022-01-16 --end_date 2022-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 83 --position_type_id 1 --employee_id 51
+--position_with_employee --name Dev 1 --start_date 2021-11-02 --end_date 2022-07-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 84 --position_type_id 1 --employee_id 6
+--position_with_employee --name Dev 2 --start_date 2021-11-02 --end_date 2022-07-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 84 --position_type_id 1 --employee_id 88
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-07-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 85 --position_type_id 1 --employee_id 93
+--position_with_employee --name Dev 1 --start_date 2022-05-02 --end_date 2022-07-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 86 --position_type_id 1 --employee_id 26
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-07-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 87 --position_type_id 1 --employee_id 20
+--position_with_employee --name Dev 2 --start_date 2022-02-02 --end_date 2022-07-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 87 --position_type_id 1 --employee_id 22
+--position_with_employee --name Dev 3 --start_date 2021-12-22 --end_date 2022-07-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 87 --position_type_id 1 --employee_id 35
+--position_with_employee --name Dev 1 --start_date 2022-01-04 --end_date 2022-07-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 88 --position_type_id 1 --employee_id 39
+--position_with_employee --name Dev 1 --start_date 2021-10-02 --end_date 2022-07-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 89 --position_type_id 1 --employee_id 27
+--position_with_employee --name Dev 1 --start_date 2022-02-01 --end_date 2022-07-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 90 --position_type_id 1 --employee_id 21
+--position_with_employee --name Dev 2 --start_date 2022-02-01 --end_date 2022-07-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 90 --position_type_id 1 --employee_id 84
+--position_with_employee --name Dev 1 --start_date 2022-03-26 --end_date 2022-07-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 91 --position_type_id 1 --employee_id 32
+--position_with_employee --name Dev 2 --start_date 2022-03-26 --end_date 2022-07-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 91 --position_type_id 1 --employee_id 59
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-03-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 92 --position_type_id 1 --employee_id 5
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-03-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 92 --position_type_id 1 --employee_id 49
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 138 --cost 100 --daily_billable_hours 8 --project_id 93 --position_type_id 1 --employee_id 8
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 125 --cost 100 --daily_billable_hours 8 --project_id 93 --position_type_id 1 --employee_id 31
+--position_with_employee --name Dev 3 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 138 --cost 100 --daily_billable_hours 8 --project_id 93 --position_type_id 1 --employee_id 86
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 71 --position_type_id 1 --employee_id 14
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 71 --position_type_id 1 --employee_id 36
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 95 --position_type_id 1 --employee_id 43
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 95 --position_type_id 1 --employee_id 48
+--position_with_employee --name Dev 3 --start_date 2022-01-01 --end_date 2022-03-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 95 --position_type_id 1 --employee_id 64
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 96 --position_type_id 1 --employee_id 28
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 96 --position_type_id 1 --employee_id 46
+--position_with_employee --name Dev 1 --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 71 --position_type_id 1 --employee_id 9
+--position_with_employee --name Dev 2 --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 163 --cost 100 --daily_billable_hours 8 --project_id 71 --position_type_id 1 --employee_id 66
+--position_with_employee --name Dev 1 --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 98 --position_type_id 1 --employee_id 10
+--position_with_employee --name Dev 2 --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 98 --position_type_id 1 --employee_id 34
+--position_with_employee --name Dev 1 --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 99 --position_type_id 1 --employee_id 52
+--position_with_employee --name Dev 2 --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 99 --position_type_id 1 --employee_id 53
+--position_with_employee --name Dev 1 --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 100 --position_type_id 1 --employee_id 7
+--position_with_employee --name Dev 2 --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 100 --position_type_id 1 --employee_id 30
+--position_with_employee --name Dev 3 --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 100 --position_type_id 1 --employee_id 41
+--position_with_employee --name Dev 4 --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 100 --position_type_id 1 --employee_id 56
+--position_with_employee --name Dev 5 --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 100 --position_type_id 1 --employee_id 57
+--position_with_employee --name Dev 1 --start_date 2022-02-23 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 101 --position_type_id 1 --employee_id 15
+--position_with_employee --name Dev 2 --start_date 2022-02-23 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 101 --position_type_id 1 --employee_id 38
+--position_with_employee --name Dev 3 --start_date 2022-02-23 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 101 --position_type_id 1 --employee_id 55
+--position_with_employee --name Dev 4 --start_date 2022-02-23 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 101 --position_type_id 1 --employee_id 80
+--position_with_employee --name Dev 5 --start_date 2022-02-23 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 101 --position_type_id 1 --employee_id 85
+--position_with_employee --name Dev 1 --start_date 2022-02-23 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 102 --position_type_id 1 --employee_id 25
+--position_with_employee --name Dev 2 --start_date 2022-02-23 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 102 --position_type_id 1 --employee_id 40
+--position_with_employee --name Dev 1 --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 103 --position_type_id 1 --employee_id 19
+--position_with_employee --name Dev 2 --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 103 --position_type_id 1 --employee_id 50
+--position_with_employee --name Dev 1 --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 104 --position_type_id 1 --employee_id 23
+--position_with_employee --name Dev 1 --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 105 --position_type_id 1 --employee_id 24
+--position_with_employee --name Dev 2 --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 140 --cost 100 --daily_billable_hours 8 --project_id 105 --position_type_id 1 --employee_id 89
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 106 --position_type_id 1 --employee_id 90
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 106 --position_type_id 1 --employee_id 92
+--position_with_employee --name Dev 1 --start_date 2022-01-01 --end_date 2022-03-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 107 --position_type_id 1 --employee_id 2
+--position_with_employee --name Dev 2 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 107 --position_type_id 1 --employee_id 42
+--position_with_employee --name Dev 3 --start_date 2022-01-01 --end_date 2022-03-31 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 107 --position_type_id 1 --employee_id 68

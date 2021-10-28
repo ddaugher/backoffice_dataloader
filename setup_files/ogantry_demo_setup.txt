@@ -1,0 +1,26 @@
+--host https://backofficestaging.gigalixirapp.com
+--login superuser@augustwenty.com Eiswein87!
+--users admin@nxogantrydemo.com 123123123 true admin
+--users user@nxogantrydemo.com 123123123 true user
+--tenants ogantry_demo
+--login admin@nxogantrydemo.com 123123123
+--regions All
+--daily_expense_types Meals
+--daily_expense_types Mileage
+--daily_expense_types Supplies
+--employee_types 1099 false
+--employee_types Salary true
+--employee_types Hourly true
+--employee_types Corp2Corp false
+--work_exception_types PTO
+--work_exception_types Bereavement
+--work_exception_types Holiday
+--work_exception_types Floating
+--holidays 2020-12-25 Christmas 8 1
+--holidays 2020-11-25 Thanksgiving 8 1
+--holidays 2020-01-18 MLK 8 1
+--holidays 2020-05-31 Memorial 8 1
+--holidays 2020-09-06 Labor 8 1
+--position_types Engineer
+--position_types Experience
+--position_types Delivery

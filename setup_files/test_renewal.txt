@@ -1,0 +1,31 @@
+--host https://backoffice.gigalixirapp.com
+--login superuser@augustwenty.com Eiswein87!
+--renew
+--release_versions rev1.152 employee_hours_double_dipping_work_exceptions
+--renew
+--release_versions rev1.152 employee_hours_double_dipping_work_exceptions
+--login superuser@augustwenty.com Eiswein87!
+--renew
+--release_versions rev1.152 employee_hours_double_dipping_work_exceptions
+--renew
+--release_versions rev1.152 employee_hours_double_dipping_work_exceptions
+--login superuser@augustwenty.com Eiswein87!
+--renew
+--renew
+--renew
+--release_versions rev1.152 employee_hours_double_dipping_work_exceptions
+--login superuser@augustwenty.com Eiswein87!
+--renew
+--renew
+--renew
+--renew
+--renew
+--renew
+--renew
+--renew
+--renew
+--renew
+--renew
+--renew
+--renew
+--release_versions rev1.152 employee_hours_double_dipping_work_exceptions
