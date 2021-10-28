@@ -1,0 +1,3 @@
+--host --url http://localhost:4000 
+--login --username superuser@augustwenty.com --password 123123123
+--delete_tenant --name testing12345
