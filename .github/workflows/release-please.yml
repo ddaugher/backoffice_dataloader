@@ -10,8 +10,8 @@ jobs:
     steps:
       - uses: GoogleCloudPlatform/release-please-action@v2.34.0
         with:
-          release-type: elixir
-          package-name: backoffice
+          release-type: simple
+          package-name: backoffice_dataloader
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
           changelog-types: '[{"type":"feat","section":"Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"chore","section":"Miscellaneous","hidden":false}]'
