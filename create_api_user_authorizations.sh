@@ -8,7 +8,7 @@ PROGRAM_NAME=$0
 function usage() {
    clear
    echo "-----------------------------------------------------------------------------------------"
-   echo "This script will apply necessary api access privileges for the backoffice Rest endpoints."
+   echo "This script will apply necessary api access privileges for the backoffice ReST endpoints."
    echo ""
    echo "usage: $PROGRAM_NAME [--token access_token] [-userids ids] [--host hostname]"
    echo ""
