@@ -1,9 +1,9 @@
+--host --url https://backoffice.gigalixirapp.com
+--login --username admin@augustwenty.com --password Eiswein87!
+--release_version --version v1.640.2 --notes 
+--host --url https://backofficestaging.gigalixirapp.com
+--login --username admin@augustwenty.com --password Eiswein87!
+--release_version --version v1.640.2 --notes 
 --host --url https://backofficeprod.gigalixirapp.com
 --login --username admin@augustwenty.com --password Eiswein87!
---release_version --version rev1.286 --notes updates to AtomicMap in order to better support extended_fields 
---host --url https://backofficeprod.gigalixirapp.com
---login --username admin@augustwenty.com --password Eiswein87!
---release_version --version rev1.286 --notes updates to AtomicMap in order to better support extended_fields 
---host --url https://backofficeprod.gigalixirapp.com
---login --username admin@augustwenty.com --password Eiswein87!
---release_version --version rev1.286 --notes updates to AtomicMap in order to better support extended_fields 
+--release_version --version v1.640.2 --notes 

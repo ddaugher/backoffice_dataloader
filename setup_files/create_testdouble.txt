@@ -1,10 +1,10 @@
---host --url https://backofficestaging.gigalixirapp.com
+--host --url https://backofficeprod.gigalixirapp.com
 --login --username superuser@augustwenty.com --password Eiswein87!
 --tenant_mapping --domain testdouble.com --tenant testdouble
 --create_tenant --name testdouble
---registration --user admin@TestDouble.com --pass 123123123 --api_access true --role admin --tenant testdouble
---registration --user User@TestDouble.com --pass 123123123 --api_access true --role user --tenant testdouble
---login --username admin@TestDouble.com --password 123123123
+--registration --user admin@testdouble.com --pass 123123123 --api_access true --role admin --tenant testdouble
+--registration --user user@testdouble.com --pass 123123123 --api_access true --role user --tenant testdouble
+--login --username admin@testdouble.com --password 123123123
 --region --name All
 --daily_expense_type --name Meals
 --daily_expense_type --name Parking
@@ -215,101 +215,101 @@
 --project --name Rails API --customer_id 12 --region_id 1 --status Forecasted
 --project --name React/Node --customer_id 1 --region_id 1 --status Forecasted
 --project --name Jon Grenning Backfill --customer_id 3 --region_id 1 --status Forecasted
---employee --first_name Kyle --last_name Adams --email Adams@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Nichol --last_name Alexander --email Alexander@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Jason --last_name Allen --email Allen@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Rick --last_name Allen --email Allen@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Daniel --last_name Ashcraft --email Ashcraft@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name River --last_name Bailey --email Bailey@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Raelyn --last_name Bangel --email Bangel@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Kevin --last_name Baribeau --email Baribeau@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Nathan --last_name Bertram --email Bertram@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Jack --last_name Boberg --email Boberg@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Kenneth --last_name Bogner --email Bogner@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Ryan --last_name Bradburn --email Bradburn@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Ross --last_name Brandes --email Brandes@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Chris --last_name Caragianis --email Caragianis@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Michael --last_name Chase --email Chase@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Ben --last_name Chodoroff --email Chodoroff@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Fabio --last_name Cirone --email Cirone@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Alexander --last_name Clarke --email Clarke@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Zach --last_name Dennis --email Dennis@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Mike --last_name Doel --email Doel@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Eileen --last_name Duffner --email Duffner@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Joé --last_name Dupuis --email Dupuis@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Nate --last_name Eizenga --email Eizenga@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Jacob --last_name Ela --email Ela@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Jeremy --last_name Fairbank --email Fairbank@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Dylan --last_name Fitzgerald --email Fitzgerald@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Daniel --last_name Flynn --email Flynn@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Cory --last_name Foy --email Foy@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Aaron --last_name Frerichs --email Frerichs@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Jim --last_name Gay --email Gay@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Landon --last_name Gray --email Gray@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Jon --last_name Grenning --email Grenning@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Tommy --last_name Groshong --email Groshong@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Jason --last_name Grosz --email Grosz@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Tyler --last_name Guillen --email Guillen@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Pam-Marie --last_name Guzzo --email Guzzo@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Jordan --last_name Hammond --email Hammond@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Glenn --last_name Harmon --email Harmon@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Nora --last_name Harris --email Harris@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name George --last_name Harwood --email Harwood@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name AJ --last_name Hekman --email Hekman@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Andrew --last_name Herr --email Herr@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Tim --last_name Hogg --email Hogg@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Ali --last_name Ibrahim --email Ibrahim@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Steve --last_name Jackson --email Jackson@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Matt --last_name Jones --email Jones@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Nate --last_name Kandler --email Kandler@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Jason --last_name Karns --email Karns@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Dale --last_name Karp --email Karp@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Mitch --last_name Kett --email Kett@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Josh --last_name Klina --email Klina@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Levi --last_name Klingler --email Klingler@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Attila --last_name Komaromi --email Komaromi@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Robert --last_name Komaromi --email Komaromi@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Andrew --last_name Lechowicz --email Lechowicz@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Minnie --last_name Lee --email Lee@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Neal --last_name Lindsay --email Lindsay@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Joseph --last_name Lozano --email Lozano@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Alex --last_name MacDonald --email MacDonald@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Katie --last_name Macke --email Macke@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Alex --last_name Martin --email Martin@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Cory --last_name Mathis --email Mathis@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Keith --last_name McCanless --email McCanless@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Kevin --last_name Munc --email Munc@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Eric --last_name Newbury --email Newbury@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Hoang --last_name Nguyen --email Nguyen@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Tom --last_name Nightingale --email Nightingale@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Dayton --last_name Nolan --email Nolan@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Jesse --last_name OBrien --email OBrien@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Cody --last_name Palmer --email Palmer@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Kenn --last_name Pascascio --email Pascascio@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Viral --last_name Patel --email Patel@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Camilo --last_name Payan --email Payan@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Shehan --last_name Perera --email Perera@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Jamie --last_name Phelps --email Phelps@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Cliff --last_name Pruitt --email Pruitt@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Jessie --last_name Puls --email Puls@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Lee --last_name Quarella --email Quarella@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Nathan --last_name Rockhold --email Rockhold@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Roger --last_name Roelofs --email Roelofs@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Justin --last_name Schoen --email Schoen@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Don --last_name Schrimsher --email Schrimsher@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Rich --last_name Seviora --email Seviora@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Aji --last_name Slater --email Slater@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Richard --last_name Steen --email Steen@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Dan --last_name Thompson --email Thompson@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Robby --last_name Thompson --email Thompson@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Ed --last_name Toro --email Toro@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Kevin --last_name Truong --email Truong@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Stephen --last_name Vance --email Vance@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Andrew --last_name Walker --email Walker@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name James --last_name Walker --email Walker@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Meagan --last_name Waller --email Waller@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Brent --last_name Yoder --email Yoder@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Mike --last_name Zornek --email Zornek@testDouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Kyle --last_name Adams --email Adams@testdouble.com --start_date 2021-01-01 --hourly_cost 75.0238095238095 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nichol --last_name Alexander --email Alexander@testdouble.com --start_date 2021-01-01 --hourly_cost 75.5476190476191 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jason --last_name Allen --email Allen@testdouble.com --start_date 2021-01-01 --hourly_cost 75.5476190476191 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Rick --last_name Allen --email Allen@testdouble.com --start_date 2021-01-01 --hourly_cost 119.047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Daniel --last_name Ashcraft --email Ashcraft@testdouble.com --start_date 2021-01-01 --hourly_cost 83.4166666666667 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name River --last_name Bailey --email Bailey@testdouble.com --start_date 2021-01-01 --hourly_cost 82.2976190476191 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Raelyn --last_name Bangel --email Bangel@testdouble.com --start_date 2021-01-01 --hourly_cost 83.2202380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Kevin --last_name Baribeau --email Baribeau@testdouble.com --start_date 2021-01-01 --hourly_cost 81.9702380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nathan --last_name Bertram --email Bertram@testdouble.com --start_date 2021-01-01 --hourly_cost 119.047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Jack --last_name Boberg --email Boberg@testdouble.com --start_date 2021-01-01 --hourly_cost 85.7142857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Kenneth --last_name Bogner --email Bogner@testdouble.com --start_date 2021-01-01 --hourly_cost 84.4107142857143 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ryan --last_name Bradburn --email Bradburn@testdouble.com --start_date 2021-01-01 --hourly_cost 80.6904761904762 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ross --last_name Brandes --email Brandes@testdouble.com --start_date 2021-01-01 --hourly_cost 84.452380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Chris --last_name Caragianis --email Caragianis@testdouble.com --start_date 2021-01-01 --hourly_cost 83.8392857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Michael --last_name Chase --email Chase@testdouble.com --start_date 2021-01-01 --hourly_cost 107.142857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Ben --last_name Chodoroff --email Chodoroff@testdouble.com --start_date 2021-01-01 --hourly_cost 81.2440476190476 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Fabio --last_name Cirone --email Cirone@testdouble.com --start_date 2021-01-01 --hourly_cost 59.5238095238095 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Alexander --last_name Clarke --email Clarke@testdouble.com --start_date 2021-01-01 --hourly_cost 74.375 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Zach --last_name Dennis --email Dennis@testdouble.com --start_date 2021-01-01 --hourly_cost 95.2380952380952 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Mike --last_name Doel --email Doel@testdouble.com --start_date 2021-01-01 --hourly_cost 90.9285714285714 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Eileen --last_name Duffner --email Duffner@testdouble.com --start_date 2021-01-01 --hourly_cost 130.952380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Joé --last_name Dupuis --email Dupuis@testdouble.com --start_date 2021-01-01 --hourly_cost 78.7440476190476 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nate --last_name Eizenga --email Eizenga@testdouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Jacob --last_name Ela --email Ela@testdouble.com --start_date 2021-01-01 --hourly_cost 107.142857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Jeremy --last_name Fairbank --email Fairbank@testdouble.com --start_date 2021-01-01 --hourly_cost 92.6309523809524 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Dylan --last_name Fitzgerald --email Fitzgerald@testdouble.com --start_date 2021-01-01 --hourly_cost 114.285714285714 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Daniel --last_name Flynn --email Flynn@testdouble.com --start_date 2021-01-01 --hourly_cost 86.9107142857143 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Cory --last_name Foy --email Foy@testdouble.com --start_date 2021-01-01 --hourly_cost 119.047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Aaron --last_name Frerichs --email Frerichs@testdouble.com --start_date 2021-01-01 --hourly_cost 82.9821428571429 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jim --last_name Gay --email Gay@testdouble.com --start_date 2021-01-01 --hourly_cost 119.047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Landon --last_name Gray --email Gray@testdouble.com --start_date 2021-01-01 --hourly_cost 73.9821428571429 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jon --last_name Grenning --email Grenning@testdouble.com --start_date 2021-01-01 --hourly_cost 76.1369047619048 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Tommy --last_name Groshong --email Groshong@testdouble.com --start_date 2021-01-01 --hourly_cost 89.0833333333333 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jason --last_name Grosz --email Grosz@testdouble.com --start_date 2021-01-01 --hourly_cost 87.9702380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Tyler --last_name Guillen --email Guillen@testdouble.com --start_date 2021-01-01 --hourly_cost 75.0238095238095 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Pam-Marie --last_name Guzzo --email Guzzo@testdouble.com --start_date 2021-01-01 --hourly_cost 70.1726190476191 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jordan --last_name Hammond --email Hammond@testdouble.com --start_date 2021-01-01 --hourly_cost 114.285714285714 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Glenn --last_name Harmon --email Harmon@testdouble.com --start_date 2021-01-01 --hourly_cost 86.0059523809524 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nora --last_name Harris --email Harris@testdouble.com --start_date 2021-01-01 --hourly_cost 130.952380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name George --last_name Harwood --email Harwood@testdouble.com --start_date 2021-01-01 --hourly_cost 114.285714285714 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name AJ --last_name Hekman --email Hekman@testdouble.com --start_date 2021-01-01 --hourly_cost 107.142857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Andrew --last_name Herr --email Herr@testdouble.com --start_date 2021-01-01 --hourly_cost 86.0059523809524 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Tim --last_name Hogg --email Hogg@testdouble.com --start_date 2021-01-01 --hourly_cost 84.9702380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ali --last_name Ibrahim --email Ibrahim@testdouble.com --start_date 2021-01-01 --hourly_cost 89.9047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Steve --last_name Jackson --email Jackson@testdouble.com --start_date 2021-01-01 --hourly_cost 95.327380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Matt --last_name Jones --email Jones@testdouble.com --start_date 2021-01-01 --hourly_cost 83.3333333333333 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nate --last_name Kandler --email Kandler@testdouble.com --start_date 2021-01-01 --hourly_cost 81.6666666666667 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jason --last_name Karns --email Karns@testdouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Dale --last_name Karp --email Karp@testdouble.com --start_date 2021-01-01 --hourly_cost 77.827380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Mitch --last_name Kett --email Kett@testdouble.com --start_date 2021-01-01 --hourly_cost 107.142857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Josh --last_name Klina --email Klina@testdouble.com --start_date 2021-01-01 --hourly_cost 80.1071428571429 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Levi --last_name Klingler --email Klingler@testdouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Attila --last_name Komaromi --email Komaromi@testdouble.com --start_date 2021-01-01 --hourly_cost 63.0833333333333 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Robert --last_name Komaromi --email Komaromi@testdouble.com --start_date 2021-01-01 --hourly_cost 74.952380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Andrew --last_name Lechowicz --email Lechowicz@testdouble.com --start_date 2021-01-01 --hourly_cost 119.047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Minnie --last_name Lee --email Lee@testdouble.com --start_date 2021-01-01 --hourly_cost 78.1547619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Neal --last_name Lindsay --email Lindsay@testdouble.com --start_date 2021-01-01 --hourly_cost 82.8154761904762 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Joseph --last_name Lozano --email Lozano@testdouble.com --start_date 2021-01-01 --hourly_cost 83.5892857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Alex --last_name MacDonald --email MacDonald@testdouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Katie --last_name Macke --email Macke@testdouble.com --start_date 2021-01-01 --hourly_cost 78.1547619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Alex --last_name Martin --email Martin@testdouble.com --start_date 2021-01-01 --hourly_cost 84.3452380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Cory --last_name Mathis --email Mathis@testdouble.com --start_date 2021-01-01 --hourly_cost 83.4166666666667 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Keith --last_name McCanless --email McCanless@testdouble.com --start_date 2021-01-01 --hourly_cost 92.125 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Kevin --last_name Munc --email Munc@testdouble.com --start_date 2021-01-01 --hourly_cost 107.142857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Eric --last_name Newbury --email Newbury@testdouble.com --start_date 2021-01-01 --hourly_cost 77.1190476190476 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Hoang --last_name Nguyen --email Nguyen@testdouble.com --start_date 2021-01-01 --hourly_cost 95.2380952380952 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Tom --last_name Nightingale --email Nightingale@testdouble.com --start_date 2021-01-01 --hourly_cost 88.0952380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Dayton --last_name Nolan --email Nolan@testdouble.com --start_date 2021-01-01 --hourly_cost 90.4702380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jesse --last_name OBrien --email OBrien@testdouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Cody --last_name Palmer --email Palmer@testdouble.com --start_date 2021-01-01 --hourly_cost 119.047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Kenn --last_name Pascascio --email Pascascio@testdouble.com --start_date 2021-01-01 --hourly_cost 119.047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Viral --last_name Patel --email Patel@testdouble.com --start_date 2021-01-01 --hourly_cost 76.6428571428571 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Camilo --last_name Payan --email Payan@testdouble.com --start_date 2021-01-01 --hourly_cost 67.2559523809524 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Shehan --last_name Perera --email Perera@testdouble.com --start_date 2021-01-01 --hourly_cost 70.7261904761905 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jamie --last_name Phelps --email Phelps@testdouble.com --start_date 2021-01-01 --hourly_cost 84.4047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Cliff --last_name Pruitt --email Pruitt@testdouble.com --start_date 2021-01-01 --hourly_cost 93.7380952380952 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jessie --last_name Puls --email Puls@testdouble.com --start_date 2021-01-01 --hourly_cost 93 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Lee --last_name Quarella --email Quarella@testdouble.com --start_date 2021-01-01 --hourly_cost 89.1130952380952 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nathan --last_name Rockhold --email Rockhold@testdouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Roger --last_name Roelofs --email Roelofs@testdouble.com --start_date 2021-01-01 --hourly_cost 107.142857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Justin --last_name Schoen --email Schoen@testdouble.com --start_date 2021-01-01 --hourly_cost 74.5059523809524 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Don --last_name Schrimsher --email Schrimsher@testdouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Rich --last_name Seviora --email Seviora@testdouble.com --start_date 2021-01-01 --hourly_cost 78.3392857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Aji --last_name Slater --email Slater@testdouble.com --start_date 2021-01-01 --hourly_cost 130.952380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Richard --last_name Steen --email Steen@testdouble.com --start_date 2021-01-01 --hourly_cost 83.5 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Dan --last_name Thompson --email Thompson@testdouble.com --start_date 2021-01-01 --hourly_cost 88.5654761904762 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Robby --last_name Thompson --email Thompson@testdouble.com --start_date 2021-01-01 --hourly_cost 73.9880952380952 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ed --last_name Toro --email Toro@testdouble.com --start_date 2021-01-01 --hourly_cost 84.452380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Kevin --last_name Truong --email Truong@testdouble.com --start_date 2021-01-01 --hourly_cost 78.0357142857143 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Stephen --last_name Vance --email Vance@testdouble.com --start_date 2021-01-01 --hourly_cost 90.9880952380952 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Andrew --last_name Walker --email Walker@testdouble.com --start_date 2021-01-01 --hourly_cost 84.3630952380952 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name James --last_name Walker --email Walker@testdouble.com --start_date 2021-01-01 --hourly_cost 79.4642857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Meagan --last_name Waller --email Waller@testdouble.com --start_date 2021-01-01 --hourly_cost 78.6726190476191 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Brent --last_name Yoder --email Yoder@testdouble.com --start_date 2021-01-01 --hourly_cost 107.142857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Mike --last_name Zornek --email Zornek@testdouble.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
 --open_position --name Dev 1 --start_date 2021-10-01 --end_date 2022-03-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 34 --position_type_id 1
 --open_position --name Dev 2 --start_date 2021-10-01 --end_date 2022-03-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 34 --position_type_id 1
 --open_position --name Dev 1 --start_date 2021-10-01 --end_date 2021-11-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 108 --position_type_id 1
