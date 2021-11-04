@@ -101,12 +101,12 @@ function process_registration() {
    URL="$HOST/api/v1/registration"
    IFS=' '
 
-   echo "--- Inserting user -> $1 $2 $3 $4 $5"
+   echo "--- Inserting user -> $1 $2 $3 $4 $5 $6"
 
    response=$($CURL -i --silent -w "\n%{http_code} " --location --request POST $URL \
       -H "Content-Type: application/json" \
       --header "Authorization: $ACCESS_TOKEN" \
-      --data-raw "{ \"user\": { \"email\": \"$1\", \"password\": \"$2\", \"password_confirmation\": \"$2\", \"api_access\": \"$3\", \"role\": \"$4\", \"tenant\": \"$5\"} }")
+      --data-raw "{ \"user\": { \"email\": \"$1\", \"password\": \"$2\", \"password_confirmation\": \"$2\", \"api_access\": \"$3\", \"role\": \"$4\", \"tenant\": \"$5\", \"self_service_storage\": \"$6\"} }")
 
    http_code=$(tail -n1 <<<"$response")
 

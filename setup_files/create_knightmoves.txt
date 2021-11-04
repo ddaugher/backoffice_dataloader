@@ -1,9 +1,9 @@
---host --url https://backofficestaging.gigalixirapp.com
---login --username superuser@augustwenty.com --password Eiswein87!
+--host --url http://localhost:4000
+--login --username superuser@augustwenty.com --password 123123123
 --tenant_mapping --domain knightmoves.com --tenant knightmoves
 --create_tenant --name knightmoves
---registration --user admin@knightmoves.com --pass 123123123 --api_access true --role admin --tenant knightmoves
---registration --user user@knightmoves.com --pass 123123123 --api_access true --role user --tenant knightmoves
+--registration --email admin@knightmoves.com --pass 123123123 --api_access true --role admin --tenant knightmoves --self_service_storage {'role':'Admin'}
+--registration --email user@knightmoves.com --pass 123123123 --api_access true --role user --tenant knightmoves --self_service_storage {'role':'User'}
 --login --username admin@knightmoves.com --password 123123123
 --region --name All
 --daily_expense_type --name Meals
