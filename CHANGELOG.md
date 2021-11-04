@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/ddaugher/backoffice_dataloader/compare/v1.1.0...v1.2.0) (2021-11-04)
+
+
+### Features
+
+* updating registration to include self_service_storage ([51033f2](https://www.github.com/ddaugher/backoffice_dataloader/commit/51033f2a654a1f8cf4c754aa516681fca6ed0188))
+
 ## [1.1.0](https://www.github.com/ddaugher/backoffice_dataloader/compare/v1.0.1...v1.1.0) (2021-10-28)
 
 
