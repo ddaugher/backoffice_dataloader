@@ -34,7 +34,7 @@ function usage() {
    echo " --position_with_employee --name [string] --start_date [yyyy-mm-dd] --end_date [yyyy-mm-dd] --bill_rate [decimal] --cost [decimal] --daily_billable_hours [integer (1-8)] --project_id [id] --position_type_id [id] --employee_id [id]"
    echo " --project --name [string] --customer_id [id] --region_id [id] --status [string]"
    echo " --region --name [string]"
-   echo " --registration --user [string] --pass [string] --api_access [true/false] --role [string (user/admin)] --tenant [string]"
+   echo " --registration --email [string] --pass [string] --api_access [true/false] --role [string (user/admin)] --tenant [string] --self_service_storage [string]"
    echo " --release_version --version [string] --notes [string]"
    echo " --renew"
    echo " --tenant_mapping --domain [string] --tenant [string]"
@@ -248,6 +248,13 @@ function process_params() {
             shift
          done
          ;;
+      --self_service_storage)
+         shift
+         while ! echo "$1" | egrep '^-' >/dev/null 2>&1 && [ ! -z "$1" ]; do
+            SELF_SERVICE_STORAGE="$SELF_SERVICE_STORAGE $1"
+            shift
+         done
+         ;;
       --status)
          shift
          while ! echo "$1" | egrep '^-' >/dev/null 2>&1 && [ ! -z "$1" ]; do
@@ -308,17 +315,20 @@ function process_input() {
       ;;
    --registration)
       process_params $@
-      echo "processing user -> $USER"
+      echo "processing email -> $EMAIL"
       echo "processing password -> $PASS"
       echo "processing api_access -> $API_ACCESS"
       echo "processing role -> $ROLE"
       echo "processing tenant -> $TENANT"
-      process_registration $USER $PASS $API_ACCESS $ROLE $TENANT
-      unset USER
+      echo "processing self service storage -> $SELF_SERVICE_STORAGE"
+      SELF_SERVICE_STORAGE=$(echo $SELF_SERVICE_STORAGE)
+      process_registration $EMAIL $PASS $API_ACCESS $ROLE $TENANT $SELF_SERVICE_STORAGE
+      unset EMAIL
       unset PASS
       unset API_ACCESS
       unset ROLE
       unset TENANT
+      unset SELF_SERVICE_STORAGE
       ;;
    --create_tenant)
       process_params $@
