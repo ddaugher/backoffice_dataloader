@@ -1,9 +1,6 @@
 --host --url https://backoffice.gigalixirapp.com
 --login --username admin@augustwenty.com --password Eiswein87!
---release_version --version v1.640.2 --notes 
+--release_version --version v1.646.4 --notes changing query logic to return correct active projects
 --host --url https://backofficestaging.gigalixirapp.com
 --login --username admin@augustwenty.com --password Eiswein87!
---release_version --version v1.640.2 --notes 
---host --url https://backofficeprod.gigalixirapp.com
---login --username admin@augustwenty.com --password Eiswein87!
---release_version --version v1.640.2 --notes 
+--release_version --version v1.646.4 --notes changing query logic to return correct active projects
