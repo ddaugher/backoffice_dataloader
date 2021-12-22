@@ -1,0 +1,492 @@
+--host --url https://backofficestaging.gigalixirapp.com
+--login --username superuser@testdouble.com --password Eiswein87!
+--tenant_mapping --domain testdouble.com --tenant testdouble
+--create_tenant --name testdouble
+--registration --email todd@testdouble.com --pass todd1234 --api_access true --role admin --tenant testdouble --self_service_storage {'role':'Admin'}
+--registration --email admin@testdouble.com --pass 123123123 --api_access true --role admin --tenant testdouble --self_service_storage {'role':'Admin'}
+--registration --email user@testdouble.com --pass 123123123 --api_access true --role user --tenant testdouble --self_service_storage {'role':'User'}
+--login --username admin@testdouble.com --password 123123123
+--region --name All
+--daily_expense_type --name Meals
+--daily_expense_type --name Parking
+--daily_expense_type --name Per Diem
+--daily_expense_type --name Hotel
+--daily_expense_type --name Mileage
+--monthly_expense_type --name Computer
+--monthly_expense_type --name Parking
+--monthly_expense_type --name Mileage
+--monthly_expense_type --name Meals
+--employee_type --name 1099 --is_employee false --is_utilized false
+--employee_type --name Hourly --is_employee false --is_utilized false
+--employee_type --name Corp2Corp --is_employee false --is_utilized false
+--employee_type --name W2 --is_employee true --is_utilized true
+--work_exception_type --name PTO
+--work_exception_type --name Bereavement
+--work_exception_type --name Holiday
+--work_exception_type --name UPTO
+--work_exception_type --name Client Visit
+--work_exception_type --name Conference
+--work_exception_type --name Training
+--holiday --date 2021-01-01 --description New Year's Day --hours 8 --work_exception_type_id 3
+--holiday --date 2021-01-18 --description Martin Luther King Day --hours 8 --work_exception_type_id 3
+--holiday --date 2021-05-31 --description Memorial Day --hours 8 --work_exception_type_id 3
+--holiday --date 2021-06-19 --description Juneteenth --hours 8 --work_exception_type_id 3
+--holiday --date 2021-07-04 --description July 4th --hours 8 --work_exception_type_id 3
+--holiday --date 2021-09-06 --description Labor Day --hours 8 --work_exception_type_id 3
+--holiday --date 2021-11-25 --description Thanksgiving Day --hours 8 --work_exception_type_id 3
+--holiday --date 2021-12-24 --description Christmas Eve --hours 8 --work_exception_type_id 3
+--holiday --date 2021-12-27 --description Christmas --hours 8 --work_exception_type_id 3
+--holiday --date 2021-12-31 --description New Year's Eve --hours 8 --work_exception_type_id 3
+--position_type --name Dev
+--position_type --name Angular
+--position_type --name C#
+--position_type --name Clojure/other
+--position_type --name Cypress
+--position_type --name DART
+--position_type --name Design
+--position_type --name DevOps
+--position_type --name Django
+--position_type --name Docker
+--position_type --name Elixir
+--position_type --name Elm
+--position_type --name ember.js
+--position_type --name Eng Mgmt
+--position_type --name Enzyme
+--position_type --name Express
+--position_type --name Front-End Javascript
+--position_type --name Gatsby
+--position_type --name Go
+--position_type --name GoLang
+--position_type --name GraphQL
+--position_type --name Hotwire
+--position_type --name Infrastructure
+--position_type --name Java
+--position_type --name Java Native
+--position_type --name JavaScript
+--position_type --name Jest
+--position_type --name Kafka
+--position_type --name Koa
+--position_type --name Kubernetes
+--position_type --name Laravel
+--position_type --name MySQL
+--position_type --name Node
+--position_type --name Node.js
+--position_type --name Objective C
+--position_type --name pg-promise
+--position_type --name Phoenix
+--position_type --name PHP
+--position_type --name Python
+--position_type --name React
+--position_type --name Ruby
+--position_type --name Ruby on Rails
+--position_type --name Rust
+--position_type --name Swift
+--position_type --name Typescript
+--position_type --name Vanilla
+--position_type --name Vue
+--position_type --name Vue.js
+--customer --name 7Signal --is_active true
+--customer --name a16z_ --is_active true
+--customer --name Amount.com --is_active true
+--customer --name Artsy --is_active true
+--customer --name AtoB_ --is_active true
+--customer --name Betterment --is_active true
+--customer --name Beyond Finance --is_active true
+--customer --name Blue Apron --is_active true
+--customer --name Bold Penguin --is_active true
+--customer --name Clever --is_active true
+--customer --name Fast Radius --is_active true
+--customer --name Flexe --is_active true
+--customer --name Fountain --is_active true
+--customer --name Funding University --is_active true
+--customer --name GetThru --is_active true
+--customer --name GitHub --is_active true
+--customer --name Goody --is_active true
+--customer --name Grainger --is_active true
+--customer --name Gusto --is_active true
+--customer --name Handshake --is_active true
+--customer --name Hendrick --is_active true
+--customer --name Lob__ --is_active true
+--customer --name Measurabl --is_active true
+--customer --name Mednax --is_active true
+--customer --name Merchants --is_active true
+--customer --name Mode_ --is_active true
+--customer --name Olive --is_active true
+--customer --name Papa_ --is_active true
+--customer --name Pathstream --is_active true
+--customer --name PGA of America --is_active true
+--customer --name Root_ --is_active true
+--customer --name Saks_ --is_active true
+--customer --name TED__ --is_active true
+--customer --name Trane --is_active true
+--customer --name UniteUs --is_active true
+--customer --name WebConnex --is_active true
+--customer --name Zendesk --is_active true
+--customer --name ZipRecruiter --is_active true
+--project --name 24h Onboarding --customer_id 19 --region_id 1 --status Booked
+--project --name Accessibility --customer_id 20 --region_id 1 --status Booked
+--project --name Benefits --customer_id 19 --region_id 1 --status Booked
+--project --name Betterment for Business --customer_id 6 --region_id 1 --status Booked
+--project --name Broker-Dealer --customer_id 6 --region_id 1 --status Booked
+--project --name Classic --customer_id 37 --region_id 1 --status Booked
+--project --name Coach Tools --customer_id 30 --region_id 1 --status Booked
+--project --name Core Services --customer_id 37 --region_id 1 --status Booked
+--project --name Core Services React --customer_id 37 --region_id 1 --status Booked
+--project --name Danger Zone Rails Upgrades --customer_id 19 --region_id 1 --status Booked
+--project --name Data Team --customer_id 9 --region_id 1 --status Booked
+--project --name Development Lifecycle --customer_id 16 --region_id 1 --status Booked
+--project --name DevOps --customer_id 26 --region_id 1 --status Booked
+--project --name Elixir --customer_id 15 --region_id 1 --status Booked
+--project --name Betterment Feature Delivery --customer_id 6 --region_id 1 --status Booked
+--project --name Mednax Feature Delivery --customer_id 24 --region_id 1 --status Booked
+--project --name TED Feature Delivery --customer_id 33 --region_id 1 --status Booked
+--project --name FirmOps --customer_id 2 --region_id 1 --status Booked
+--project --name Front End --customer_id 38 --region_id 1 --status Booked
+--project --name Go Features --customer_id 10 --region_id 1 --status Booked
+--project --name Growth & Monetization --customer_id 37 --region_id 1 --status Booked
+--project --name Hendrick --customer_id 21 --region_id 1 --status Booked
+--project --name Idea to Code --customer_id 16 --region_id 1 --status Booked
+--project --name Infra --customer_id 10 --region_id 1 --status Booked
+--project --name Integration --customer_id 19 --region_id 1 --status Booked
+--project --name Integrations --customer_id 20 --region_id 1 --status Booked
+--project --name Knowledge Base --customer_id 19 --region_id 1 --status Booked
+--project --name Localization --customer_id 37 --region_id 1 --status Booked
+--project --name Mentoring --customer_id 19 --region_id 1 --status Booked
+--project --name Nexia Web Services --customer_id 34 --region_id 1 --status Booked
+--project --name Node + Go --customer_id 22 --region_id 1 --status Booked
+--project --name Node Upgrade --customer_id 4 --region_id 1 --status Booked
+--project --name Onboarding Bootcamp --customer_id 16 --region_id 1 --status Booked
+--project --name Platform Health --customer_id 16 --region_id 1 --status Booked
+--project --name Proteus --customer_id 34 --region_id 1 --status Booked
+--project --name Pufferfish --customer_id 19 --region_id 1 --status Booked
+--project --name Rails API --customer_id 23 --region_id 1 --status Booked
+--project --name Rails Architecture --customer_id 38 --region_id 1 --status Booked
+--project --name Rails Features --customer_id 9 --region_id 1 --status Booked
+--project --name Rails Refactor --customer_id 31 --region_id 1 --status Booked
+--project --name Sales Experience --customer_id 11 --region_id 1 --status Booked
+--project --name Squonk --customer_id 37 --region_id 1 --status Booked
+--project --name State Tax Registration --customer_id 19 --region_id 1 --status Booked
+--project --name Talent --customer_id 2 --region_id 1 --status Booked
+--project --name TED.com --customer_id 33 --region_id 1 --status Booked
+--project --name UI Platform --customer_id 16 --region_id 1 --status Booked
+--project --name Workflow and Growth --customer_id 37 --region_id 1 --status Booked
+--project --name Betterment for Business Extension --customer_id 6 --region_id 1 --status Forecasted
+--project --name Broker-Dealer Extension --customer_id 6 --region_id 1 --status Forecasted
+--project --name DevOps Extension --customer_id 26 --region_id 1 --status Forecasted
+--project --name Betterment Feature Delivery Extension --customer_id 6 --region_id 1 --status Forecasted
+--project --name TED Feature Delivery Extension --customer_id 33 --region_id 1 --status Forecasted
+--project --name Hendrick Extension --customer_id 21 --region_id 1 --status Forecasted
+--project --name Knowledge Base Extension --customer_id 19 --region_id 1 --status Forecasted
+--project --name Nexia Web Services Extension --customer_id 34 --region_id 1 --status Forecasted
+--project --name Onboarding Bootcamp Extension --customer_id 16 --region_id 1 --status Forecasted
+--project --name Platform Health Extension --customer_id 16 --region_id 1 --status Forecasted
+--project --name Rails Refactor Extension --customer_id 31 --region_id 1 --status Forecasted
+--project --name Sales Experience Extension --customer_id 11 --region_id 1 --status Forecasted
+--project --name State Tax Registration Extension --customer_id 19 --region_id 1 --status Forecasted
+--project --name TED.com Extension --customer_id 33 --region_id 1 --status Forecasted
+--project --name 24h Onboarding Draft --customer_id 19 --region_id 1 --status Draft
+--project --name Accessibility Draft --customer_id 20 --region_id 1 --status Draft
+--project --name Benefits Draft --customer_id 19 --region_id 1 --status Draft
+--project --name Betterment for Business Draft --customer_id 6 --region_id 1 --status Draft
+--project --name Broker-Dealer Draft --customer_id 6 --region_id 1 --status Draft
+--project --name Coach Tools Draft --customer_id 30 --region_id 1 --status Draft
+--project --name Danger Zone Rails Upgrades Draft --customer_id 19 --region_id 1 --status Draft
+--project --name Data Team Draft --customer_id 9 --region_id 1 --status Draft
+--project --name Development Lifecycle Draft --customer_id 16 --region_id 1 --status Draft
+--project --name DevOps Draft --customer_id 26 --region_id 1 --status Draft
+--project --name Betterment Feature Delivery Draft --customer_id 6 --region_id 1 --status Draft
+--project --name TED Feature Delivery Draft --customer_id 33 --region_id 1 --status Draft
+--project --name Front End Draft --customer_id 38 --region_id 1 --status Draft
+--project --name Go Features Draft --customer_id 10 --region_id 1 --status Draft
+--project --name Hendrick Draft --customer_id 21 --region_id 1 --status Draft
+--project --name Idea to Code Draft --customer_id 16 --region_id 1 --status Draft
+--project --name Infra Draft --customer_id 10 --region_id 1 --status Draft
+--project --name Integration Draft --customer_id 19 --region_id 1 --status Draft
+--project --name Knowledge Base Draft --customer_id 19 --region_id 1 --status Draft
+--project --name Nexia Web Services Draft --customer_id 34 --region_id 1 --status Draft
+--project --name Onboarding Bootcamp Draft --customer_id 16 --region_id 1 --status Draft
+--project --name Platform Health Draft --customer_id 16 --region_id 1 --status Draft
+--project --name Proteus  Draft --customer_id 34 --region_id 1 --status Draft
+--project --name Pufferfish Draft --customer_id 19 --region_id 1 --status Draft
+--project --name Rails Architecture Draft --customer_id 38 --region_id 1 --status Draft
+--project --name Rails Features Draft --customer_id 9 --region_id 1 --status Draft
+--project --name Rails Refactor Draft --customer_id 31 --region_id 1 --status Draft
+--project --name Sales Experience Draft --customer_id 11 --region_id 1 --status Draft
+--project --name State Tax Registration Draft --customer_id 19 --region_id 1 --status Draft
+--project --name TED.com Draft --customer_id 33 --region_id 1 --status Draft
+--project --name UI Platform Draft --customer_id 16 --region_id 1 --status Draft
+--project --name Rails API --customer_id 23 --region_id 1 --status Forecasted
+--project --name React/Node --customer_id 2 --region_id 1 --status Forecasted
+--project --name Jon Grenning Backfill --customer_id 9 --region_id 1 --status Forecasted
+--employee --first_name Kyle --last_name Adams --email adams@testdouble.com --start_date 2021-01-01 --hourly_cost 75.0238095238095 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nichol --last_name Alexander --email alexander@testdouble.com --start_date 2021-01-01 --hourly_cost 75.5476190476191 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jason --last_name Allen --email allen@testdouble.com --start_date 2021-01-01 --hourly_cost 75.5476190476191 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Rick --last_name Allen --email allen@testdouble.com --start_date 2021-01-01 --hourly_cost 119.047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Daniel --last_name Ashcraft --email ashcraft@testdouble.com --start_date 2021-01-01 --hourly_cost 83.4166666666667 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name River --last_name Bailey --email bailey@testdouble.com --start_date 2021-01-01 --hourly_cost 82.2976190476191 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Raelyn --last_name Bangel --email bangel@testdouble.com --start_date 2021-01-01 --hourly_cost 83.2202380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Kevin --last_name Baribeau --email baribeau@testdouble.com --start_date 2021-01-01 --hourly_cost 81.9702380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nathan --last_name Bertram --email bertram@testdouble.com --start_date 2021-01-01 --hourly_cost 119.047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Jack --last_name Boberg --email boberg@testdouble.com --start_date 2021-01-01 --hourly_cost 85.7142857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Kenneth --last_name Bogner --email bogner@testdouble.com --start_date 2021-01-01 --hourly_cost 84.4107142857143 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ryan --last_name Bradburn --email bradburn@testdouble.com --start_date 2021-01-01 --hourly_cost 80.6904761904762 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ross --last_name Brandes --email brandes@testdouble.com --start_date 2021-01-01 --hourly_cost 84.452380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Chris --last_name Caragianis --email caragianis@testdouble.com --start_date 2021-01-01 --hourly_cost 83.8392857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Michael --last_name Chase --email chase@testdouble.com --start_date 2021-01-01 --hourly_cost 107.142857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Ben --last_name Chodoroff --email chodoroff@testdouble.com --start_date 2021-01-01 --hourly_cost 81.2440476190476 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Fabio --last_name Cirone --email cirone@testdouble.com --start_date 2021-01-01 --hourly_cost 59.5238095238095 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Alexander --last_name Clarke --email clarke@testdouble.com --start_date 2021-01-01 --hourly_cost 74.375 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Zach --last_name Dennis --email dennis@testdouble.com --start_date 2021-01-01 --hourly_cost 95.2380952380952 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Mike --last_name Doel --email doel@testdouble.com --start_date 2021-01-01 --hourly_cost 90.9285714285714 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Eileen --last_name Duffner --email duffner@testdouble.com --start_date 2021-01-01 --hourly_cost 130.952380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Joé --last_name Dupuis --email dupuis@testdouble.com --start_date 2021-01-01 --hourly_cost 78.7440476190476 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nate --last_name Eizenga --email eizenga@testdouble.com --start_date 2021-01-01 --hourly_cost 112.5 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Jacob --last_name Ela --email ela@testdouble.com --start_date 2021-01-01 --hourly_cost 107.142857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Jeremy --last_name Fairbank --email fairbank@testdouble.com --start_date 2021-01-01 --hourly_cost 92.6309523809524 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Dylan --last_name Fitzgerald --email fitzgerald@testdouble.com --start_date 2021-01-01 --hourly_cost 114.285714285714 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Daniel --last_name Flynn --email flynn@testdouble.com --start_date 2021-01-01 --hourly_cost 86.9107142857143 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Cory --last_name Foy --email foy@testdouble.com --start_date 2021-01-01 --hourly_cost 119.047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Aaron --last_name Frerichs --email frerichs@testdouble.com --start_date 2021-01-01 --hourly_cost 82.9821428571429 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jim --last_name Gay --email gay@testdouble.com --start_date 2021-01-01 --hourly_cost 119.047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Landon --last_name Gray --email gray@testdouble.com --start_date 2021-01-01 --hourly_cost 73.9821428571429 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jon --last_name Grenning --email grenning@testdouble.com --start_date 2021-01-01 --hourly_cost 76.1369047619048 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Tommy --last_name Groshong --email groshong@testdouble.com --start_date 2021-01-01 --hourly_cost 89.0833333333333 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jason --last_name Grosz --email grosz@testdouble.com --start_date 2021-01-01 --hourly_cost 87.9702380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Tyler --last_name Guillen --email guillen@testdouble.com --start_date 2021-01-01 --hourly_cost 75.0238095238095 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Pam-Marie --last_name Guzzo --email guzzo@testdouble.com --start_date 2021-01-01 --hourly_cost 70.1726190476191 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jordan --last_name Hammond --email hammond@testdouble.com --start_date 2021-01-01 --hourly_cost 114.285714285714 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Glenn --last_name Harmon --email harmon@testdouble.com --start_date 2021-01-01 --hourly_cost 86.0059523809524 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nora --last_name Harris --email harris@testdouble.com --start_date 2021-01-01 --hourly_cost 130.952380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name George --last_name Harwood --email harwood@testdouble.com --start_date 2021-01-01 --hourly_cost 114.285714285714 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name AJ --last_name Hekman --email hekman@testdouble.com --start_date 2021-01-01 --hourly_cost 107.142857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Andrew --last_name Herr --email herr@testdouble.com --start_date 2021-01-01 --hourly_cost 86.0059523809524 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Tim --last_name Hogg --email hogg@testdouble.com --start_date 2021-01-01 --hourly_cost 84.9702380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ali --last_name Ibrahim --email ibrahim@testdouble.com --start_date 2021-01-01 --hourly_cost 89.9047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Steve --last_name Jackson --email jackson@testdouble.com --start_date 2021-01-01 --hourly_cost 95.327380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Matt --last_name Jones --email jones@testdouble.com --start_date 2021-01-01 --hourly_cost 83.3333333333333 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nate --last_name Kandler --email kandler@testdouble.com --start_date 2021-01-01 --hourly_cost 81.6666666666667 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jason --last_name Karns --email karns@testdouble.com --start_date 2021-01-01 --hourly_cost 94.2619047619048 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Dale --last_name Karp --email karp@testdouble.com --start_date 2021-01-01 --hourly_cost 77.827380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Mitch --last_name Kett --email kett@testdouble.com --start_date 2021-01-01 --hourly_cost 107.142857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Josh --last_name Klina --email klina@testdouble.com --start_date 2021-01-01 --hourly_cost 80.1071428571429 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Levi --last_name Klingler --email klingler@testdouble.com --start_date 2021-01-01 --hourly_cost 73.9761904761905 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Attila --last_name Komaromi --email komaromi@testdouble.com --start_date 2021-01-01 --hourly_cost 63.0833333333333 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Robert --last_name Komaromi --email komaromi@testdouble.com --start_date 2021-01-01 --hourly_cost 74.952380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Minnie --last_name Lee --email lee@testdouble.com --start_date 2021-01-01 --hourly_cost 78.1547619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Neal --last_name Lindsay --email lindsay@testdouble.com --start_date 2021-01-01 --hourly_cost 82.8154761904762 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Joseph --last_name Lozano --email lozano@testdouble.com --start_date 2021-01-01 --hourly_cost 83.5892857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Alex --last_name MacDonald --email macdonald@testdouble.com --start_date 2021-01-01 --hourly_cost 0 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Katie --last_name Macke --email macke@testdouble.com --start_date 2021-01-01 --hourly_cost 78.1547619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Alex --last_name Martin --email martin@testdouble.com --start_date 2021-01-01 --hourly_cost 84.3452380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Cory --last_name Mathis --email mathis@testdouble.com --start_date 2021-01-01 --hourly_cost 83.4166666666667 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Keith --last_name McCanless --email mccanless@testdouble.com --start_date 2021-01-01 --hourly_cost 92.125 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Kevin --last_name Munc --email munc@testdouble.com --start_date 2021-01-01 --hourly_cost 107.142857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Eric --last_name Newbury --email newbury@testdouble.com --start_date 2021-01-01 --hourly_cost 77.1190476190476 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Hoang --last_name Nguyen --email nguyen@testdouble.com --start_date 2021-01-01 --hourly_cost 95.2380952380952 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Tom --last_name Nightingale --email nightingale@testdouble.com --start_date 2021-01-01 --hourly_cost 88.0952380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Dayton --last_name Nolan --email nolan@testdouble.com --start_date 2021-01-01 --hourly_cost 90.4702380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jesse --last_name OBrien --email obrien@testdouble.com --start_date 2021-01-01 --hourly_cost 84.0654761904762 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Cody --last_name Palmer --email palmer@testdouble.com --start_date 2021-01-01 --hourly_cost 119.047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Kenn --last_name Pascascio --email pascascio@testdouble.com --start_date 2021-01-01 --hourly_cost 119.047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Viral --last_name Patel --email patel@testdouble.com --start_date 2021-01-01 --hourly_cost 76.6428571428571 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Camilo --last_name Payan --email payan@testdouble.com --start_date 2021-01-01 --hourly_cost 67.2559523809524 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Shehan --last_name Perera --email perera@testdouble.com --start_date 2021-01-01 --hourly_cost 70.7261904761905 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jamie --last_name Phelps --email phelps@testdouble.com --start_date 2021-01-01 --hourly_cost 84.4047619047619 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Cliff --last_name Pruitt --email pruitt@testdouble.com --start_date 2021-01-01 --hourly_cost 93.7380952380952 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jessica --last_name Puls --email puls@testdouble.com --start_date 2021-01-01 --hourly_cost 89.952380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Lee --last_name Quarella --email quarella@testdouble.com --start_date 2021-01-01 --hourly_cost 89.1130952380952 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nathan --last_name Rockhold --email rockhold@testdouble.com --start_date 2021-01-01 --hourly_cost 133.333333333333 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Roger --last_name Roelofs --email roelofs@testdouble.com --start_date 2021-01-01 --hourly_cost 107.142857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Justin --last_name Schoen --email schoen@testdouble.com --start_date 2021-01-01 --hourly_cost 74.5059523809524 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Don --last_name Schrimsher --email schrimsher@testdouble.com --start_date 2021-01-01 --hourly_cost 114.285714285714 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Rich --last_name Seviora --email seviora@testdouble.com --start_date 2021-01-01 --hourly_cost 78.3392857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Aji --last_name Slater --email slater@testdouble.com --start_date 2021-01-01 --hourly_cost 130.952380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Richard --last_name Steen --email steen@testdouble.com --start_date 2021-01-01 --hourly_cost 83.5 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Dan --last_name Thompson --email thompson@testdouble.com --start_date 2021-01-01 --hourly_cost 88.5654761904762 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Robby --last_name Thompson --email thompson@testdouble.com --start_date 2021-01-01 --hourly_cost 73.9880952380952 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ed --last_name Toro --email toro@testdouble.com --start_date 2021-01-01 --hourly_cost 84.452380952381 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Kevin --last_name Truong --email truong@testdouble.com --start_date 2021-01-01 --hourly_cost 78.0357142857143 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Stephen --last_name Vance --email vance@testdouble.com --start_date 2021-01-01 --hourly_cost 90.9880952380952 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Andrew --last_name Walker --email walker@testdouble.com --start_date 2021-01-01 --hourly_cost 84.3630952380952 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name James --last_name Walker --email walker@testdouble.com --start_date 2021-01-01 --hourly_cost 79.4642857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Meagan --last_name Waller --email waller@testdouble.com --start_date 2021-01-01 --hourly_cost 78.6726190476191 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Brent --last_name Yoder --email yoder@testdouble.com --start_date 2021-01-01 --hourly_cost 107.142857142857 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Jeremy --last_name Neal --email neal@testdouble.com --start_date 2021-01-01 --hourly_cost 79.05 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Andy --last_name Whillans --email whillans@testdouble.com --start_date 2021-01-01 --hourly_cost 76.45 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jason --last_name Stiebs --email stiebs@testdouble.com --start_date 2021-01-01 --hourly_cost 125 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Erhan --last_name Berber --email berber@testdouble.com --start_date 2021-01-01 --hourly_cost 120 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Rob --last_name Yurkowski --email yurkowski@testdouble.com --start_date 2021-01-01 --hourly_cost 125 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Philip --last_name Solobay --email solobay@testdouble.com --start_date 2021-01-01 --hourly_cost 95 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--position_with_employee --name Senior Consultant --start_date 2021-02-22 --end_date 2022-04-01 --bill_rate 163 --cost 82 --daily_billable_hours 8 --project_id 1 --position_type_id 1 --employee_id 6
+--position_with_employee --name Senior Consultant --start_date 2021-02-18 --end_date 2022-04-01 --bill_rate 163 --cost 84 --daily_billable_hours 8 --project_id 1 --position_type_id 1 --employee_id 88
+--position_with_employee --name Senior Consultant --start_date 2021-09-27 --end_date 2022-01-28 --bill_rate 150 --cost 83 --daily_billable_hours 8 --project_id 2 --position_type_id 1 --employee_id 5
+--position_with_employee --name Senior Consultant --start_date 2021-10-11 --end_date 2022-01-28 --bill_rate 150 --cost 78 --daily_billable_hours 8 --project_id 2 --position_type_id 1 --employee_id 49
+--position_with_employee --name Senior Consultant --start_date 2021-10-11 --end_date 2022-01-28 --bill_rate 150 --cost 77 --daily_billable_hours 8 --project_id 2 --position_type_id 1 --employee_id 65
+--position_with_employee --name Special Agent --start_date 2021-02-08 --end_date 2022-01-28 --bill_rate 150 --cost 119 --daily_billable_hours 8 --project_id 2 --position_type_id 1 --employee_id 71
+--position_with_employee --name Senior Consultant --start_date 2021-02-22 --end_date 2022-03-31 --bill_rate 163 --cost 79 --daily_billable_hours 8 --project_id 3 --position_type_id 1 --employee_id 93
+--position_with_employee --name Senior Consultant --start_date 2021-12-14 --end_date 2021-12-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 96
+--position_with_employee --name Special Agent --start_date 2021-09-13 --end_date 2021-12-31 --bill_rate 175 --cost 119 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 70
+--position_with_employee --name Senior Consultant --start_date 2021-11-29 --end_date 2021-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 91
+--position_with_employee --name Senior Consultant --start_date 2021-08-09 --end_date 2021-12-31 --bill_rate 175 --cost 74 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 18
+--position_with_employee --name Software Engineer --start_date 2021-08-09 --end_date 2021-12-31 --bill_rate 175 --cost 71 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 74
+--position_with_employee --name Senior Consultant --start_date 2021-07-12 --end_date 2022-02-07 --bill_rate 135 --cost 83 --daily_billable_hours 8 --project_id 6 --position_type_id 1 --employee_id 7
+--position_with_employee --name Special Agent --start_date 2019-08-26 --end_date 2022-02-07 --bill_rate 135 --cost 119 --daily_billable_hours 8 --project_id 6 --position_type_id 1 --employee_id 30
+--position_with_employee --name Special Agent --start_date 2020-10-05 --end_date 2021-12-31 --bill_rate 135 --cost 107 --daily_billable_hours 8 --project_id 6 --position_type_id 1 --employee_id 41
+--position_with_employee --name Senior Consultant --start_date 2021-07-12 --end_date 2022-02-07 --bill_rate 135 --cost 78 --daily_billable_hours 8 --project_id 6 --position_type_id 1 --employee_id 56
+--position_with_employee --name Senior Consultant --start_date 2021-07-26 --end_date 2022-02-07 --bill_rate 135 --cost 83 --daily_billable_hours 8 --project_id 6 --position_type_id 1 --employee_id 57
+--position_with_employee --name Senior Consultant --start_date 2020-11-16 --end_date 2022-04-30 --bill_rate 163 --cost 85 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 43
+--position_with_employee --name Staff Consultant --start_date 2020-11-09 --end_date 2022-04-30 --bill_rate 163 --cost 94 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 48
+--position_with_employee --name Senior Consultant --start_date 2021-11-24 --end_date 2021-12-17 --bill_rate 163 --cost 78 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 60
+--position_with_employee --name Special Agent --start_date 2020-03-23 --end_date 2022-04-30 --bill_rate 163 --cost 107 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 64
+--position_with_employee --name Special Agent --start_date 2021-08-09 --end_date 2022-02-07 --bill_rate 135 --cost 107 --daily_billable_hours 8 --project_id 8 --position_type_id 1 --employee_id 15
+--position_with_employee --name Special Agent --start_date 2021-08-09 --end_date 2022-02-07 --bill_rate 135 --cost 107 --daily_billable_hours 8 --project_id 8 --position_type_id 1 --employee_id 80
+--position_with_employee --name Senior Consultant --start_date 2021-08-09 --end_date 2022-02-07 --bill_rate 135 --cost 84 --daily_billable_hours 8 --project_id 8 --position_type_id 1 --employee_id 85
+--position_with_employee --name Staff Consultant --start_date 2021-08-09 --end_date 2022-02-07 --bill_rate 135 --cost 93 --daily_billable_hours 8 --project_id 9 --position_type_id 1 --employee_id 25
+--position_with_employee --name Special Agent --start_date 2021-08-09 --end_date 2022-02-07 --bill_rate 135 --cost 114 --daily_billable_hours 8 --project_id 9 --position_type_id 1 --employee_id 40
+--position_with_employee --name Special Agent --start_date 2021-11-01 --end_date 2022-05-01 --bill_rate 163 --cost 114 --daily_billable_hours 8 --project_id 10 --position_type_id 1 --employee_id 26
+--position_with_employee --name Senior Consultant --start_date 2021-11-08 --end_date 2022-05-01 --bill_rate 163 --cost 0 --daily_billable_hours 8 --project_id 10 --position_type_id 1 --employee_id 59
+--position_with_employee --name Senior Consultant --start_date 2021-04-12 --end_date 2022-02-01 --bill_rate 150 --cost 84 --daily_billable_hours 8 --project_id 11 --position_type_id 1 --employee_id 69
+--position_with_employee --name Special Agent --start_date 2021-07-19 --end_date 2021-12-31 --bill_rate 163 --cost 60 --daily_billable_hours 8 --project_id 12 --position_type_id 1 --employee_id 17
+--position_with_employee --name Senior Consultant --start_date 2021-03-08 --end_date 2021-12-31 --bill_rate 163 --cost 92 --daily_billable_hours 8 --project_id 12 --position_type_id 1 --employee_id 63
+--position_with_employee --name Senior Consultant --start_date 2021-03-08 --end_date 2021-12-31 --bill_rate 163 --cost 90 --daily_billable_hours 8 --project_id 12 --position_type_id 1 --employee_id 77
+--position_with_employee --name Senior Consultant --start_date 2022-01-04 --end_date 2022-03-31 --bill_rate 200 --cost 92 --daily_billable_hours 8 --project_id 13 --position_type_id 1 --employee_id 63
+--position_with_employee --name Senior Consultant --start_date 2022-01-04 --end_date 2022-03-31 --bill_rate 200 --cost 90 --daily_billable_hours 8 --project_id 13 --position_type_id 1 --employee_id 77
+--position_with_employee --name Staff Consultant --start_date 2022-01-04 --end_date 2022-03-01 --bill_rate 175 --cost 90 --daily_billable_hours 8 --project_id 14 --position_type_id 1 --employee_id 68
+--position_with_employee --name Special Agent --start_date 2021-11-29 --end_date 2022-03-01 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 14 --position_type_id 1 --employee_id 98
+--position_with_employee --name Special Agent --start_date 2021-07-26 --end_date 2021-12-31 --bill_rate 175 --cost 119 --daily_billable_hours 8 --project_id 15 --position_type_id 1 --employee_id 4
+--position_with_employee --name Senior Consultant --start_date 2021-11-10 --end_date 2021-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 15 --position_type_id 1 --employee_id 58
+--position_with_employee --name Senior Consultant --start_date 2021-07-12 --end_date 2021-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 15 --position_type_id 1 --employee_id 75
+--position_with_employee --name Senior Consultant --start_date 2021-12-13 --end_date 2022-12-31 --bill_rate 175 --cost 75 --daily_billable_hours 8 --project_id 16 --position_type_id 1 --employee_id 1
+--position_with_employee --name Senior Consultant --start_date 2021-07-12 --end_date 2022-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 16 --position_type_id 1 --employee_id 14
+--position_with_employee --name Senior Consultant --start_date 2021-07-12 --end_date 2022-12-31 --bill_rate 175 --cost 70 --daily_billable_hours 8 --project_id 16 --position_type_id 1 --employee_id 36
+--position_with_employee --name Special Agent --start_date 2021-03-22 --end_date 2022-03-31 --bill_rate 163 --cost 119 --daily_billable_hours 8 --project_id 17 --position_type_id 1 --employee_id 9
+--position_with_employee --name Special Agent --start_date 2021-03-22 --end_date 2022-03-31 --bill_rate 163 --cost 95 --daily_billable_hours 8 --project_id 17 --position_type_id 1 --employee_id 66
+--position_with_employee --name Senior Consultant --start_date 2020-01-07 --end_date 2022-12-31 --bill_rate 163 --cost 82 --daily_billable_hours 8 --project_id 18 --position_type_id 1 --employee_id 47
+--position_with_employee --name Senior Consultant --start_date 2021-11-18 --end_date 2022-12-31 --bill_rate 163 --cost 75 --daily_billable_hours 8 --project_id 18 --position_type_id 1 --employee_id 81
+--position_with_employee --name Senior Consultant --start_date 2021-06-14 --end_date 2022-03-31 --bill_rate 175 --cost 79 --daily_billable_hours 8 --project_id 19 --position_type_id 1 --employee_id 92
+--position_with_employee --name Senior Consultant --start_date 2021-11-22 --end_date 2022-03-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 19 --position_type_id 1 --employee_id 97
+--position_with_employee --name Staff Consultant --start_date 2021-02-18 --end_date 2022-02-01 --bill_rate 175 --cost 95 --daily_billable_hours 8 --project_id 20 --position_type_id 1 --employee_id 45
+--position_with_employee --name Special Agent --start_date 2020-10-05 --end_date 2021-12-31 --bill_rate 135 --cost 107 --daily_billable_hours 8 --project_id 21 --position_type_id 1 --employee_id 50
+--position_with_employee --name Staff Consultant --start_date 2020-07-14 --end_date 2021-12-31 --bill_rate 138 --cost 82 --daily_billable_hours 8 --project_id 22 --position_type_id 1 --employee_id 8
+--position_with_employee --name Software Engineer --start_date 2021-05-24 --end_date 2021-12-31 --bill_rate 125 --cost 74 --daily_billable_hours 8 --project_id 22 --position_type_id 1 --employee_id 31
+--position_with_employee --name Senior Consultant --start_date 2014-07-28 --end_date 2021-12-31 --bill_rate 138 --cost 89 --daily_billable_hours 8 --project_id 22 --position_type_id 1 --employee_id 86
+--position_with_employee --name Special Agent --start_date 2021-04-26 --end_date 2021-12-31 --bill_rate 150 --cost 114 --daily_billable_hours 8 --project_id 23 --position_type_id 1 --employee_id 82
+--position_with_employee --name Special Agent --start_date 2021-02-18 --end_date 2021-12-31 --bill_rate 175 --cost 133 --daily_billable_hours 8 --project_id 24 --position_type_id 1 --employee_id 79
+--position_with_employee --name Senior Consultant --start_date 2021-05-03 --end_date 2022-04-30 --bill_rate 163 --cost 91 --daily_billable_hours 8 --project_id 25 --position_type_id 1 --employee_id 20
+--position_with_employee --name Senior Consultant --start_date 2020-09-16 --end_date 2022-01-31 --bill_rate 163 --cost 79 --daily_billable_hours 8 --project_id 25 --position_type_id 1 --employee_id 22
+--position_with_employee --name Senior Consultant --start_date 2021-06-14 --end_date 2022-03-31 --bill_rate 163 --cost 75 --daily_billable_hours 8 --project_id 25 --position_type_id 1 --employee_id 35
+--position_with_employee --name Senior Consultant --start_date 2021-11-29 --end_date 2022-06-30 --bill_rate 150 --cost 86 --daily_billable_hours 8 --project_id 26 --position_type_id 1 --employee_id 38
+--position_with_employee --name Senior Consultant --start_date 2020-11-09 --end_date 2022-06-30 --bill_rate 150 --cost 84 --daily_billable_hours 8 --project_id 26 --position_type_id 1 --employee_id 61
+--position_with_employee --name Special Agent --start_date 2021-07-19 --end_date 2021-12-31 --bill_rate 163 --cost 131 --daily_billable_hours 8 --project_id 27 --position_type_id 1 --employee_id 39
+--position_with_employee --name Special Agent --start_date 2021-11-22 --end_date 2022-02-07 --bill_rate 135 --cost 0 --daily_billable_hours 8 --project_id 28 --position_type_id 1 --employee_id 99
+--position_with_employee --name Senior Consultant --start_date 2020-11-16 --end_date 2021-12-31 --bill_rate 163 --cost 78 --daily_billable_hours 8 --project_id 29 --position_type_id 1 --employee_id 89
+--position_with_employee --name Special Agent --start_date 2021-07-19 --end_date 2021-12-31 --bill_rate 150 --cost 86 --daily_billable_hours 8 --project_id 30 --position_type_id 1 --employee_id 10
+--position_with_employee --name Staff Consultant --start_date 2020-03-16 --end_date 2021-12-31 --bill_rate 150 --cost 88 --daily_billable_hours 8 --project_id 30 --position_type_id 1 --employee_id 34
+--position_with_employee --name Senior Consultant --start_date 2021-11-01 --end_date 2022-05-01 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 31 --position_type_id 1 --employee_id 11
+--position_with_employee --name Senior Consultant --start_date 2021-11-15 --end_date 2022-05-01 --bill_rate 175 --cost 78 --daily_billable_hours 8 --project_id 31 --position_type_id 1 --employee_id 83
+--position_with_employee --name Special Agent --start_date 2021-12-20 --end_date 2022-01-16 --bill_rate 188 --cost 0 --daily_billable_hours 8 --project_id 32 --position_type_id 1 --employee_id 100
+--position_with_employee --name Senior Consultant --start_date 2021-04-13 --end_date 2021-12-31 --bill_rate 150 --cost 83 --daily_billable_hours 8 --project_id 33 --position_type_id 1 --employee_id 29
+--position_with_employee --name Senior Consultant --start_date 2019-02-14 --end_date 2021-12-31 --bill_rate 150 --cost 94 --daily_billable_hours 8 --project_id 33 --position_type_id 1 --employee_id 76
+--position_with_employee --name Senior Consultant --start_date 2019-06-03 --end_date 2022-01-31 --bill_rate 150 --cost 84 --daily_billable_hours 8 --project_id 34 --position_type_id 1 --employee_id 13
+--position_with_employee --name Software Engineer --start_date 2021-10-13 --end_date 2022-06-30 --bill_rate 150 --cost 74 --daily_billable_hours 8 --project_id 35 --position_type_id 1 --employee_id 52
+--position_with_employee --name Software Engineer --start_date 2021-10-26 --end_date 2022-06-30 --bill_rate 150 --cost 63 --daily_billable_hours 8 --project_id 35 --position_type_id 1 --employee_id 53
+--position_with_employee --name Senior Consultant --start_date 2021-11-01 --end_date 2022-03-25 --bill_rate 163 --cost 81 --daily_billable_hours 8 --project_id 36 --position_type_id 1 --employee_id 12
+--position_with_employee --name Senior Consultant --start_date 2021-10-25 --end_date 2022-03-25 --bill_rate 163 --cost 76 --daily_billable_hours 8 --project_id 36 --position_type_id 1 --employee_id 32
+--position_with_employee --name Senior Consultant --start_date 2021-11-08 --end_date 2022-01-10 --bill_rate 188 --cost 76 --daily_billable_hours 8 --project_id 37 --position_type_id 1 --employee_id 3
+--position_with_employee --name Senior Consultant --start_date 2021-11-08 --end_date 2022-01-10 --bill_rate 188 --cost 74 --daily_billable_hours 8 --project_id 37 --position_type_id 1 --employee_id 87
+--position_with_employee --name Senior Consultant --start_date 2021-05-10 --end_date 2022-03-31 --bill_rate 175 --cost 76 --daily_billable_hours 8 --project_id 38 --position_type_id 1 --employee_id 2
+--position_with_employee --name Senior Consultant --start_date 2021-08-23 --end_date 2022-03-31 --bill_rate 175 --cost 86 --daily_billable_hours 8 --project_id 38 --position_type_id 1 --employee_id 42
+--position_with_employee --name Staff Consultant --start_date 2021-05-10 --end_date 2021-12-15 --bill_rate 175 --cost 90 --daily_billable_hours 8 --project_id 38 --position_type_id 1 --employee_id 68
+--position_with_employee --name Special Agent --start_date 2021-12-13 --end_date 2022-03-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 38 --position_type_id 1 --employee_id 101
+--position_with_employee --name Senior Consultant --start_date 2021-03-01 --end_date 2022-02-01 --bill_rate 150 --cost 77 --daily_billable_hours 8 --project_id 39 --position_type_id 1 --employee_id 72
+--position_with_employee --name Special Agent --start_date 2021-06-21 --end_date 2022-01-31 --bill_rate 163 --cost 119 --daily_billable_hours 8 --project_id 40 --position_type_id 1 --employee_id 28
+--position_with_employee --name Senior Consultant --start_date 2021-07-06 --end_date 2022-03-31 --bill_rate 163 --cost 83 --daily_billable_hours 8 --project_id 40 --position_type_id 1 --employee_id 46
+--position_with_employee --name Special Agent --start_date 2021-03-22 --end_date 2022-02-28 --bill_rate 163 --cost 114 --daily_billable_hours 8 --project_id 41 --position_type_id 1 --employee_id 37
+--position_with_employee --name Special Agent --start_date 2021-11-03 --end_date 2022-02-28 --bill_rate 163 --cost 107 --daily_billable_hours 8 --project_id 41 --position_type_id 1 --employee_id 94
+--position_with_employee --name Special Agent --start_date 2021-03-29 --end_date 2022-02-07 --bill_rate 135 --cost 0 --daily_billable_hours 8 --project_id 42 --position_type_id 1 --employee_id 23
+--position_with_employee --name Special Agent --start_date 2021-06-07 --end_date 2022-01-31 --bill_rate 163 --cost 131 --daily_billable_hours 8 --project_id 43 --position_type_id 1 --employee_id 84
+--position_with_employee --name Senior Consultant --start_date 2021-05-10 --end_date 2022-12-31 --bill_rate 163 --cost 81 --daily_billable_hours 8 --project_id 44 --position_type_id 1 --employee_id 16
+--position_with_employee --name Senior Consultant --start_date 2021-07-06 --end_date 2022-03-31 --bill_rate 163 --cost 89 --daily_billable_hours 8 --project_id 45 --position_type_id 1 --employee_id 33
+--position_with_employee --name Senior Consultant --start_date 2021-07-06 --end_date 2022-03-31 --bill_rate 163 --cost 75 --daily_billable_hours 8 --project_id 45 --position_type_id 1 --employee_id 54
+--position_with_employee --name Senior Consultant --start_date 2020-07-13 --end_date 2022-01-15 --bill_rate 150 --cost 80 --daily_billable_hours 8 --project_id 46 --position_type_id 1 --employee_id 51
+--position_with_employee --name Senior Consultant --start_date 2021-05-01 --end_date 2022-01-15 --bill_rate 150 --cost 89 --daily_billable_hours 8 --project_id 46 --position_type_id 1 --employee_id 78
+--position_with_employee --name Special Agent --start_date 2020-11-09 --end_date 2021-12-31 --bill_rate 135 --cost 107 --daily_billable_hours 8 --project_id 47 --position_type_id 1 --employee_id 24
+--position_with_employee --name Senior Consultant --start_date 2020-11-16 --end_date 2021-12-31 --bill_rate 135 --cost 78 --daily_billable_hours 8 --project_id 47 --position_type_id 1 --employee_id 89
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 48 --position_type_id 1 --employee_id 96
+--position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 119 --daily_billable_hours 8 --project_id 48 --position_type_id 1 --employee_id 70
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 48 --position_type_id 1 --employee_id 91
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 74 --daily_billable_hours 8 --project_id 49 --position_type_id 1 --employee_id 18
+--position_with_employee --name Software Engineer --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 71 --daily_billable_hours 8 --project_id 49 --position_type_id 1 --employee_id 74
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 200 --cost 92 --daily_billable_hours 8 --project_id 50 --position_type_id 1 --employee_id 63
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 200 --cost 90 --daily_billable_hours 8 --project_id 50 --position_type_id 1 --employee_id 77
+--position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 119 --daily_billable_hours 8 --project_id 51 --position_type_id 1 --employee_id 4
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 51 --position_type_id 1 --employee_id 58
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 51 --position_type_id 1 --employee_id 75
+--position_with_employee --name Special Agent --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 119 --daily_billable_hours 8 --project_id 52 --position_type_id 1 --employee_id 9
+--position_with_employee --name Special Agent --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 95 --daily_billable_hours 8 --project_id 52 --position_type_id 1 --employee_id 66
+--position_with_employee --name Staff Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 138 --cost 82 --daily_billable_hours 8 --project_id 53 --position_type_id 1 --employee_id 8
+--position_with_employee --name Software Engineer --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 125 --cost 74 --daily_billable_hours 8 --project_id 53 --position_type_id 1 --employee_id 31
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 138 --cost 89 --daily_billable_hours 8 --project_id 53 --position_type_id 1 --employee_id 86
+--position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 163 --cost 131 --daily_billable_hours 8 --project_id 54 --position_type_id 1 --employee_id 39
+--position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-06-30 --bill_rate 150 --cost 86 --daily_billable_hours 8 --project_id 55 --position_type_id 1 --employee_id 10
+--position_with_employee --name Staff Consultant --start_date 2022-01-03 --end_date 2022-06-30 --bill_rate 150 --cost 88 --daily_billable_hours 8 --project_id 55 --position_type_id 1 --employee_id 34
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 150 --cost 83 --daily_billable_hours 8 --project_id 56 --position_type_id 1 --employee_id 29
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 150 --cost 94 --daily_billable_hours 8 --project_id 56 --position_type_id 1 --employee_id 76
+--position_with_employee --name Senior Consultant --start_date 2022-02-01 --end_date 2022-04-30 --bill_rate 150 --cost 84 --daily_billable_hours 8 --project_id 57 --position_type_id 1 --employee_id 13
+--position_with_employee --name Special Agent --start_date 2022-02-01 --end_date 2022-03-31 --bill_rate 163 --cost 119 --daily_billable_hours 8 --project_id 58 --position_type_id 1 --employee_id 28
+--position_with_employee --name Special Agent --start_date 2022-03-01 --end_date 2022-03-31 --bill_rate 163 --cost 114 --daily_billable_hours 8 --project_id 59 --position_type_id 1 --employee_id 37
+--position_with_employee --name Special Agent --start_date 2022-03-01 --end_date 2022-03-31 --bill_rate 163 --cost 107 --daily_billable_hours 8 --project_id 59 --position_type_id 1 --employee_id 94
+--position_with_employee --name Special Agent --start_date 2022-02-01 --end_date 2022-03-31 --bill_rate 163 --cost 131 --daily_billable_hours 8 --project_id 60 --position_type_id 1 --employee_id 84
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 89 --daily_billable_hours 8 --project_id 61 --position_type_id 1 --employee_id 33
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 75 --daily_billable_hours 8 --project_id 61 --position_type_id 1 --employee_id 54
+--position_with_employee --name Senior Consultant --start_date 2022-04-04 --end_date 2022-07-31 --bill_rate 163 --cost 82 --daily_billable_hours 8 --project_id 62 --position_type_id 1 --employee_id 6
+--position_with_employee --name Senior Consultant --start_date 2022-04-04 --end_date 2022-07-31 --bill_rate 163 --cost 84 --daily_billable_hours 8 --project_id 62 --position_type_id 1 --employee_id 88
+--position_with_employee --name Senior Consultant --start_date 2022-01-31 --end_date 2022-03-31 --bill_rate 150 --cost 83 --daily_billable_hours 8 --project_id 63 --position_type_id 1 --employee_id 5
+--position_with_employee --name Senior Consultant --start_date 2022-01-31 --end_date 2022-03-31 --bill_rate 150 --cost 78 --daily_billable_hours 8 --project_id 63 --position_type_id 1 --employee_id 49
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-07-31 --bill_rate 163 --cost 79 --daily_billable_hours 8 --project_id 64 --position_type_id 1 --employee_id 93
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 65 --position_type_id 1 --employee_id 96
+--position_with_employee --name Special Agent --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 119 --daily_billable_hours 8 --project_id 65 --position_type_id 1 --employee_id 70
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 65 --position_type_id 1 --employee_id 91
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 74 --daily_billable_hours 8 --project_id 66 --position_type_id 1 --employee_id 18
+--position_with_employee --name Software Engineer --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 71 --daily_billable_hours 8 --project_id 66 --position_type_id 1 --employee_id 74
+--position_with_employee --name Senior Consultant --start_date 2022-05-02 --end_date 2022-06-30 --bill_rate 163 --cost 85 --daily_billable_hours 8 --project_id 67 --position_type_id 1 --employee_id 43
+--position_with_employee --name Staff Consultant --start_date 2022-05-02 --end_date 2022-06-30 --bill_rate 163 --cost 94 --daily_billable_hours 8 --project_id 67 --position_type_id 1 --employee_id 48
+--position_with_employee --name Special Agent --start_date 2022-05-02 --end_date 2022-07-31 --bill_rate 163 --cost 114 --daily_billable_hours 8 --project_id 68 --position_type_id 1 --employee_id 26
+--position_with_employee --name Senior Consultant --start_date 2022-05-02 --end_date 2022-07-31 --bill_rate 163 --cost 0 --daily_billable_hours 8 --project_id 68 --position_type_id 1 --employee_id 59
+--position_with_employee --name Senior Consultant --start_date 2022-02-02 --end_date 2022-06-30 --bill_rate 150 --cost 84 --daily_billable_hours 8 --project_id 69 --position_type_id 1 --employee_id 69
+--position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-12-31 --bill_rate 163 --cost 60 --daily_billable_hours 8 --project_id 70 --position_type_id 1 --employee_id 17
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-12-31 --bill_rate 163 --cost 92 --daily_billable_hours 8 --project_id 70 --position_type_id 1 --employee_id 63
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-12-31 --bill_rate 163 --cost 90 --daily_billable_hours 8 --project_id 70 --position_type_id 1 --employee_id 77
+--position_with_employee --name Special Agent --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 119 --daily_billable_hours 8 --project_id 72 --position_type_id 1 --employee_id 4
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 72 --position_type_id 1 --employee_id 58
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 72 --position_type_id 1 --employee_id 75
+--position_with_employee --name Special Agent --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 163 --cost 119 --daily_billable_hours 8 --project_id 73 --position_type_id 1 --employee_id 9
+--position_with_employee --name Special Agent --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 163 --cost 95 --daily_billable_hours 8 --project_id 73 --position_type_id 1 --employee_id 66
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 79 --daily_billable_hours 8 --project_id 74 --position_type_id 1 --employee_id 92
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 74 --position_type_id 1 --employee_id 97
+--position_with_employee --name Staff Consultant --start_date 2022-02-02 --end_date 2022-06-30 --bill_rate 175 --cost 95 --daily_billable_hours 8 --project_id 75 --position_type_id 1 --employee_id 45
+--position_with_employee --name Staff Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 138 --cost 82 --daily_billable_hours 8 --project_id 76 --position_type_id 1 --employee_id 8
+--position_with_employee --name Software Engineer --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 125 --cost 74 --daily_billable_hours 8 --project_id 76 --position_type_id 1 --employee_id 31
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 138 --cost 89 --daily_billable_hours 8 --project_id 76 --position_type_id 1 --employee_id 86
+--position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-12-31 --bill_rate 150 --cost 114 --daily_billable_hours 8 --project_id 77 --position_type_id 1 --employee_id 82
+--position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 133 --daily_billable_hours 8 --project_id 78 --position_type_id 1 --employee_id 79
+--position_with_employee --name Senior Consultant --start_date 2022-05-02 --end_date 2022-07-31 --bill_rate 163 --cost 91 --daily_billable_hours 8 --project_id 79 --position_type_id 1 --employee_id 20
+--position_with_employee --name Senior Consultant --start_date 2022-02-01 --end_date 2022-07-31 --bill_rate 163 --cost 79 --daily_billable_hours 8 --project_id 79 --position_type_id 1 --employee_id 22
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-07-31 --bill_rate 163 --cost 75 --daily_billable_hours 8 --project_id 79 --position_type_id 1 --employee_id 35
+--position_with_employee --name Special Agent --start_date 2022-04-01 --end_date 2022-07-31 --bill_rate 163 --cost 131 --daily_billable_hours 8 --project_id 80 --position_type_id 1 --employee_id 39
+--position_with_employee --name Special Agent --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 150 --cost 86 --daily_billable_hours 8 --project_id 81 --position_type_id 1 --employee_id 10
+--position_with_employee --name Staff Consultant --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 150 --cost 88 --daily_billable_hours 8 --project_id 81 --position_type_id 1 --employee_id 34
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 150 --cost 83 --daily_billable_hours 8 --project_id 82 --position_type_id 1 --employee_id 29
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 150 --cost 94 --daily_billable_hours 8 --project_id 82 --position_type_id 1 --employee_id 76
+--position_with_employee --name Senior Consultant --start_date 2022-05-02 --end_date 2022-07-31 --bill_rate 150 --cost 84 --daily_billable_hours 8 --project_id 83 --position_type_id 1 --employee_id 13
+--position_with_employee --name Software Engineer --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 150 --cost 74 --daily_billable_hours 8 --project_id 84 --position_type_id 1 --employee_id 52
+--position_with_employee --name Software Engineer --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 150 --cost 63 --daily_billable_hours 8 --project_id 84 --position_type_id 1 --employee_id 53
+--position_with_employee --name Senior Consultant --start_date 2022-03-28 --end_date 2022-07-31 --bill_rate 163 --cost 81 --daily_billable_hours 8 --project_id 85 --position_type_id 1 --employee_id 12
+--position_with_employee --name Senior Consultant --start_date 2022-03-28 --end_date 2022-07-31 --bill_rate 163 --cost 76 --daily_billable_hours 8 --project_id 85 --position_type_id 1 --employee_id 32
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 86 --daily_billable_hours 8 --project_id 86 --position_type_id 1 --employee_id 42
+--position_with_employee --name Senior Consultant --start_date 2022-02-02 --end_date 2022-06-30 --bill_rate 150 --cost 77 --daily_billable_hours 8 --project_id 87 --position_type_id 1 --employee_id 72
+--position_with_employee --name Special Agent --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 119 --daily_billable_hours 8 --project_id 88 --position_type_id 1 --employee_id 28
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 83 --daily_billable_hours 8 --project_id 88 --position_type_id 1 --employee_id 46
+--position_with_employee --name Special Agent --start_date 2022-04-01 --end_date 2022-07-31 --bill_rate 163 --cost 131 --daily_billable_hours 8 --project_id 90 --position_type_id 1 --employee_id 84
+--position_with_employee --name Senior Consultant --start_date 2022-01-17 --end_date 2022-03-31 --bill_rate 150 --cost 80 --daily_billable_hours 8 --project_id 92 --position_type_id 1 --employee_id 51
+--position_with_employee --name Senior Consultant --start_date 2022-01-17 --end_date 2022-03-31 --bill_rate 150 --cost 89 --daily_billable_hours 8 --project_id 92 --position_type_id 1 --employee_id 78

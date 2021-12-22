@@ -1,0 +1,3 @@
+--host --url https://backofficestaging.gigalixirapp.com
+--login --username superuser@thesunflowerlab.com --password Eiswein87!
+--delete_tenant --name sunflower

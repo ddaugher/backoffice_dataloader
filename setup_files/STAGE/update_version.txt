@@ -1,0 +1,3 @@
+--host --url https://backofficestaging.gigalixirapp.com
+--login --username admin@augustwenty.com --password Eiswein87!
+--release_version --version v1.649.0 --notes adding filter (exclude_utilizations) to the index_plus_utilization 
