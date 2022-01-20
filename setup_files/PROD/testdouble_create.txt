@@ -2,9 +2,9 @@
 --login --username superuser@testdouble.com --password Eiswein87!
 --tenant_mapping --domain testdouble.com --tenant testdouble
 --create_tenant --name testdouble
---registration --email todd@testdouble.com --pass todd1234 --api_access true --role admin --tenant testdouble --self_service_storage {'role':'Admin'}
---registration --email admin@testdouble.com --pass 123123123 --api_access true --role admin --tenant testdouble --self_service_storage {'role':'Admin'}
---registration --email user@testdouble.com --pass 123123123 --api_access true --role user --tenant testdouble --self_service_storage {'role':'User'}
+--registration --email todd@testdouble.com --pass todd1234 --api_access true --role admin --tenant testdouble --self_service_storage {'role':'admin'}
+--registration --email admin@testdouble.com --pass 123123123 --api_access true --role admin --tenant testdouble --self_service_storage {'role':'admin'}
+--registration --email user@testdouble.com --pass 123123123 --api_access true --role user --tenant testdouble --self_service_storage {'role':'user'}
 --login --username admin@testdouble.com --password 123123123
 --region --name All
 --daily_expense_type --name Meals
@@ -37,6 +37,47 @@
 --holiday --date 2021-12-24 --description Christmas Eve --hours 8 --work_exception_type_id 3
 --holiday --date 2021-12-27 --description Christmas --hours 8 --work_exception_type_id 3
 --holiday --date 2021-12-31 --description New Year's Eve --hours 8 --work_exception_type_id 3
+--holiday --date 2022-01-01 --description New Year's Day --hours 8 --work_exception_type_id 3
+--holiday --date 2022-02-17 --description Martin Luther King Day --hours 8 --work_exception_type_id 3
+--holiday --date 2022-05-30 --description Memorial Day --hours 8 --work_exception_type_id 3
+--holiday --date 2022-06-19 --description Juneteenth --hours 8 --work_exception_type_id 3
+--holiday --date 2022-07-04 --description July 4th --hours 8 --work_exception_type_id 3
+--holiday --date 2022-09-05 --description Labor Day --hours 8 --work_exception_type_id 3
+--holiday --date 2022-11-24 --description Thanksgiving Day --hours 8 --work_exception_type_id 3
+--holiday --date 2022-12-24 --description Christmas Eve --hours 8 --work_exception_type_id 3
+--holiday --date 2022-12-25 --description Christmas --hours 8 --work_exception_type_id 3
+--holiday --date 2022-12-31 --description New Year's Eve --hours 8 --work_exception_type_id 3
+--holiday --date 2022-01-03 --description FTO Plug 1 Jan  --hours 8 --work_exception_type_id 3
+--holiday --date 2022-01-04 --description FTO Plug 2 Jan  --hours 8 --work_exception_type_id 3
+--holiday --date 2022-01-27 --description Retreat 1a Jan --hours 8 --work_exception_type_id 3
+--holiday --date 2022-01-28 --description Retreat 1b Jan --hours 8 --work_exception_type_id 3
+--holiday --date 2022-02-01 --description FTO Plug 3 Feb --hours 8 --work_exception_type_id 3
+--holiday --date 2022-03-01 --description FTO Plug 4 Mar --hours 8 --work_exception_type_id 3
+--holiday --date 2022-04-01 --description FTO Plug 5 Apr --hours 8 --work_exception_type_id 3
+--holiday --date 2022-05-25 --description FTO Plug 6 May --hours 8 --work_exception_type_id 3
+--holiday --date 2022-05-26 --description FTO Plug 7 May --hours 8 --work_exception_type_id 3
+--holiday --date 2022-05-27 --description FTO Plug 8 May --hours 8 --work_exception_type_id 3
+--holiday --date 2022-06-06 --description FTO Plug 9 Jun --hours 8 --work_exception_type_id 3
+--holiday --date 2022-06-07 --description FTO Plug 10 Jun --hours 8 --work_exception_type_id 3
+--holiday --date 2022-06-08 --description FTO Plug 11 Jun --hours 8 --work_exception_type_id 3
+--holiday --date 2022-07-05 --description FTO Plug 12 Jul --hours 8 --work_exception_type_id 3
+--holiday --date 2022-07-06 --description FTO Plug 13 Jul --hours 8 --work_exception_type_id 3
+--holiday --date 2022-07-07 --description FTO Plug 14 Jul --hours 8 --work_exception_type_id 3
+--holiday --date 2022-07-21 --description Retreat 2a Jul --hours 8 --work_exception_type_id 3
+--holiday --date 2022-07-22 --description Retreat 2b Jul --hours 8 --work_exception_type_id 3
+--holiday --date 2022-08-08 --description FTO Plug 15 Aug --hours 8 --work_exception_type_id 3
+--holiday --date 2022-08-09 --description FTO Plug 14 Aug --hours 8 --work_exception_type_id 3
+--holiday --date 2022-08-10 --description FTO Plug 15 Aug --hours 8 --work_exception_type_id 3
+--holiday --date 2022-09-06 --description FTO Plug 16 Sep --hours 8 --work_exception_type_id 3
+--holiday --date 2022-09-07 --description FTO Plug 17 Sep --hours 8 --work_exception_type_id 3
+--holiday --date 2022-09-08 --description FTO Plug 18 Sep --hours 8 --work_exception_type_id 3
+--holiday --date 2022-10-27 --description FTO Plug 19 Oct --hours 8 --work_exception_type_id 3
+--holiday --date 2022-10-28 --description FTO Plug 20 Oct --hours 8 --work_exception_type_id 3
+--holiday --date 2022-11-25 --description FTO Plug 21 Nov --hours 8 --work_exception_type_id 3
+--holiday --date 2022-12-26 --description FTO Plug 22 Dec --hours 8 --work_exception_type_id 3
+--holiday --date 2022-12-27 --description FTO Plug 23 Dec --hours 8 --work_exception_type_id 3
+--holiday --date 2022-12-28 --description FTO Plug 24 Dec --hours 8 --work_exception_type_id 3
+--holiday --date 2022-12-29 --description FTO Plug 25 Dec --hours 8 --work_exception_type_id 3
 --position_type --name Dev
 --position_type --name Angular
 --position_type --name C#
@@ -79,12 +120,19 @@
 --position_type --name React
 --position_type --name Ruby
 --position_type --name Ruby on Rails
+--position_type --name Rails
 --position_type --name Rust
 --position_type --name Swift
 --position_type --name Typescript
---position_type --name Vanilla
+--position_type --name Vanilla Javascript
 --position_type --name Vue
+--position_type --name CI/CD
+--position_type --name Redux
 --position_type --name Vue.js
+--position_type --name React.js
+--position_type --name Node/Express
+--position_type --name Polyglot
+--position_type --name React Native
 --customer --name 7Signal --is_active true
 --customer --name a16z_ --is_active true
 --customer --name Amount.com --is_active true
@@ -215,6 +263,14 @@
 --project --name State Tax Registration Draft --customer_id 19 --region_id 1 --status Draft
 --project --name TED.com Draft --customer_id 33 --region_id 1 --status Draft
 --project --name UI Platform Draft --customer_id 16 --region_id 1 --status Draft
+--project --name React Architecture --customer_id 32 --region_id 1 --status Draft
+--project --name Rails/React --customer_id 8 --region_id 1 --status Draft
+--project --name React Refactor --customer_id 36 --region_id 1 --status Draft
+--project --name Go API --customer_id 36 --region_id 1 --status Draft
+--project --name Acceptance Tests --customer_id 13 --region_id 1 --status Draft
+--project --name Java/React/Node --customer_id 1 --region_id 1 --status Draft
+--project --name Rails --customer_id 25 --region_id 1 --status Draft
+--project --name Rails Consulting --customer_id 5 --region_id 1 --status Draft
 --project --name Rails API --customer_id 23 --region_id 1 --status Forecasted
 --project --name React/Node --customer_id 2 --region_id 1 --status Forecasted
 --project --name Jon Grenning Backfill --customer_id 9 --region_id 1 --status Forecasted
@@ -317,159 +373,182 @@
 --employee --first_name Erhan --last_name Berber --email berber@testdouble.com --start_date 2021-01-01 --hourly_cost 120 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
 --employee --first_name Rob --last_name Yurkowski --email yurkowski@testdouble.com --start_date 2021-01-01 --hourly_cost 125 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
 --employee --first_name Philip --last_name Solobay --email solobay@testdouble.com --start_date 2021-01-01 --hourly_cost 95 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--open_position --name Dev 1 --start_date 2022-01-01 --end_date 2022-04-01 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 93 --position_type_id 1
+--open_position --name Dev 2 --start_date 2021-03-01 --end_date 2022-04-01 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 93 --position_type_id 1
+--open_position --name Dev 1 --start_date 2022-01-01 --end_date 2022-08-29 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 94 --position_type_id 1
+--open_position --name Dev 2 --start_date 2022-01-01 --end_date 2022-08-29 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 94 --position_type_id 1
+--open_position --name Dev 3 --start_date 2022-04-01 --end_date 2022-08-29 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 94 --position_type_id 1
+--open_position --name Dev 4 --start_date 2022-04-01 --end_date 2022-08-29 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 94 --position_type_id 1
+--open_position --name Dev 1 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 95 --position_type_id 26
+--open_position --name Dev 2 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 95 --position_type_id 26
+--open_position --name Dev 3 --start_date 2022-03-01 --end_date 2022-06-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 95 --position_type_id 26
+--open_position --name Dev 1 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 96 --position_type_id 40
+--open_position --name Dev 1 --start_date 2022-01-01 --end_date 2022-05-01 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 97 --position_type_id 40
+--open_position --name Dev 2 --start_date 2022-01-01 --end_date 2022-05-01 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 97 --position_type_id 1
+--open_position --name Dev 1 --start_date 2022-01-01 --end_date 2022-05-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 98 --position_type_id 40
+--open_position --name Dev 2 --start_date 2022-01-01 --end_date 2022-05-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 98 --position_type_id 40
+--open_position --name Dev 1 --start_date 2022-03-01 --end_date 2022-05-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 98 --position_type_id 40
+--open_position --name Dev 2 --start_date 2022-03-01 --end_date 2022-05-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 98 --position_type_id 40
+--open_position --name Dev 3 --start_date 2022-03-01 --end_date 2022-05-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 98 --position_type_id 40
+--open_position --name Dev 4 --start_date 2022-03-01 --end_date 2022-05-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 98 --position_type_id 40
+--open_position --name Dev 5 --start_date 2022-03-01 --end_date 2022-05-31 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 98 --position_type_id 40
+--open_position --name Dev 1 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 99 --position_type_id 42
+--open_position --name Dev 2 --start_date 2022-01-01 --end_date 2022-06-30 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 99 --position_type_id 42
+--open_position --name Dev 1 --start_date 2022-01-01 --end_date 2022-04-01 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 100 --position_type_id 42
+--open_position --name Dev 2 --start_date 2022-01-01 --end_date 2022-04-01 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 100 --position_type_id 42
 --position_with_employee --name Senior Consultant --start_date 2021-02-22 --end_date 2022-04-01 --bill_rate 163 --cost 82 --daily_billable_hours 8 --project_id 1 --position_type_id 1 --employee_id 6
---position_with_employee --name Senior Consultant --start_date 2021-02-18 --end_date 2022-04-01 --bill_rate 163 --cost 84 --daily_billable_hours 8 --project_id 1 --position_type_id 1 --employee_id 88
+--position_with_employee --name Senior Consultant --start_date 2021-02-18 --end_date 2022-04-01 --bill_rate 163 --cost 84 --daily_billable_hours 8 --project_id 1 --position_type_id 1 --employee_id 87
 --position_with_employee --name Senior Consultant --start_date 2021-09-27 --end_date 2022-01-28 --bill_rate 150 --cost 83 --daily_billable_hours 8 --project_id 2 --position_type_id 1 --employee_id 5
 --position_with_employee --name Senior Consultant --start_date 2021-10-11 --end_date 2022-01-28 --bill_rate 150 --cost 78 --daily_billable_hours 8 --project_id 2 --position_type_id 1 --employee_id 49
---position_with_employee --name Senior Consultant --start_date 2021-10-11 --end_date 2022-01-28 --bill_rate 150 --cost 77 --daily_billable_hours 8 --project_id 2 --position_type_id 1 --employee_id 65
---position_with_employee --name Special Agent --start_date 2021-02-08 --end_date 2022-01-28 --bill_rate 150 --cost 119 --daily_billable_hours 8 --project_id 2 --position_type_id 1 --employee_id 71
---position_with_employee --name Senior Consultant --start_date 2021-02-22 --end_date 2022-03-31 --bill_rate 163 --cost 79 --daily_billable_hours 8 --project_id 3 --position_type_id 1 --employee_id 93
---position_with_employee --name Senior Consultant --start_date 2021-12-14 --end_date 2021-12-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 96
---position_with_employee --name Special Agent --start_date 2021-09-13 --end_date 2021-12-31 --bill_rate 175 --cost 119 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 70
---position_with_employee --name Senior Consultant --start_date 2021-11-29 --end_date 2021-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 91
+--position_with_employee --name Senior Consultant --start_date 2021-10-11 --end_date 2022-01-28 --bill_rate 150 --cost 77 --daily_billable_hours 8 --project_id 2 --position_type_id 1 --employee_id 64
+--position_with_employee --name Special Agent --start_date 2021-02-08 --end_date 2022-01-28 --bill_rate 150 --cost 119 --daily_billable_hours 8 --project_id 2 --position_type_id 1 --employee_id 70
+--position_with_employee --name Senior Consultant --start_date 2021-02-22 --end_date 2022-03-31 --bill_rate 163 --cost 79 --daily_billable_hours 8 --project_id 3 --position_type_id 1 --employee_id 92
+--position_with_employee --name Senior Consultant --start_date 2021-12-14 --end_date 2021-12-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 94
+--position_with_employee --name Special Agent --start_date 2021-09-13 --end_date 2021-12-31 --bill_rate 175 --cost 119 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 69
+--position_with_employee --name Senior Consultant --start_date 2021-11-29 --end_date 2021-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 90
 --position_with_employee --name Senior Consultant --start_date 2021-08-09 --end_date 2021-12-31 --bill_rate 175 --cost 74 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 18
---position_with_employee --name Software Engineer --start_date 2021-08-09 --end_date 2021-12-31 --bill_rate 175 --cost 71 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 74
+--position_with_employee --name Software Engineer --start_date 2021-08-09 --end_date 2021-12-31 --bill_rate 175 --cost 71 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 73
 --position_with_employee --name Senior Consultant --start_date 2021-07-12 --end_date 2022-02-07 --bill_rate 135 --cost 83 --daily_billable_hours 8 --project_id 6 --position_type_id 1 --employee_id 7
 --position_with_employee --name Special Agent --start_date 2019-08-26 --end_date 2022-02-07 --bill_rate 135 --cost 119 --daily_billable_hours 8 --project_id 6 --position_type_id 1 --employee_id 30
 --position_with_employee --name Special Agent --start_date 2020-10-05 --end_date 2021-12-31 --bill_rate 135 --cost 107 --daily_billable_hours 8 --project_id 6 --position_type_id 1 --employee_id 41
---position_with_employee --name Senior Consultant --start_date 2021-07-12 --end_date 2022-02-07 --bill_rate 135 --cost 78 --daily_billable_hours 8 --project_id 6 --position_type_id 1 --employee_id 56
---position_with_employee --name Senior Consultant --start_date 2021-07-26 --end_date 2022-02-07 --bill_rate 135 --cost 83 --daily_billable_hours 8 --project_id 6 --position_type_id 1 --employee_id 57
+--position_with_employee --name Senior Consultant --start_date 2021-07-12 --end_date 2022-02-07 --bill_rate 135 --cost 78 --daily_billable_hours 8 --project_id 6 --position_type_id 1 --employee_id 55
+--position_with_employee --name Senior Consultant --start_date 2021-07-26 --end_date 2022-02-07 --bill_rate 135 --cost 83 --daily_billable_hours 8 --project_id 6 --position_type_id 1 --employee_id 56
 --position_with_employee --name Senior Consultant --start_date 2020-11-16 --end_date 2022-04-30 --bill_rate 163 --cost 85 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 43
 --position_with_employee --name Staff Consultant --start_date 2020-11-09 --end_date 2022-04-30 --bill_rate 163 --cost 94 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 48
---position_with_employee --name Senior Consultant --start_date 2021-11-24 --end_date 2021-12-17 --bill_rate 163 --cost 78 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 60
---position_with_employee --name Special Agent --start_date 2020-03-23 --end_date 2022-04-30 --bill_rate 163 --cost 107 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 64
+--position_with_employee --name Senior Consultant --start_date 2021-11-24 --end_date 2021-12-17 --bill_rate 163 --cost 78 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 59
+--position_with_employee --name Special Agent --start_date 2020-03-23 --end_date 2022-04-30 --bill_rate 163 --cost 107 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 63
 --position_with_employee --name Special Agent --start_date 2021-08-09 --end_date 2022-02-07 --bill_rate 135 --cost 107 --daily_billable_hours 8 --project_id 8 --position_type_id 1 --employee_id 15
---position_with_employee --name Special Agent --start_date 2021-08-09 --end_date 2022-02-07 --bill_rate 135 --cost 107 --daily_billable_hours 8 --project_id 8 --position_type_id 1 --employee_id 80
---position_with_employee --name Senior Consultant --start_date 2021-08-09 --end_date 2022-02-07 --bill_rate 135 --cost 84 --daily_billable_hours 8 --project_id 8 --position_type_id 1 --employee_id 85
+--position_with_employee --name Special Agent --start_date 2021-08-09 --end_date 2022-02-07 --bill_rate 135 --cost 107 --daily_billable_hours 8 --project_id 8 --position_type_id 1 --employee_id 79
+--position_with_employee --name Senior Consultant --start_date 2021-08-09 --end_date 2022-02-07 --bill_rate 135 --cost 84 --daily_billable_hours 8 --project_id 8 --position_type_id 1 --employee_id 84
 --position_with_employee --name Staff Consultant --start_date 2021-08-09 --end_date 2022-02-07 --bill_rate 135 --cost 93 --daily_billable_hours 8 --project_id 9 --position_type_id 1 --employee_id 25
 --position_with_employee --name Special Agent --start_date 2021-08-09 --end_date 2022-02-07 --bill_rate 135 --cost 114 --daily_billable_hours 8 --project_id 9 --position_type_id 1 --employee_id 40
 --position_with_employee --name Special Agent --start_date 2021-11-01 --end_date 2022-05-01 --bill_rate 163 --cost 114 --daily_billable_hours 8 --project_id 10 --position_type_id 1 --employee_id 26
---position_with_employee --name Senior Consultant --start_date 2021-11-08 --end_date 2022-05-01 --bill_rate 163 --cost 0 --daily_billable_hours 8 --project_id 10 --position_type_id 1 --employee_id 59
---position_with_employee --name Senior Consultant --start_date 2021-04-12 --end_date 2022-02-01 --bill_rate 150 --cost 84 --daily_billable_hours 8 --project_id 11 --position_type_id 1 --employee_id 69
+--position_with_employee --name Senior Consultant --start_date 2021-11-08 --end_date 2022-05-01 --bill_rate 163 --cost 0 --daily_billable_hours 8 --project_id 10 --position_type_id 1 --employee_id 58
+--position_with_employee --name Senior Consultant --start_date 2021-04-12 --end_date 2022-02-01 --bill_rate 150 --cost 84 --daily_billable_hours 8 --project_id 11 --position_type_id 1 --employee_id 68
 --position_with_employee --name Special Agent --start_date 2021-07-19 --end_date 2021-12-31 --bill_rate 163 --cost 60 --daily_billable_hours 8 --project_id 12 --position_type_id 1 --employee_id 17
---position_with_employee --name Senior Consultant --start_date 2021-03-08 --end_date 2021-12-31 --bill_rate 163 --cost 92 --daily_billable_hours 8 --project_id 12 --position_type_id 1 --employee_id 63
---position_with_employee --name Senior Consultant --start_date 2021-03-08 --end_date 2021-12-31 --bill_rate 163 --cost 90 --daily_billable_hours 8 --project_id 12 --position_type_id 1 --employee_id 77
---position_with_employee --name Senior Consultant --start_date 2022-01-04 --end_date 2022-03-31 --bill_rate 200 --cost 92 --daily_billable_hours 8 --project_id 13 --position_type_id 1 --employee_id 63
---position_with_employee --name Senior Consultant --start_date 2022-01-04 --end_date 2022-03-31 --bill_rate 200 --cost 90 --daily_billable_hours 8 --project_id 13 --position_type_id 1 --employee_id 77
---position_with_employee --name Staff Consultant --start_date 2022-01-04 --end_date 2022-03-01 --bill_rate 175 --cost 90 --daily_billable_hours 8 --project_id 14 --position_type_id 1 --employee_id 68
---position_with_employee --name Special Agent --start_date 2021-11-29 --end_date 2022-03-01 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 14 --position_type_id 1 --employee_id 98
+--position_with_employee --name Senior Consultant --start_date 2021-03-08 --end_date 2021-12-31 --bill_rate 163 --cost 92 --daily_billable_hours 8 --project_id 12 --position_type_id 1 --employee_id 62
+--position_with_employee --name Senior Consultant --start_date 2021-03-08 --end_date 2021-12-31 --bill_rate 163 --cost 90 --daily_billable_hours 8 --project_id 12 --position_type_id 1 --employee_id 76
+--position_with_employee --name Senior Consultant --start_date 2022-01-04 --end_date 2022-03-31 --bill_rate 200 --cost 92 --daily_billable_hours 8 --project_id 13 --position_type_id 1 --employee_id 62
+--position_with_employee --name Senior Consultant --start_date 2022-01-04 --end_date 2022-03-31 --bill_rate 200 --cost 90 --daily_billable_hours 8 --project_id 13 --position_type_id 1 --employee_id 76
+--position_with_employee --name Staff Consultant --start_date 2022-01-04 --end_date 2022-03-01 --bill_rate 175 --cost 90 --daily_billable_hours 8 --project_id 14 --position_type_id 1 --employee_id 67
+--position_with_employee --name Special Agent --start_date 2021-11-29 --end_date 2022-03-01 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 14 --position_type_id 1 --employee_id 96
 --position_with_employee --name Special Agent --start_date 2021-07-26 --end_date 2021-12-31 --bill_rate 175 --cost 119 --daily_billable_hours 8 --project_id 15 --position_type_id 1 --employee_id 4
---position_with_employee --name Senior Consultant --start_date 2021-11-10 --end_date 2021-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 15 --position_type_id 1 --employee_id 58
---position_with_employee --name Senior Consultant --start_date 2021-07-12 --end_date 2021-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 15 --position_type_id 1 --employee_id 75
+--position_with_employee --name Senior Consultant --start_date 2021-11-10 --end_date 2021-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 15 --position_type_id 1 --employee_id 57
+--position_with_employee --name Senior Consultant --start_date 2021-07-12 --end_date 2021-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 15 --position_type_id 1 --employee_id 74
 --position_with_employee --name Senior Consultant --start_date 2021-12-13 --end_date 2022-12-31 --bill_rate 175 --cost 75 --daily_billable_hours 8 --project_id 16 --position_type_id 1 --employee_id 1
 --position_with_employee --name Senior Consultant --start_date 2021-07-12 --end_date 2022-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 16 --position_type_id 1 --employee_id 14
 --position_with_employee --name Senior Consultant --start_date 2021-07-12 --end_date 2022-12-31 --bill_rate 175 --cost 70 --daily_billable_hours 8 --project_id 16 --position_type_id 1 --employee_id 36
 --position_with_employee --name Special Agent --start_date 2021-03-22 --end_date 2022-03-31 --bill_rate 163 --cost 119 --daily_billable_hours 8 --project_id 17 --position_type_id 1 --employee_id 9
---position_with_employee --name Special Agent --start_date 2021-03-22 --end_date 2022-03-31 --bill_rate 163 --cost 95 --daily_billable_hours 8 --project_id 17 --position_type_id 1 --employee_id 66
+--position_with_employee --name Special Agent --start_date 2021-03-22 --end_date 2022-03-31 --bill_rate 163 --cost 95 --daily_billable_hours 8 --project_id 17 --position_type_id 1 --employee_id 65
 --position_with_employee --name Senior Consultant --start_date 2020-01-07 --end_date 2022-12-31 --bill_rate 163 --cost 82 --daily_billable_hours 8 --project_id 18 --position_type_id 1 --employee_id 47
---position_with_employee --name Senior Consultant --start_date 2021-11-18 --end_date 2022-12-31 --bill_rate 163 --cost 75 --daily_billable_hours 8 --project_id 18 --position_type_id 1 --employee_id 81
---position_with_employee --name Senior Consultant --start_date 2021-06-14 --end_date 2022-03-31 --bill_rate 175 --cost 79 --daily_billable_hours 8 --project_id 19 --position_type_id 1 --employee_id 92
---position_with_employee --name Senior Consultant --start_date 2021-11-22 --end_date 2022-03-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 19 --position_type_id 1 --employee_id 97
+--position_with_employee --name Senior Consultant --start_date 2021-11-18 --end_date 2022-12-31 --bill_rate 163 --cost 75 --daily_billable_hours 8 --project_id 18 --position_type_id 1 --employee_id 80
+--position_with_employee --name Senior Consultant --start_date 2021-06-14 --end_date 2022-03-31 --bill_rate 175 --cost 79 --daily_billable_hours 8 --project_id 19 --position_type_id 1 --employee_id 91
+--position_with_employee --name Senior Consultant --start_date 2021-11-22 --end_date 2022-03-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 19 --position_type_id 1 --employee_id 95
 --position_with_employee --name Staff Consultant --start_date 2021-02-18 --end_date 2022-02-01 --bill_rate 175 --cost 95 --daily_billable_hours 8 --project_id 20 --position_type_id 1 --employee_id 45
 --position_with_employee --name Special Agent --start_date 2020-10-05 --end_date 2021-12-31 --bill_rate 135 --cost 107 --daily_billable_hours 8 --project_id 21 --position_type_id 1 --employee_id 50
 --position_with_employee --name Staff Consultant --start_date 2020-07-14 --end_date 2021-12-31 --bill_rate 138 --cost 82 --daily_billable_hours 8 --project_id 22 --position_type_id 1 --employee_id 8
 --position_with_employee --name Software Engineer --start_date 2021-05-24 --end_date 2021-12-31 --bill_rate 125 --cost 74 --daily_billable_hours 8 --project_id 22 --position_type_id 1 --employee_id 31
---position_with_employee --name Senior Consultant --start_date 2014-07-28 --end_date 2021-12-31 --bill_rate 138 --cost 89 --daily_billable_hours 8 --project_id 22 --position_type_id 1 --employee_id 86
---position_with_employee --name Special Agent --start_date 2021-04-26 --end_date 2021-12-31 --bill_rate 150 --cost 114 --daily_billable_hours 8 --project_id 23 --position_type_id 1 --employee_id 82
---position_with_employee --name Special Agent --start_date 2021-02-18 --end_date 2021-12-31 --bill_rate 175 --cost 133 --daily_billable_hours 8 --project_id 24 --position_type_id 1 --employee_id 79
+--position_with_employee --name Senior Consultant --start_date 2014-07-28 --end_date 2021-12-31 --bill_rate 138 --cost 89 --daily_billable_hours 8 --project_id 22 --position_type_id 1 --employee_id 85
+--position_with_employee --name Special Agent --start_date 2021-04-26 --end_date 2021-12-31 --bill_rate 150 --cost 114 --daily_billable_hours 8 --project_id 23 --position_type_id 1 --employee_id 81
+--position_with_employee --name Special Agent --start_date 2021-02-18 --end_date 2021-12-31 --bill_rate 175 --cost 133 --daily_billable_hours 8 --project_id 24 --position_type_id 1 --employee_id 78
 --position_with_employee --name Senior Consultant --start_date 2021-05-03 --end_date 2022-04-30 --bill_rate 163 --cost 91 --daily_billable_hours 8 --project_id 25 --position_type_id 1 --employee_id 20
 --position_with_employee --name Senior Consultant --start_date 2020-09-16 --end_date 2022-01-31 --bill_rate 163 --cost 79 --daily_billable_hours 8 --project_id 25 --position_type_id 1 --employee_id 22
 --position_with_employee --name Senior Consultant --start_date 2021-06-14 --end_date 2022-03-31 --bill_rate 163 --cost 75 --daily_billable_hours 8 --project_id 25 --position_type_id 1 --employee_id 35
 --position_with_employee --name Senior Consultant --start_date 2021-11-29 --end_date 2022-06-30 --bill_rate 150 --cost 86 --daily_billable_hours 8 --project_id 26 --position_type_id 1 --employee_id 38
---position_with_employee --name Senior Consultant --start_date 2020-11-09 --end_date 2022-06-30 --bill_rate 150 --cost 84 --daily_billable_hours 8 --project_id 26 --position_type_id 1 --employee_id 61
+--position_with_employee --name Senior Consultant --start_date 2020-11-09 --end_date 2022-06-30 --bill_rate 150 --cost 84 --daily_billable_hours 8 --project_id 26 --position_type_id 1 --employee_id 60
 --position_with_employee --name Special Agent --start_date 2021-07-19 --end_date 2021-12-31 --bill_rate 163 --cost 131 --daily_billable_hours 8 --project_id 27 --position_type_id 1 --employee_id 39
---position_with_employee --name Special Agent --start_date 2021-11-22 --end_date 2022-02-07 --bill_rate 135 --cost 0 --daily_billable_hours 8 --project_id 28 --position_type_id 1 --employee_id 99
---position_with_employee --name Senior Consultant --start_date 2020-11-16 --end_date 2021-12-31 --bill_rate 163 --cost 78 --daily_billable_hours 8 --project_id 29 --position_type_id 1 --employee_id 89
+--position_with_employee --name Special Agent --start_date 2021-11-22 --end_date 2022-02-07 --bill_rate 135 --cost 0 --daily_billable_hours 8 --project_id 28 --position_type_id 1 --employee_id 97
+--position_with_employee --name Senior Consultant --start_date 2020-11-16 --end_date 2021-12-31 --bill_rate 163 --cost 78 --daily_billable_hours 8 --project_id 29 --position_type_id 1 --employee_id 88
 --position_with_employee --name Special Agent --start_date 2021-07-19 --end_date 2021-12-31 --bill_rate 150 --cost 86 --daily_billable_hours 8 --project_id 30 --position_type_id 1 --employee_id 10
 --position_with_employee --name Staff Consultant --start_date 2020-03-16 --end_date 2021-12-31 --bill_rate 150 --cost 88 --daily_billable_hours 8 --project_id 30 --position_type_id 1 --employee_id 34
 --position_with_employee --name Senior Consultant --start_date 2021-11-01 --end_date 2022-05-01 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 31 --position_type_id 1 --employee_id 11
---position_with_employee --name Senior Consultant --start_date 2021-11-15 --end_date 2022-05-01 --bill_rate 175 --cost 78 --daily_billable_hours 8 --project_id 31 --position_type_id 1 --employee_id 83
---position_with_employee --name Special Agent --start_date 2021-12-20 --end_date 2022-01-16 --bill_rate 188 --cost 0 --daily_billable_hours 8 --project_id 32 --position_type_id 1 --employee_id 100
+--position_with_employee --name Senior Consultant --start_date 2021-11-15 --end_date 2022-05-01 --bill_rate 175 --cost 78 --daily_billable_hours 8 --project_id 31 --position_type_id 1 --employee_id 82
+--position_with_employee --name Special Agent --start_date 2021-12-20 --end_date 2022-01-16 --bill_rate 188 --cost 0 --daily_billable_hours 8 --project_id 32 --position_type_id 1 --employee_id 98
 --position_with_employee --name Senior Consultant --start_date 2021-04-13 --end_date 2021-12-31 --bill_rate 150 --cost 83 --daily_billable_hours 8 --project_id 33 --position_type_id 1 --employee_id 29
---position_with_employee --name Senior Consultant --start_date 2019-02-14 --end_date 2021-12-31 --bill_rate 150 --cost 94 --daily_billable_hours 8 --project_id 33 --position_type_id 1 --employee_id 76
+--position_with_employee --name Senior Consultant --start_date 2019-02-14 --end_date 2021-12-31 --bill_rate 150 --cost 94 --daily_billable_hours 8 --project_id 33 --position_type_id 1 --employee_id 75
 --position_with_employee --name Senior Consultant --start_date 2019-06-03 --end_date 2022-01-31 --bill_rate 150 --cost 84 --daily_billable_hours 8 --project_id 34 --position_type_id 1 --employee_id 13
 --position_with_employee --name Software Engineer --start_date 2021-10-13 --end_date 2022-06-30 --bill_rate 150 --cost 74 --daily_billable_hours 8 --project_id 35 --position_type_id 1 --employee_id 52
 --position_with_employee --name Software Engineer --start_date 2021-10-26 --end_date 2022-06-30 --bill_rate 150 --cost 63 --daily_billable_hours 8 --project_id 35 --position_type_id 1 --employee_id 53
 --position_with_employee --name Senior Consultant --start_date 2021-11-01 --end_date 2022-03-25 --bill_rate 163 --cost 81 --daily_billable_hours 8 --project_id 36 --position_type_id 1 --employee_id 12
 --position_with_employee --name Senior Consultant --start_date 2021-10-25 --end_date 2022-03-25 --bill_rate 163 --cost 76 --daily_billable_hours 8 --project_id 36 --position_type_id 1 --employee_id 32
 --position_with_employee --name Senior Consultant --start_date 2021-11-08 --end_date 2022-01-10 --bill_rate 188 --cost 76 --daily_billable_hours 8 --project_id 37 --position_type_id 1 --employee_id 3
---position_with_employee --name Senior Consultant --start_date 2021-11-08 --end_date 2022-01-10 --bill_rate 188 --cost 74 --daily_billable_hours 8 --project_id 37 --position_type_id 1 --employee_id 87
+--position_with_employee --name Senior Consultant --start_date 2021-11-08 --end_date 2022-01-10 --bill_rate 188 --cost 74 --daily_billable_hours 8 --project_id 37 --position_type_id 1 --employee_id 86
 --position_with_employee --name Senior Consultant --start_date 2021-05-10 --end_date 2022-03-31 --bill_rate 175 --cost 76 --daily_billable_hours 8 --project_id 38 --position_type_id 1 --employee_id 2
 --position_with_employee --name Senior Consultant --start_date 2021-08-23 --end_date 2022-03-31 --bill_rate 175 --cost 86 --daily_billable_hours 8 --project_id 38 --position_type_id 1 --employee_id 42
---position_with_employee --name Staff Consultant --start_date 2021-05-10 --end_date 2021-12-15 --bill_rate 175 --cost 90 --daily_billable_hours 8 --project_id 38 --position_type_id 1 --employee_id 68
---position_with_employee --name Special Agent --start_date 2021-12-13 --end_date 2022-03-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 38 --position_type_id 1 --employee_id 101
---position_with_employee --name Senior Consultant --start_date 2021-03-01 --end_date 2022-02-01 --bill_rate 150 --cost 77 --daily_billable_hours 8 --project_id 39 --position_type_id 1 --employee_id 72
+--position_with_employee --name Staff Consultant --start_date 2021-05-10 --end_date 2021-12-15 --bill_rate 175 --cost 90 --daily_billable_hours 8 --project_id 38 --position_type_id 1 --employee_id 67
+--position_with_employee --name Special Agent --start_date 2021-12-13 --end_date 2022-03-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 38 --position_type_id 1 --employee_id 99
+--position_with_employee --name Senior Consultant --start_date 2021-03-01 --end_date 2022-02-01 --bill_rate 150 --cost 77 --daily_billable_hours 8 --project_id 39 --position_type_id 1 --employee_id 71
 --position_with_employee --name Special Agent --start_date 2021-06-21 --end_date 2022-01-31 --bill_rate 163 --cost 119 --daily_billable_hours 8 --project_id 40 --position_type_id 1 --employee_id 28
 --position_with_employee --name Senior Consultant --start_date 2021-07-06 --end_date 2022-03-31 --bill_rate 163 --cost 83 --daily_billable_hours 8 --project_id 40 --position_type_id 1 --employee_id 46
 --position_with_employee --name Special Agent --start_date 2021-03-22 --end_date 2022-02-28 --bill_rate 163 --cost 114 --daily_billable_hours 8 --project_id 41 --position_type_id 1 --employee_id 37
---position_with_employee --name Special Agent --start_date 2021-11-03 --end_date 2022-02-28 --bill_rate 163 --cost 107 --daily_billable_hours 8 --project_id 41 --position_type_id 1 --employee_id 94
+--position_with_employee --name Special Agent --start_date 2021-11-03 --end_date 2022-02-28 --bill_rate 163 --cost 107 --daily_billable_hours 8 --project_id 41 --position_type_id 1 --employee_id 93
 --position_with_employee --name Special Agent --start_date 2021-03-29 --end_date 2022-02-07 --bill_rate 135 --cost 0 --daily_billable_hours 8 --project_id 42 --position_type_id 1 --employee_id 23
---position_with_employee --name Special Agent --start_date 2021-06-07 --end_date 2022-01-31 --bill_rate 163 --cost 131 --daily_billable_hours 8 --project_id 43 --position_type_id 1 --employee_id 84
+--position_with_employee --name Special Agent --start_date 2021-06-07 --end_date 2022-01-31 --bill_rate 163 --cost 131 --daily_billable_hours 8 --project_id 43 --position_type_id 1 --employee_id 83
 --position_with_employee --name Senior Consultant --start_date 2021-05-10 --end_date 2022-12-31 --bill_rate 163 --cost 81 --daily_billable_hours 8 --project_id 44 --position_type_id 1 --employee_id 16
 --position_with_employee --name Senior Consultant --start_date 2021-07-06 --end_date 2022-03-31 --bill_rate 163 --cost 89 --daily_billable_hours 8 --project_id 45 --position_type_id 1 --employee_id 33
 --position_with_employee --name Senior Consultant --start_date 2021-07-06 --end_date 2022-03-31 --bill_rate 163 --cost 75 --daily_billable_hours 8 --project_id 45 --position_type_id 1 --employee_id 54
 --position_with_employee --name Senior Consultant --start_date 2020-07-13 --end_date 2022-01-15 --bill_rate 150 --cost 80 --daily_billable_hours 8 --project_id 46 --position_type_id 1 --employee_id 51
---position_with_employee --name Senior Consultant --start_date 2021-05-01 --end_date 2022-01-15 --bill_rate 150 --cost 89 --daily_billable_hours 8 --project_id 46 --position_type_id 1 --employee_id 78
+--position_with_employee --name Senior Consultant --start_date 2021-05-01 --end_date 2022-01-15 --bill_rate 150 --cost 89 --daily_billable_hours 8 --project_id 46 --position_type_id 1 --employee_id 77
 --position_with_employee --name Special Agent --start_date 2020-11-09 --end_date 2021-12-31 --bill_rate 135 --cost 107 --daily_billable_hours 8 --project_id 47 --position_type_id 1 --employee_id 24
---position_with_employee --name Senior Consultant --start_date 2020-11-16 --end_date 2021-12-31 --bill_rate 135 --cost 78 --daily_billable_hours 8 --project_id 47 --position_type_id 1 --employee_id 89
---position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 48 --position_type_id 1 --employee_id 96
---position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 119 --daily_billable_hours 8 --project_id 48 --position_type_id 1 --employee_id 70
---position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 48 --position_type_id 1 --employee_id 91
+--position_with_employee --name Senior Consultant --start_date 2020-11-16 --end_date 2021-12-31 --bill_rate 135 --cost 78 --daily_billable_hours 8 --project_id 47 --position_type_id 1 --employee_id 88
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 48 --position_type_id 1 --employee_id 94
+--position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 119 --daily_billable_hours 8 --project_id 48 --position_type_id 1 --employee_id 69
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 48 --position_type_id 1 --employee_id 90
 --position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 74 --daily_billable_hours 8 --project_id 49 --position_type_id 1 --employee_id 18
---position_with_employee --name Software Engineer --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 71 --daily_billable_hours 8 --project_id 49 --position_type_id 1 --employee_id 74
---position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 200 --cost 92 --daily_billable_hours 8 --project_id 50 --position_type_id 1 --employee_id 63
---position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 200 --cost 90 --daily_billable_hours 8 --project_id 50 --position_type_id 1 --employee_id 77
+--position_with_employee --name Software Engineer --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 71 --daily_billable_hours 8 --project_id 49 --position_type_id 1 --employee_id 73
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 200 --cost 92 --daily_billable_hours 8 --project_id 50 --position_type_id 1 --employee_id 62
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 200 --cost 90 --daily_billable_hours 8 --project_id 50 --position_type_id 1 --employee_id 76
 --position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 119 --daily_billable_hours 8 --project_id 51 --position_type_id 1 --employee_id 4
---position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 51 --position_type_id 1 --employee_id 58
---position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 51 --position_type_id 1 --employee_id 75
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 51 --position_type_id 1 --employee_id 57
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 51 --position_type_id 1 --employee_id 74
 --position_with_employee --name Special Agent --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 119 --daily_billable_hours 8 --project_id 52 --position_type_id 1 --employee_id 9
---position_with_employee --name Special Agent --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 95 --daily_billable_hours 8 --project_id 52 --position_type_id 1 --employee_id 66
+--position_with_employee --name Special Agent --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 95 --daily_billable_hours 8 --project_id 52 --position_type_id 1 --employee_id 65
 --position_with_employee --name Staff Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 138 --cost 82 --daily_billable_hours 8 --project_id 53 --position_type_id 1 --employee_id 8
 --position_with_employee --name Software Engineer --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 125 --cost 74 --daily_billable_hours 8 --project_id 53 --position_type_id 1 --employee_id 31
---position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 138 --cost 89 --daily_billable_hours 8 --project_id 53 --position_type_id 1 --employee_id 86
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 138 --cost 89 --daily_billable_hours 8 --project_id 53 --position_type_id 1 --employee_id 85
 --position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 163 --cost 131 --daily_billable_hours 8 --project_id 54 --position_type_id 1 --employee_id 39
 --position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-06-30 --bill_rate 150 --cost 86 --daily_billable_hours 8 --project_id 55 --position_type_id 1 --employee_id 10
 --position_with_employee --name Staff Consultant --start_date 2022-01-03 --end_date 2022-06-30 --bill_rate 150 --cost 88 --daily_billable_hours 8 --project_id 55 --position_type_id 1 --employee_id 34
 --position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 150 --cost 83 --daily_billable_hours 8 --project_id 56 --position_type_id 1 --employee_id 29
---position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 150 --cost 94 --daily_billable_hours 8 --project_id 56 --position_type_id 1 --employee_id 76
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 150 --cost 94 --daily_billable_hours 8 --project_id 56 --position_type_id 1 --employee_id 75
 --position_with_employee --name Senior Consultant --start_date 2022-02-01 --end_date 2022-04-30 --bill_rate 150 --cost 84 --daily_billable_hours 8 --project_id 57 --position_type_id 1 --employee_id 13
 --position_with_employee --name Special Agent --start_date 2022-02-01 --end_date 2022-03-31 --bill_rate 163 --cost 119 --daily_billable_hours 8 --project_id 58 --position_type_id 1 --employee_id 28
 --position_with_employee --name Special Agent --start_date 2022-03-01 --end_date 2022-03-31 --bill_rate 163 --cost 114 --daily_billable_hours 8 --project_id 59 --position_type_id 1 --employee_id 37
---position_with_employee --name Special Agent --start_date 2022-03-01 --end_date 2022-03-31 --bill_rate 163 --cost 107 --daily_billable_hours 8 --project_id 59 --position_type_id 1 --employee_id 94
---position_with_employee --name Special Agent --start_date 2022-02-01 --end_date 2022-03-31 --bill_rate 163 --cost 131 --daily_billable_hours 8 --project_id 60 --position_type_id 1 --employee_id 84
+--position_with_employee --name Special Agent --start_date 2022-03-01 --end_date 2022-03-31 --bill_rate 163 --cost 107 --daily_billable_hours 8 --project_id 59 --position_type_id 1 --employee_id 93
+--position_with_employee --name Special Agent --start_date 2022-02-01 --end_date 2022-03-31 --bill_rate 163 --cost 131 --daily_billable_hours 8 --project_id 60 --position_type_id 1 --employee_id 83
 --position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 89 --daily_billable_hours 8 --project_id 61 --position_type_id 1 --employee_id 33
 --position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 75 --daily_billable_hours 8 --project_id 61 --position_type_id 1 --employee_id 54
 --position_with_employee --name Senior Consultant --start_date 2022-04-04 --end_date 2022-07-31 --bill_rate 163 --cost 82 --daily_billable_hours 8 --project_id 62 --position_type_id 1 --employee_id 6
---position_with_employee --name Senior Consultant --start_date 2022-04-04 --end_date 2022-07-31 --bill_rate 163 --cost 84 --daily_billable_hours 8 --project_id 62 --position_type_id 1 --employee_id 88
+--position_with_employee --name Senior Consultant --start_date 2022-04-04 --end_date 2022-07-31 --bill_rate 163 --cost 84 --daily_billable_hours 8 --project_id 62 --position_type_id 1 --employee_id 87
 --position_with_employee --name Senior Consultant --start_date 2022-01-31 --end_date 2022-03-31 --bill_rate 150 --cost 83 --daily_billable_hours 8 --project_id 63 --position_type_id 1 --employee_id 5
 --position_with_employee --name Senior Consultant --start_date 2022-01-31 --end_date 2022-03-31 --bill_rate 150 --cost 78 --daily_billable_hours 8 --project_id 63 --position_type_id 1 --employee_id 49
---position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-07-31 --bill_rate 163 --cost 79 --daily_billable_hours 8 --project_id 64 --position_type_id 1 --employee_id 93
---position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 65 --position_type_id 1 --employee_id 96
---position_with_employee --name Special Agent --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 119 --daily_billable_hours 8 --project_id 65 --position_type_id 1 --employee_id 70
---position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 65 --position_type_id 1 --employee_id 91
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-07-31 --bill_rate 163 --cost 79 --daily_billable_hours 8 --project_id 64 --position_type_id 1 --employee_id 92
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 65 --position_type_id 1 --employee_id 94
+--position_with_employee --name Special Agent --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 119 --daily_billable_hours 8 --project_id 65 --position_type_id 1 --employee_id 69
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 65 --position_type_id 1 --employee_id 90
 --position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 74 --daily_billable_hours 8 --project_id 66 --position_type_id 1 --employee_id 18
---position_with_employee --name Software Engineer --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 71 --daily_billable_hours 8 --project_id 66 --position_type_id 1 --employee_id 74
+--position_with_employee --name Software Engineer --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 71 --daily_billable_hours 8 --project_id 66 --position_type_id 1 --employee_id 73
 --position_with_employee --name Senior Consultant --start_date 2022-05-02 --end_date 2022-06-30 --bill_rate 163 --cost 85 --daily_billable_hours 8 --project_id 67 --position_type_id 1 --employee_id 43
 --position_with_employee --name Staff Consultant --start_date 2022-05-02 --end_date 2022-06-30 --bill_rate 163 --cost 94 --daily_billable_hours 8 --project_id 67 --position_type_id 1 --employee_id 48
 --position_with_employee --name Special Agent --start_date 2022-05-02 --end_date 2022-07-31 --bill_rate 163 --cost 114 --daily_billable_hours 8 --project_id 68 --position_type_id 1 --employee_id 26
---position_with_employee --name Senior Consultant --start_date 2022-05-02 --end_date 2022-07-31 --bill_rate 163 --cost 0 --daily_billable_hours 8 --project_id 68 --position_type_id 1 --employee_id 59
---position_with_employee --name Senior Consultant --start_date 2022-02-02 --end_date 2022-06-30 --bill_rate 150 --cost 84 --daily_billable_hours 8 --project_id 69 --position_type_id 1 --employee_id 69
+--position_with_employee --name Senior Consultant --start_date 2022-05-02 --end_date 2022-07-31 --bill_rate 163 --cost 0 --daily_billable_hours 8 --project_id 68 --position_type_id 1 --employee_id 58
+--position_with_employee --name Senior Consultant --start_date 2022-02-02 --end_date 2022-06-30 --bill_rate 150 --cost 84 --daily_billable_hours 8 --project_id 69 --position_type_id 1 --employee_id 68
 --position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-12-31 --bill_rate 163 --cost 60 --daily_billable_hours 8 --project_id 70 --position_type_id 1 --employee_id 17
---position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-12-31 --bill_rate 163 --cost 92 --daily_billable_hours 8 --project_id 70 --position_type_id 1 --employee_id 63
---position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-12-31 --bill_rate 163 --cost 90 --daily_billable_hours 8 --project_id 70 --position_type_id 1 --employee_id 77
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-12-31 --bill_rate 163 --cost 92 --daily_billable_hours 8 --project_id 70 --position_type_id 1 --employee_id 62
+--position_with_employee --name Senior Consultant --start_date 2022-01-03 --end_date 2022-12-31 --bill_rate 163 --cost 90 --daily_billable_hours 8 --project_id 70 --position_type_id 1 --employee_id 76
 --position_with_employee --name Special Agent --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 119 --daily_billable_hours 8 --project_id 72 --position_type_id 1 --employee_id 4
---position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 72 --position_type_id 1 --employee_id 58
---position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 72 --position_type_id 1 --employee_id 75
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 72 --position_type_id 1 --employee_id 57
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 84 --daily_billable_hours 8 --project_id 72 --position_type_id 1 --employee_id 74
 --position_with_employee --name Special Agent --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 163 --cost 119 --daily_billable_hours 8 --project_id 73 --position_type_id 1 --employee_id 9
---position_with_employee --name Special Agent --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 163 --cost 95 --daily_billable_hours 8 --project_id 73 --position_type_id 1 --employee_id 66
---position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 79 --daily_billable_hours 8 --project_id 74 --position_type_id 1 --employee_id 92
---position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 74 --position_type_id 1 --employee_id 97
+--position_with_employee --name Special Agent --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 163 --cost 95 --daily_billable_hours 8 --project_id 73 --position_type_id 1 --employee_id 65
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 79 --daily_billable_hours 8 --project_id 74 --position_type_id 1 --employee_id 91
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 0 --daily_billable_hours 8 --project_id 74 --position_type_id 1 --employee_id 95
 --position_with_employee --name Staff Consultant --start_date 2022-02-02 --end_date 2022-06-30 --bill_rate 175 --cost 95 --daily_billable_hours 8 --project_id 75 --position_type_id 1 --employee_id 45
 --position_with_employee --name Staff Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 138 --cost 82 --daily_billable_hours 8 --project_id 76 --position_type_id 1 --employee_id 8
 --position_with_employee --name Software Engineer --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 125 --cost 74 --daily_billable_hours 8 --project_id 76 --position_type_id 1 --employee_id 31
---position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 138 --cost 89 --daily_billable_hours 8 --project_id 76 --position_type_id 1 --employee_id 86
---position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-12-31 --bill_rate 150 --cost 114 --daily_billable_hours 8 --project_id 77 --position_type_id 1 --employee_id 82
---position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 133 --daily_billable_hours 8 --project_id 78 --position_type_id 1 --employee_id 79
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 138 --cost 89 --daily_billable_hours 8 --project_id 76 --position_type_id 1 --employee_id 85
+--position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-12-31 --bill_rate 150 --cost 114 --daily_billable_hours 8 --project_id 77 --position_type_id 1 --employee_id 81
+--position_with_employee --name Special Agent --start_date 2022-01-03 --end_date 2022-03-31 --bill_rate 175 --cost 133 --daily_billable_hours 8 --project_id 78 --position_type_id 1 --employee_id 78
 --position_with_employee --name Senior Consultant --start_date 2022-05-02 --end_date 2022-07-31 --bill_rate 163 --cost 91 --daily_billable_hours 8 --project_id 79 --position_type_id 1 --employee_id 20
 --position_with_employee --name Senior Consultant --start_date 2022-02-01 --end_date 2022-07-31 --bill_rate 163 --cost 79 --daily_billable_hours 8 --project_id 79 --position_type_id 1 --employee_id 22
 --position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-07-31 --bill_rate 163 --cost 75 --daily_billable_hours 8 --project_id 79 --position_type_id 1 --employee_id 35
@@ -477,16 +556,16 @@
 --position_with_employee --name Special Agent --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 150 --cost 86 --daily_billable_hours 8 --project_id 81 --position_type_id 1 --employee_id 10
 --position_with_employee --name Staff Consultant --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 150 --cost 88 --daily_billable_hours 8 --project_id 81 --position_type_id 1 --employee_id 34
 --position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 150 --cost 83 --daily_billable_hours 8 --project_id 82 --position_type_id 1 --employee_id 29
---position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 150 --cost 94 --daily_billable_hours 8 --project_id 82 --position_type_id 1 --employee_id 76
+--position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 150 --cost 94 --daily_billable_hours 8 --project_id 82 --position_type_id 1 --employee_id 75
 --position_with_employee --name Senior Consultant --start_date 2022-05-02 --end_date 2022-07-31 --bill_rate 150 --cost 84 --daily_billable_hours 8 --project_id 83 --position_type_id 1 --employee_id 13
 --position_with_employee --name Software Engineer --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 150 --cost 74 --daily_billable_hours 8 --project_id 84 --position_type_id 1 --employee_id 52
 --position_with_employee --name Software Engineer --start_date 2022-07-01 --end_date 2022-12-31 --bill_rate 150 --cost 63 --daily_billable_hours 8 --project_id 84 --position_type_id 1 --employee_id 53
 --position_with_employee --name Senior Consultant --start_date 2022-03-28 --end_date 2022-07-31 --bill_rate 163 --cost 81 --daily_billable_hours 8 --project_id 85 --position_type_id 1 --employee_id 12
 --position_with_employee --name Senior Consultant --start_date 2022-03-28 --end_date 2022-07-31 --bill_rate 163 --cost 76 --daily_billable_hours 8 --project_id 85 --position_type_id 1 --employee_id 32
 --position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 175 --cost 86 --daily_billable_hours 8 --project_id 86 --position_type_id 1 --employee_id 42
---position_with_employee --name Senior Consultant --start_date 2022-02-02 --end_date 2022-06-30 --bill_rate 150 --cost 77 --daily_billable_hours 8 --project_id 87 --position_type_id 1 --employee_id 72
+--position_with_employee --name Senior Consultant --start_date 2022-02-02 --end_date 2022-06-30 --bill_rate 150 --cost 77 --daily_billable_hours 8 --project_id 87 --position_type_id 1 --employee_id 71
 --position_with_employee --name Special Agent --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 119 --daily_billable_hours 8 --project_id 88 --position_type_id 1 --employee_id 28
 --position_with_employee --name Senior Consultant --start_date 2022-04-01 --end_date 2022-06-30 --bill_rate 163 --cost 83 --daily_billable_hours 8 --project_id 88 --position_type_id 1 --employee_id 46
---position_with_employee --name Special Agent --start_date 2022-04-01 --end_date 2022-07-31 --bill_rate 163 --cost 131 --daily_billable_hours 8 --project_id 90 --position_type_id 1 --employee_id 84
+--position_with_employee --name Special Agent --start_date 2022-04-01 --end_date 2022-07-31 --bill_rate 163 --cost 131 --daily_billable_hours 8 --project_id 90 --position_type_id 1 --employee_id 83
 --position_with_employee --name Senior Consultant --start_date 2022-01-17 --end_date 2022-03-31 --bill_rate 150 --cost 80 --daily_billable_hours 8 --project_id 92 --position_type_id 1 --employee_id 51
---position_with_employee --name Senior Consultant --start_date 2022-01-17 --end_date 2022-03-31 --bill_rate 150 --cost 89 --daily_billable_hours 8 --project_id 92 --position_type_id 1 --employee_id 78
+--position_with_employee --name Senior Consultant --start_date 2022-01-17 --end_date 2022-03-31 --bill_rate 150 --cost 89 --daily_billable_hours 8 --project_id 92 --position_type_id 1 --employee_id 77
