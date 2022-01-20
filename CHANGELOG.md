@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.1](https://www.github.com/ddaugher/backoffice_dataloader/compare/v1.2.0...v1.2.1) (2022-01-20)
+
+
+### Bug Fixes
+
+* changing query string to optional ([3b70b29](https://www.github.com/ddaugher/backoffice_dataloader/commit/3b70b2964d1885ee1f91a9a2f782aee4e3f942c3))
+
 ## [1.2.0](https://www.github.com/ddaugher/backoffice_dataloader/compare/v1.1.0...v1.2.0) (2021-11-04)
 
 
