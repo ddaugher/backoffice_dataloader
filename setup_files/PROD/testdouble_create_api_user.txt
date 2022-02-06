@@ -1,0 +1,3 @@
+--host --url https://backofficeprod.gigalixirapp.com
+--login --username admin@augustwenty.com --password Eiswein87!
+--registration --email apiuser@testdouble.com --pass i3YynX8nr6md --api_access true --role admin --tenant testdouble --self_service_storage {}

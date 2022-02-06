@@ -1,0 +1,3 @@
+--host --url http://localhost:4000
+--login --username admin@nxdomain.com --password 123123123
+--global_detail --name dog130 --extended_fields { "ext_dog": "dog126", "ext_number": 123 }

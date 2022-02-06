@@ -23,6 +23,7 @@ function usage() {
    echo " --delete_tenant --name [string]"
    echo " --employee --first_name [string] --last_name [string] --email [string] --start_date [yyyy-mm-dd] --hourly_cost [decimal] --daily_billable_hours [integer (1-8)] --utilization_target [decimal] --employee_type_id [id] --region_id [id]"
    echo " --employee_type --name [string] --is_employee [true/false] --is_utilized [true/false]"
+   echo " --global_detail --name [string] --extended_fields [string]" 
    echo " --holiday --date [yyyy-mm-dd] --description [string] --hours [integer (1-8)] --work_exception_type_id [id]"
    echo " --host --url [url]"
    echo " --login --username [string] --password [string]]"
@@ -248,6 +249,13 @@ function process_params() {
             shift
          done
          ;;
+      --extended_fields)
+         shift
+         while ! echo "$1" | egrep '^-' >/dev/null 2>&1 && [ ! -z "$1" ]; do
+            EXTENDED_FIELDS="$EXTENDED_FIELDS $1"
+            shift
+         done
+         ;;
       --self_service_storage)
          shift
          while ! echo "$1" | egrep '^-' >/dev/null 2>&1 && [ ! -z "$1" ]; do
@@ -343,6 +351,14 @@ function process_input() {
       echo "processing tenant -> $NAME"
       process_delete_tenant $NAME
       unset NAME
+      ;;
+   --global_detail)
+      process_params $@
+      echo "processing name -> $NAME"
+      echo "processing extended_fields -> $EXTENDED_FIELDS"
+      process_global_detail $NAME "$EXTENDED_FIELDS"
+      unset NAME
+      unset EXTENDED_FIELDS
       ;;
    --tenant_mapping)
       process_params $@

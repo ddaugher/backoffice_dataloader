@@ -97,6 +97,28 @@ function process_tenant_mapping() {
    fi
 }
 
+function process_global_detail() {
+   URL="$HOST/api/v1/global_details"
+   IFS=' '
+
+   echo "--- Creating global detail-> $1 $2"
+
+   response=$($CURL -i -s --silent -w "\n%{http_code} " --location --request POST $URL \
+      -H "Content-Type: application/json" \
+      --header "Authorization: $ACCESS_TOKEN" \
+      --data-raw "$(echo { \"global_detail\": { \"name\": \"$1\", \"extended_fields\": $2 } })")
+
+   http_code=$(tail -n1 <<<"$response")
+
+   if [[ "$http_code" -ne 201 ]]; then
+      MESSAGE=$(echo $response | jsonValue message)
+      echo "Unable to continue : $http_code, $MESSAGE"
+      exit 1;
+   else
+      echo "----- GLOBAL DETAIL CREATED ----- $http_code"
+   fi
+}
+
 function process_registration() {
    URL="$HOST/api/v1/registration"
    IFS=' '
