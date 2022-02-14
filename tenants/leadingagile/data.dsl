@@ -1,0 +1,125 @@
+--host --url $HOST
+--tenant_login
+--tenant_mapping --domain $DOMAIN --tenant $TENANT
+--delete_tenant --name $TENANT
+--create_tenant --name $TENANT
+--registration --email admin@$DOMAIN --pass 123123123 --api_access true --role admin --self_service_storage {'role':'admin'}
+--login --username admin@$DOMAIN --password 123123123
+--registration --email user@$DOMAIN --pass 123123123 --api_access true --role user --self_service_storage {'role':'user'}
+--login --username admin@$DOMAIN --password 123123123
+--registration --email daryl.kulak@leadingagile.com --pass 123123123 --api_access true --role user --self_service_storage {'role':'Studio_User'}
+--login --username admin@$DOMAIN --password 123123123
+--region --name All
+--daily_expense_type --name Meals
+--daily_expense_type --name Parking
+--daily_expense_type --name Per Diem
+--daily_expense_type --name Hotel
+--daily_expense_type --name Mileage
+--monthly_expense_type --name Computer
+--monthly_expense_type --name Parking
+--monthly_expense_type --name Mileage
+--monthly_expense_type --name Meals
+--monthly_expense_type --name Team Health
+--employee_type --name 1099 --is_employee false --is_utilized false
+--employee_type --name Hourly --is_employee false --is_utilized false
+--employee_type --name Corp2Corp --is_employee false --is_utilized false
+--employee_type --name W2 --is_employee true --is_utilized true
+--work_exception_type --name PTO
+--work_exception_type --name Bereavement
+--work_exception_type --name Holiday
+--work_exception_type --name UPTO
+--work_exception_type --name Client Visit
+--work_exception_type --name Conference
+--work_exception_type --name Training
+--holiday --date 2021-01-01 --description New Year's Day --hours 8 --work_exception_type_id 3
+--holiday --date 2021-01-18 --description Martin Luther King Day --hours 8 --work_exception_type_id 3
+--holiday --date 2021-05-31 --description Memorial Day --hours 8 --work_exception_type_id 3
+--holiday --date 2021-06-19 --description Juneteenth --hours 8 --work_exception_type_id 3
+--holiday --date 2021-07-04 --description July 4th --hours 8 --work_exception_type_id 3
+--holiday --date 2021-09-06 --description Labor Day --hours 8 --work_exception_type_id 3
+--holiday --date 2021-11-25 --description Thanksgiving Day --hours 8 --work_exception_type_id 3
+--holiday --date 2021-12-24 --description Christmas Eve --hours 8 --work_exception_type_id 3
+--holiday --date 2021-12-27 --description Christmas --hours 8 --work_exception_type_id 3
+--holiday --date 2021-12-31 --description New Year's Eve --hours 8 --work_exception_type_id 3
+--holiday --date 2022-01-01 --description New Year's Day --hours 8 --work_exception_type_id 3
+--holiday --date 2022-02-17 --description Martin Luther King Day --hours 8 --work_exception_type_id 3
+--holiday --date 2022-05-30 --description Memorial Day --hours 8 --work_exception_type_id 3
+--holiday --date 2022-06-19 --description Juneteenth --hours 8 --work_exception_type_id 3
+--holiday --date 2022-07-04 --description July 4th --hours 8 --work_exception_type_id 3
+--holiday --date 2022-09-05 --description Labor Day --hours 8 --work_exception_type_id 3
+--holiday --date 2022-11-24 --description Thanksgiving Day --hours 8 --work_exception_type_id 3
+--holiday --date 2022-12-24 --description Christmas Eve --hours 8 --work_exception_type_id 3
+--holiday --date 2022-12-25 --description Christmas --hours 8 --work_exception_type_id 3
+--holiday --date 2022-12-31 --description New Year's Eve --hours 8 --work_exception_type_id 3
+--position_type --name Polyglot Dev
+--position_type --name Front End Dev
+--position_type --name Java Guru
+--position_type --name UX
+--position_type --name Engineer
+--position_type --name Product
+--position_type --name Delivery
+--position_type --name Account Manager
+--customer --name FORD MSS --is_active true
+--customer --name Horizon Control Group (HCG) --is_active true
+--customer --name Mednax --is_active true
+--customer --name VTDL --is_active true
+--customer --name Test Double --is_active true
+--project_time_materials --name Product Extract --customer_id 1 --region_id 1 --status Booked
+--project_time_materials --name Developer Pair --customer_id 3 --region_id 1 --status Booked
+--project_time_materials --name SCRUM Master --customer_id 3 --region_id 1 --status Booked
+--project_time_materials --name Team Extension --customer_id 3 --region_id 1 --status Forecasted
+--project_time_materials --name SOW 1 Discovery --customer_id 2 --region_id 1 --status Forecasted
+--project_time_materials --name SOW 2 Dev Ops Infra Build --customer_id 2 --region_id 1 --status Forecasted
+--project_time_materials --name SOW 3 Build --customer_id 2 --region_id 1 --status Forecasted
+--project_time_materials --name VTDL RFP --customer_id 5 --region_id 1 --status Draft
+--project_time_materials --name Pair 1 --customer_id 3 --region_id 1 --status Draft
+--project_time_materials --name Pair 2 --customer_id 3 --region_id 1 --status Draft
+--employee --first_name Keith --last_name Dingle --email keith.dingle@leadingagile.com --start_date 2022-02-15 --hourly_cost 80.85106383 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Adam --last_name Gartee --email adam.gartee@leadingagile.com --start_date 2022-01-17 --hourly_cost 151.59 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jeff --last_name Hoover --email jeff.hoover@leadingagile.com --start_date 2021-01-04 --hourly_cost 202.12 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Butch --last_name Howard --email butch.howard@leadingagile.com --start_date 2021-01-04 --hourly_cost 176.86 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name James --last_name Hester --email james.hester@leadingagile.com --start_date 2020-11-16 --hourly_cost 175 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
+--employee --first_name Daryl --last_name Kulak --email daryl.kulak@leadingagile.com --start_date 2021-01-04 --hourly_cost 243.7 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name David --last_name Nack --email david.nack@leadingagile.com --start_date 2021-04-01 --hourly_cost 242.55 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Derek --last_name Poppink --email derek.poppink@leadingagile.com --start_date 2020-12-01 --hourly_cost 181.91 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Kevin --last_name Smith --email kevin.smith@leadingagile.com --start_date 2021-01-04 --hourly_cost 243.7 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Steve --last_name Turley --email steve.turley@leadingagile.com --start_date 2022-01-03 --hourly_cost 242.55 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Tyler --last_name Vick --email tyler.vick@leadingagile.com --start_date 2022-04-04 --hourly_cost 151.59 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name George --last_name Walters --email george.walters@leadingagile.com --start_date 2021-02-15 --hourly_cost 156.64 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ron --last_name Quartel --email ron.quartel@leadingagile.com --start_date 2020-01-01 --hourly_cost 150 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--open_position --name Pair 1 Dev 1 --start_date 2022-03-14 --end_date 2022-05-29 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 9 --position_type_id 1
+--open_position --name Pair 1 Dev 2 --start_date 2022-03-14 --end_date 2022-05-29 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 9 --position_type_id 1
+--open_position --name Dev 2 --start_date 2022-03-14 --end_date 2022-03-29 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 5 --position_type_id 1
+--open_position --name DevOps --start_date 2022-03-14 --end_date 2022-05-29 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 6 --position_type_id 1
+--open_position --name Dev 2 --start_date 2022-03-30 --end_date 2022-09-01 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 7 --position_type_id 1
+--open_position --name Dev 3 --start_date 2022-03-30 --end_date 2022-09-01 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 7 --position_type_id 1
+--open_position --name Dev 4 --start_date 2022-03-30 --end_date 2022-09-01 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 7 --position_type_id 1
+--open_position --name Pair 2 Dev 1 --start_date 2022-03-14 --end_date 2022-05-29 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 10 --position_type_id 1
+--open_position --name Pair 2 Dev 2 --start_date 2022-03-14 --end_date 2022-05-29 --bill_rate 175 --cost 100 --daily_billable_hours 8 --project_id 10 --position_type_id 1
+--open_position --name Engineer --start_date 2022-01-01 --end_date 2022-04-01 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 8 --position_type_id 1
+--open_position --name Engineer --start_date 2022-01-01 --end_date 2022-04-01 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 8 --position_type_id 1
+--open_position --name Project Manager --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 210 --cost 125 --daily_billable_hours 8 --project_id 8 --position_type_id 1
+--open_position --name Tech Lead --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 200 --cost 125 --daily_billable_hours 8 --project_id 8 --position_type_id 1
+--open_position --name BA lean manufacturing --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 200 --cost 125 --daily_billable_hours 8 --project_id 8 --position_type_id 1
+--open_position --name BA lean trainer --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 200 --cost 125 --daily_billable_hours 8 --project_id 8 --position_type_id 1
+--open_position --name Applicatons Developers --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 160 --cost 125 --daily_billable_hours 8 --project_id 8 --position_type_id 1
+--open_position --name UX Designers --start_date 2022-04-01 --end_date 2022-12-31 --bill_rate 180 --cost 125 --daily_billable_hours 8 --project_id 8 --position_type_id 1
+--position_with_employee --name Technical Lead --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 289.47 --cost 120 --daily_billable_hours 8 --project_id 1 --position_type_id 5 --employee_id 5
+--position_with_employee --name Engineer 1 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 230.26 --cost 120 --daily_billable_hours 8 --project_id 1 --position_type_id 5 --employee_id 3
+--position_with_employee --name Engineer 2 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 217.11 --cost 120 --daily_billable_hours 8 --project_id 1 --position_type_id 5 --employee_id 4
+--position_with_employee --name Engineer 3 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 217.11 --cost 120 --daily_billable_hours 8 --project_id 1 --position_type_id 5 --employee_id 12
+--position_with_employee --name Engineer 4 --start_date 2022-01-01 --end_date 2022-12-31 --bill_rate 217.11 --cost 120 --daily_billable_hours 8 --project_id 1 --position_type_id 5 --employee_id 13
+--position_with_employee --name Technical Lead --start_date 2022-01-15 --end_date 2022-04-01 --bill_rate 263.636363636364 --cost 120 --daily_billable_hours 8 --project_id 2 --position_type_id 5 --employee_id 10
+--position_with_employee --name Engineer --start_date 2022-01-15 --end_date 2022-04-01 --bill_rate 263.636363636364 --cost 120 --daily_billable_hours 8 --project_id 2 --position_type_id 6 --employee_id 7
+--position_with_employee --name SCRUM Master --start_date 2022-02-15 --end_date 2022-04-01 --bill_rate 175 --cost 120 --daily_billable_hours 8 --project_id 3 --position_type_id 5 --employee_id 2
+--position_with_employee --name Technical Lead --start_date 2022-04-02 --end_date 2022-09-01 --bill_rate 175 --cost 120 --daily_billable_hours 8 --project_id 4 --position_type_id 5 --employee_id 11
+--position_with_employee --name Engineer --start_date 2022-04-02 --end_date 2022-09-01 --bill_rate 175 --cost 120 --daily_billable_hours 8 --project_id 4 --position_type_id 6 --employee_id 7
+--position_with_employee --name SCRUM Master --start_date 2022-04-02 --end_date 2022-09-01 --bill_rate 175 --cost 120 --daily_billable_hours 8 --project_id 4 --position_type_id 5 --employee_id 2
+--position_with_employee --name Agile Coach --start_date 2022-02-15 --end_date 2022-03-29 --bill_rate 175 --cost 120 --daily_billable_hours 2 --project_id 5 --position_type_id 5 --employee_id 6
+--position_with_employee --name UX Designer --start_date 2022-02-15 --end_date 2022-03-29 --bill_rate 175 --cost 120 --daily_billable_hours 8 --project_id 5 --position_type_id 5 --employee_id 8
+--position_with_employee --name Principle Engineer --start_date 2022-02-15 --end_date 2022-03-29 --bill_rate 175 --cost 120 --daily_billable_hours 8 --project_id 5 --position_type_id 5 --employee_id 9
+--position_with_employee --name Dev 1 --start_date 2022-03-01 --end_date 2022-03-29 --bill_rate 175 --cost 120 --daily_billable_hours 8 --project_id 5 --position_type_id 5 --employee_id 1
+--position_with_employee --name Agile Coach --start_date 2022-03-30 --end_date 2022-09-01 --bill_rate 175 --cost 120 --daily_billable_hours 8 --project_id 7 --position_type_id 5 --employee_id 6
+--position_with_employee --name UX Designer --start_date 2022-03-30 --end_date 2022-09-01 --bill_rate 175 --cost 120 --daily_billable_hours 8 --project_id 7 --position_type_id 5 --employee_id 8
+--position_with_employee --name Principle Engineer --start_date 2022-03-30 --end_date 2022-09-01 --bill_rate 175 --cost 120 --daily_billable_hours 8 --project_id 7 --position_type_id 5 --employee_id 9
+--position_with_employee --name Dev 1 --start_date 2022-03-30 --end_date 2022-09-01 --bill_rate 175 --cost 120 --daily_billable_hours 8 --project_id 7 --position_type_id 5 --employee_id 1

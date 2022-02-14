@@ -45,7 +45,10 @@ function process_create_tenant() {
 
    http_code=$(tail -n1 <<<"$response")
 
-   if [[ "$http_code" -ne 201 ]]; then
+   if [[ "$http_code" -eq 422 ]]; then
+      MESSAGE=$(echo $response | jsonValue message)
+      echo "continuing : $http_code, $MESSAGE"
+   elif [[ "$http_code" -ne 201 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
       echo "Unable to continue : $http_code, $MESSAGE"
       exit 1;
@@ -66,7 +69,10 @@ function process_delete_tenant() {
 
    http_code=$(tail -n1 <<<"$response")
 
-   if [[ "$http_code" -ne 200 ]]; then
+   if [[ "$http_code" -eq 422 ]]; then
+      MESSAGE=$(echo $response | jsonValue message)
+      echo "continuing : $http_code, $MESSAGE"
+   elif [[ "$http_code" -ne 200 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
       echo "Unable to continue : $http_code, $MESSAGE"
       exit 1;
@@ -79,6 +85,8 @@ function process_tenant_mapping() {
    URL="$HOST/api/v1/tenant_mappings"
    IFS=' '
 
+   echo $DOMAIN
+
    echo "--- Creating tenant mapping -> $1 $2"
 
    response=$($CURL -i -s --silent -w "\n%{http_code} " --location --request POST $URL \
@@ -88,12 +96,57 @@ function process_tenant_mapping() {
 
    http_code=$(tail -n1 <<<"$response")
 
-   if [[ "$http_code" -ne 201 ]]; then
+   if [[ "$http_code" -eq 422 ]]; then
+      MESSAGE=$(echo $response | jsonValue message)
+      echo "continuing : $http_code, $MESSAGE"
+   elif [[ "$http_code" -ne 201 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
       echo "Unable to continue : $http_code, $MESSAGE"
       exit 1;
    else
       echo "----- TENANT MAPPING CREATED ----- $http_code"
+   fi
+}
+
+function process_delete_tenant_mapping() {
+   URL="$HOST/api/v1/tenant_mappings?tenant=$1"
+   IFS=' '
+
+   echo $DOMAIN
+
+   echo "--- Deleting tenant mapping -> $1"
+
+   response=$($CURL -i -s --silent -w "\n%{http_code} " --location --request GET $URL \
+      -H "Content-Type: application/json" \
+      --header "Authorization: $ACCESS_TOKEN")
+
+   http_code=$(tail -n1 <<<"$response")
+   echo $http_code
+
+   if [[ "$http_code" -ne 200 ]]; then
+      MESSAGE=$(echo $response | jsonValue message)
+      echo "Unable to continue : $http_code, $MESSAGE"
+   else
+      ID=$(echo $response | jsonValue id)
+      echo "id -> $ID"
+   fi
+
+   URL="$HOST/api/v1/tenant_mappings/$ID"
+   IFS=' '
+   response=$($CURL -i -s --silent -w "\n%{http_code} " --location --request DELETE $URL \
+      --header "Authorization: $ACCESS_TOKEN")
+
+   http_code=$(tail -n1 <<<"$response")
+   echo $http_code
+
+   if [[ "$http_code" -eq 422 ]]; then
+      MESSAGE=$(echo $response | jsonValue message)
+      echo "continuing : $http_code, $MESSAGE"
+   elif [[ "$http_code" -ne 200 ]]; then
+      MESSAGE=$(echo $response | jsonValue message)
+      echo "Unable to continue : $http_code, $MESSAGE"
+   else
+      echo "----- TENANT MAPPING DELETED ----- $http_code"
    fi
 }
 
@@ -123,12 +176,12 @@ function process_registration() {
    URL="$HOST/api/v1/registration"
    IFS=' '
 
-   echo "--- Inserting user -> $1 $2 $3 $4 $5 $6"
+   echo "--- Inserting user -> $1 $2 $3 $4 $5"
 
    response=$($CURL -i --silent -w "\n%{http_code} " --location --request POST $URL \
       -H "Content-Type: application/json" \
       --header "Authorization: $ACCESS_TOKEN" \
-      --data-raw "{ \"user\": { \"email\": \"$1\", \"password\": \"$2\", \"password_confirmation\": \"$2\", \"api_access\": \"$3\", \"role\": \"$4\", \"tenant\": \"$5\", \"self_service_storage\": \"$6\"} }")
+      --data-raw "{ \"user\": { \"email\": \"$1\", \"password\": \"$2\", \"password_confirmation\": \"$2\", \"api_access\": \"$3\", \"role\": \"$4\", \"self_service_storage\": \"$5\"} }")
 
    http_code=$(tail -n1 <<<"$response")
 
@@ -137,12 +190,7 @@ function process_registration() {
       echo "Unable to continue : $http_code, $MESSAGE", $response
       exit 1;
    else
-      ACCESS_TOKEN=$(echo $response | jsonValue access_token)
-      RENEWAL_TOKEN=$(echo $response | jsonValue renewal_token)
-
       echo "----- USER CREATED ----- $http_code"
-      echo "ACCESS_TOKEN -> $ACCESS_TOKEN"
-      echo "RENEWAL_TOKEN -> $RENEWAL_TOKEN"
    fi
 }
 
@@ -514,17 +562,17 @@ function process_position_daily_expense() {
    fi
 }
 
-function process_project() {
+function process_project_time_materials() {
    URL="$HOST/api/v1/projects"
    IFS=' '
 
-   echo "--- Inserting project -> $1 $2 $3 $4"
+   echo "--- Inserting project -> $1 $2 $3 $4 $5"
 
    response=$($CURL -i --silent -w "\n%{http_code} " --location --request POST \
       $URL \
       -H "Content-Type: application/json" \
       --header "Authorization: $ACCESS_TOKEN" \
-      --data-raw "{ \"project\": { \"name\": \"$1\", \"customer_id\": $2, \"region_id\": $3, \"status\": \"$4\" } }")
+      --data-raw "{ \"project\": { \"name\": \"$1\", \"customer_id\": $2, \"region_id\": $3, \"status\": \"$4\", \"billing_type\": \"$5\"} }")
 
    http_code=$(tail -n1 <<<"$response")
 
@@ -533,6 +581,52 @@ function process_project() {
       echo "Unable to continue : $http_code, $MESSAGE", $response
       exit 1;
    else
-      echo "----- PROJECT CREATED ----- $http_code"
+      echo "----- TIME MATERIALS PROJECT CREATED ----- $http_code"
+   fi
+}
+
+function process_project_retainer() {
+   URL="$HOST/api/v1/projects"
+   IFS=' '
+
+   echo "--- Inserting project -> $1 $2 $3 $4 $5 $6"
+
+   response=$($CURL -i --silent -w "\n%{http_code} " --location --request POST \
+      $URL \
+      -H "Content-Type: application/json" \
+      --header "Authorization: $ACCESS_TOKEN" \
+      --data-raw "{ \"project\": { \"name\": \"$1\", \"customer_id\": $2, \"region_id\": $3, \"status\": \"$4\", \"amount\": \"$5\", \"billing_type\": \"$6\"} }")
+
+   http_code=$(tail -n1 <<<"$response")
+
+   if [[ "$http_code" -ne 201 ]]; then
+      MESSAGE=$(echo $response | jsonValue message)
+      echo "Unable to continue : $http_code, $MESSAGE", $response
+      exit 1;
+   else
+      echo "----- RETAINER PROJECT CREATED ----- $http_code"
+   fi
+}
+
+function process_project_fixed_bid() {
+   URL="$HOST/api/v1/projects"
+   IFS=' '
+
+   echo "--- Inserting project -> $1 $2 $3 $4 $5 $6"
+
+   response=$($CURL -i --silent -w "\n%{http_code} " --location --request POST \
+      $URL \
+      -H "Content-Type: application/json" \
+      --header "Authorization: $ACCESS_TOKEN" \
+      --data-raw "{ \"project\": { \"name\": \"$1\", \"customer_id\": $2, \"region_id\": $3, \"status\": \"$4\", \"amount\": \"$5\", \"billing_type\": \"$6\"} }")
+
+   http_code=$(tail -n1 <<<"$response")
+
+   if [[ "$http_code" -ne 201 ]]; then
+      MESSAGE=$(echo $response | jsonValue message)
+      echo "Unable to continue : $http_code, $MESSAGE", $response
+      exit 1;
+   else
+      echo "----- FIXED BID PROJECT CREATED ----- $http_code"
    fi
 }

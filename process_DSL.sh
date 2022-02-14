@@ -1,14 +1,90 @@
 #!/bin/bash
 
+source ./configs.sh
 source ./functions.sh
 
+ALL_ENVS=(LOCAL DEV STAGE PROD)
+export ENV=LOCAL
+export TENANT=BASE
+
 ACCESS_TOKEN=''
-HOST=''
-PASSWORD=''
+export HOST=''
+export DOMAIN=''
 PROGRAM_NAME=$0
 RENEWAL_TOKEN=''
-USERNAME=''
 CURL='/usr/bin/curl'
+
+gather_HOST () {
+   echo "--------------------------------------> $ENV"
+   if [ "$ENV" == LOCAL ];
+   then
+     export HOST="http://localhost:4000"
+   elif [ "$ENV" == DEV ];
+   then
+     export HOST="https://backoffice.gigalixirapp.com"
+   elif [ "$ENV" == STAGE ];
+   then
+     export HOST="https://backofficestaging.gigalixirapp.com"
+   elif [ "$ENV" == PROD ];
+   then
+     export HOST="https://backofficeprod.gigalixirapp.com"
+   else
+     export HOST="https://backoffice.gigalixirapp.com"
+   fi
+}
+
+gather_DOMAIN () {
+    export DOMAIN=$(echo "$TENANT.com")
+}
+
+publish_SLACK () {
+  curl -X POST -H 'Content-type: application/json' --data "{'text':'Deploying Backoffice (${ENV})'}" https://hooks.slack.com/services/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
+  curl -X POST -H 'Content-type: application/json' --data "{'text':'Setting revision: ${REV}'}" https://hooks.slack.com/services/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
+  return 0
+}
+
+gather_ENV () {
+  let counter=1
+  while [ $counter -le ${#ALL_ENVS[@]} ]; do
+    echo "--- $counter. ${ALL_ENVS[$counter-1]}"
+    let counter++
+  done
+
+  echo "Enter number of ENV to apply (enter Q to quit): [1]"
+  read env
+  env=${env:-1}
+
+  if [ $env = "Q" ] || [ $env = "q" ]; then
+    exit 0
+  fi
+
+  export ENV=${ALL_ENVS[$env-1]}
+  echo "Setting ENV -> $ENV"
+  return 0
+}
+
+gather_TENANTS () {
+  ALL_TENANTS=( $(cd tenants; ls -d */ | cut -f1 -d'/') )
+
+  let counter=1
+  while [ $counter -le ${#ALL_TENANTS[@]} ]; do
+    echo "--- $counter. ${ALL_TENANTS[$counter-1]}"
+    let counter++
+  done
+
+  echo "Enter number of TENANT to apply (enter Q to quit): [1]"
+  read env
+  env=${env:-1}
+
+  if [ $env = "Q" ] || [ $env = "q" ]; then
+    exit 0
+  fi
+
+  export TENANT=${ALL_TENANTS[$env-1]}
+  echo $TENANT
+  return 0
+}
+
 
 function usage() {
    clear
@@ -23,22 +99,26 @@ function usage() {
    echo " --delete_tenant --name [string]"
    echo " --employee --first_name [string] --last_name [string] --email [string] --start_date [yyyy-mm-dd] --hourly_cost [decimal] --daily_billable_hours [integer (1-8)] --utilization_target [decimal] --employee_type_id [id] --region_id [id]"
    echo " --employee_type --name [string] --is_employee [true/false] --is_utilized [true/false]"
-   echo " --global_detail --name [string] --extended_fields [string]" 
+   echo " --global_detail --name [string] --extended_fields [string]"
    echo " --holiday --date [yyyy-mm-dd] --description [string] --hours [integer (1-8)] --work_exception_type_id [id]"
    echo " --host --url [url]"
    echo " --login --username [string] --password [string]]"
+   echo " --tenant_login"
    echo " --monthly_expense_type --name [string]"
    echo " --open_position --name [string] --start_date [yyyy-mm-dd] --end_date [yyyy-mm-dd] --bill_rate [decimal] --cost [decimal] --daily_billable_hours [integer (1-8)] --project_id [id] --position_type_id [id]"
    echo " --position_monthly_expense --month [integer] --year [integer] --cost [decimal] --description [string] --position_id [id] --monthly_expense_type_id [id]"
    echo " --position_daily_expense --cost [decimal] --description [string] --position_id [id] --monthly_expense_type_id [id]"
    echo " --position_type --name [string]"
    echo " --position_with_employee --name [string] --start_date [yyyy-mm-dd] --end_date [yyyy-mm-dd] --bill_rate [decimal] --cost [decimal] --daily_billable_hours [integer (1-8)] --project_id [id] --position_type_id [id] --employee_id [id]"
-   echo " --project --name [string] --customer_id [id] --region_id [id] --status [string]"
+   echo " --project_time_material --name [string] --customer_id [id] --region_id [id] --status [string]"
+   echo " --project_retainer --name [string] --customer_id [id] --region_id [id] --status [string] --monthly_amount [decimal]"
+   echo " --project_fixed_bid --name [string] --customer_id [id] --region_id [id] --status [string] --amount [decimal]"
    echo " --region --name [string]"
-   echo " --registration --email [string] --pass [string] --api_access [true/false] --role [string (user/admin)] --tenant [string] --self_service_storage [string]"
+   echo " --registration --email [string] --pass [string] --api_access [true/false] --role [string (user/admin)] --self_service_storage [string]"
    echo " --release_version --version [string] --notes [string]"
    echo " --renew"
    echo " --tenant_mapping --domain [string] --tenant [string]"
+   echo " --delete_tenant_mapping --tenant [string]"
    echo " --work_exception --description [string] --date [yyyy-mm-dd] --employee_id [id] --work_exception_type_id [id] --hours [integer (1-8)]"
    echo " --work_exception_type --name [string]"
    echo "-----------------------------------------------------------------------------------------"
@@ -47,35 +127,45 @@ function usage() {
 }
 
 # if less than one argument supplied, display usage
-if [ $# -lt 1 ]; then
-   usage
-   exit 1
-fi
+# if [ $# -lt 1 ]; then
+#    usage
+#    exit 1
+# fi
 
-#check whether user supplied -h or --help . If yes display usage
-if [[ ($1 == "--help") || $1 == "-h" ]]; then
-   usage
-   exit 0
-fi
+# check whether user supplied -h or --help . If yes display usage
+# if [[ ($1 == "--help") || $1 == "-h" ]]; then
+#    usage
+#    exit 0
+# fi
 
 function process_params() {
    shift
    while :; do
       echo $1
       case "$1" in
+      --monthly_amount)
+         shift
+         export MONTHLY_AMOUNT="$1"
+         shift
+         ;;
+      --amount)
+         shift
+         export AMOUNT="$1"
+         shift
+         ;;
       --url)
          shift
-         HOST="$1"
+         export HOST="$1"
          shift
          ;;
       --tenant)
          shift
-         TENANT="$1"
+         export TENANT="$1"
          shift
          ;;
       --domain)
          shift
-         DOMAIN="$1"
+         export DOMAIN="$1"
          shift
          ;;
       --username)
@@ -307,8 +397,12 @@ function process_input() {
    echo "input line : $1"
    case "$1" in
    --host)
-      process_params $@
       echo "processing host -> $HOST"
+      ;;
+   --tenant_login)
+      echo "processing username -> $TENANT_USERNAME"
+      echo "processing password -> $TENANT_PASSWORD"
+      create_session $TENANT_USERNAME $TENANT_PASSWORD
       ;;
    --login)
       process_params $@
@@ -327,15 +421,13 @@ function process_input() {
       echo "processing password -> $PASS"
       echo "processing api_access -> $API_ACCESS"
       echo "processing role -> $ROLE"
-      echo "processing tenant -> $TENANT"
       echo "processing self service storage -> $SELF_SERVICE_STORAGE"
       SELF_SERVICE_STORAGE=$(echo $SELF_SERVICE_STORAGE)
-      process_registration $EMAIL $PASS $API_ACCESS $ROLE $TENANT $SELF_SERVICE_STORAGE
+      process_registration $EMAIL $PASS $API_ACCESS $ROLE "$SELF_SERVICE_STORAGE"
       unset EMAIL
       unset PASS
       unset API_ACCESS
       unset ROLE
-      unset TENANT
       unset SELF_SERVICE_STORAGE
       ;;
    --create_tenant)
@@ -362,10 +454,16 @@ function process_input() {
       ;;
    --tenant_mapping)
       process_params $@
-      echo "processing tenant -> $DOMAIN"
+      echo "processing domain -> $DOMAIN"
       echo "processing tenant -> $TENANT"
       process_tenant_mapping $DOMAIN $TENANT
       unset DOMAIN
+      unset TENANT
+      ;;
+   --delete_tenant_mapping)
+      process_params $@
+      echo "processing tenant -> $TENANT"
+      process_delete_tenant_mapping $TENANT
       unset TENANT
       ;;
    --region)
@@ -513,17 +611,17 @@ function process_input() {
       echo "processing employee_type_id -> $EMPLOYEE_TYPE_ID"
       echo "processing region_id -> $REGION_ID"
       process_employee "$FIRST_NAME" "$LAST_NAME" $EMAIL $START_DATE $HOURLY_COST $DAILY_BILLABLE_HOURS $UTILIZATION_TARGET $EMPLOYEE_TYPE_ID $REGION_ID
-      unset FIRST_NAME
-      unset LAST_NAME
-      unset EMAIL
-      unset START_DATE
-      unset HOURLY_COST
       unset DAILY_BILLABLE_HOURS
-      unset UTILIZATION_TARGET
+      unset EMAIL
       unset EMPLOYEE_TYPE_ID
+      unset FIRST_NAME
+      unset HOURLY_COST
+      unset LAST_NAME
       unset REGION_ID
+      unset START_DATE
+      unset UTILIZATION_TARGET
       ;;
-   --project)
+   --project_fixed_bid)
       echo "processing projects ---"
       process_params $@
       NAME=$(echo $NAME)
@@ -532,9 +630,46 @@ function process_input() {
       echo "processing customer_id -> $CUSTOMER_ID"
       echo "processing region_id -> $REGION_ID"
       echo "processing status -> $STATUS"
-      process_project "$NAME" $CUSTOMER_ID $REGION_ID "$STATUS"
-      unset NAME
+      echo "processing amount -> $AMOUNT"
+      echo "processing billing_type -> Fixed Bid"
+      process_project_fixed_bid "$NAME" $CUSTOMER_ID $REGION_ID "$STATUS" $AMOUNT "Fixed Bid"
+      unset AMOUNT
       unset CUSTOMER_ID
+      unset NAME
+      unset REGION_ID
+      unset STATUS
+      ;;
+   --project_retainer)
+      echo "processing projects ---"
+      process_params $@
+      NAME=$(echo $NAME)
+      STATUS=$(echo $STATUS)
+      echo "processing project -> $NAME"
+      echo "processing customer_id -> $CUSTOMER_ID"
+      echo "processing region_id -> $REGION_ID"
+      echo "processing status -> $STATUS"
+      echo "processing monthly_amount -> $MONTHLY_AMOUNT"
+      echo "processing billing_type -> Retainer"
+      process_project_retainer "$NAME" $CUSTOMER_ID $REGION_ID "$STATUS" $MONTHLY_AMOUNT "Retainer"
+      unset CUSTOMER_ID
+      unset MONTHLY_AMOUNT
+      unset NAME
+      unset REGION_ID
+      unset STATUS
+      ;;
+   --project_time_materials)
+      echo "processing projects ---"
+      process_params $@
+      NAME=$(echo $NAME)
+      STATUS=$(echo $STATUS)
+      echo "processing project -> $NAME"
+      echo "processing customer_id -> $CUSTOMER_ID"
+      echo "processing region_id -> $REGION_ID"
+      echo "processing status -> $STATUS"
+      echo "processing billing_type -> Time and Materials"
+      process_project_time_materials "$NAME" $CUSTOMER_ID $REGION_ID "$STATUS" "Time and Materials"
+      unset CUSTOMER_ID
+      unset NAME
       unset REGION_ID
       unset STATUS
       ;;
@@ -597,10 +732,20 @@ function process_input() {
    esac
 }
 
+gather_ENV
+gather_HOST
+gather_TENANTS
+gather_DOMAIN
+
+envsubst < "tenants/$TENANT/data.dsl" > /tmp/file.tmp
+
 while IFS= read -r line; do
-   if [[ $line != /--* ]]; then
-      echo "-----------------------------------------------------------------------------------------"
-      echo "incoming line from file : $line"
-      process_input $line
-   fi
-done <"$1"
+  if [[ $line != /--* ]];
+  then
+     echo "-----------------------------------------------------------------------------------------"
+     echo "incoming line from file : $line"
+     process_input $line
+  else
+    echo "skipping $line"
+  fi
+done < "/tmp/file.tmp"

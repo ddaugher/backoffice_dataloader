@@ -1,0 +1,4 @@
+--host --url http://localhost:4000
+--login --username admin@nxdomain.com --password 123123123
+--registration --email test144@testuat.com --pass 123123123 --api_access true --role admin --self_service_storage {'role': 'Admin'}
+--login --username test144@testuat.com --password 123123123

@@ -1,0 +1,5 @@
+--host --url https://backoffice.gigalixirapp.com
+--login --username admin@augustwenty.com --password Eiswein87!
+--registration --email test123@nxdomain.com --pass 123123123 --api_access true --role admin --tenant sunflower_uat --self_service_storage {'role':'Admin'}
+--login --username test123@nxdomain.com --password 123123123
+

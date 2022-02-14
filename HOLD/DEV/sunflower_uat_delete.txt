@@ -1,0 +1,3 @@
+--host --url https://backoffice.gigalixirapp.com
+--login --username admin@augustwenty.com --password Eiswein87!
+--delete_tenant --name sunfloweruat
