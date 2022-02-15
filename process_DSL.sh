@@ -4,7 +4,7 @@ source ./configs.sh
 source ./functions.sh
 
 ALL_ENVS=(LOCAL DEV STAGE PROD)
-export ENV=LOCAL
+export ENV=''
 export TENANT=BASE
 
 ACCESS_TOKEN=''
@@ -14,77 +14,75 @@ PROGRAM_NAME=$0
 RENEWAL_TOKEN=''
 CURL='/usr/bin/curl'
 
-gather_HOST () {
+gather_HOST() {
    echo "--------------------------------------> $ENV"
-   if [ "$ENV" == LOCAL ];
-   then
-     export HOST="http://localhost:4000"
-   elif [ "$ENV" == DEV ];
-   then
-     export HOST="https://backoffice.gigalixirapp.com"
-   elif [ "$ENV" == STAGE ];
-   then
-     export HOST="https://backofficestaging.gigalixirapp.com"
-   elif [ "$ENV" == PROD ];
-   then
-     export HOST="https://backofficeprod.gigalixirapp.com"
+   if [ "$ENV" == LOCAL ]; then
+      export HOST="http://localhost:4000"
+   elif [ "$ENV" == DEV ]; then
+      export HOST="https://backoffice.gigalixirapp.com"
+   elif [ "$ENV" == STAGE ]; then
+      export HOST="https://backofficestaging.gigalixirapp.com"
+   elif [ "$ENV" == PROD ]; then
+      export HOST="https://backofficeprod.gigalixirapp.com"
    else
-     export HOST="https://backoffice.gigalixirapp.com"
+      export HOST="https://backoffice.gigalixirapp.com"
    fi
 }
 
-gather_DOMAIN () {
-    export DOMAIN=$(echo "$TENANT.com")
+gather_DOMAIN() {
+   export DOMAIN=$(echo "$TENANT.com")
 }
 
-publish_SLACK () {
-  curl -X POST -H 'Content-type: application/json' --data "{'text':'Deploying Backoffice (${ENV})'}" https://hooks.slack.com/services/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
-  curl -X POST -H 'Content-type: application/json' --data "{'text':'Setting revision: ${REV}'}" https://hooks.slack.com/services/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
-  return 0
+publish_SLACK() {
+   curl -X POST -H 'Content-type: application/json' --data "{'text':'Deploying Backoffice (${ENV})'}" https://hooks.slack.com/services/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
+   curl -X POST -H 'Content-type: application/json' --data "{'text':'Setting revision: ${REV}'}" https://hooks.slack.com/services/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
+   return 0
 }
 
-gather_ENV () {
-  let counter=1
-  while [ $counter -le ${#ALL_ENVS[@]} ]; do
-    echo "--- $counter. ${ALL_ENVS[$counter-1]}"
-    let counter++
-  done
+gather_ENV() {
+   let counter=1
+   while [ $counter -le ${#ALL_ENVS[@]} ]; do
+      echo "--- ${ALL_ENVS[$counter - 1]}"
+      let counter++
+   done
 
-  echo "Enter number of ENV to apply (enter Q to quit): [1]"
-  read env
-  env=${env:-1}
+   echo "Enter name of ENV to apply (enter Q to quit): [LOCAL]"
+   read env
+   env=${env:-LOCAL}
 
-  if [ $env = "Q" ] || [ $env = "q" ]; then
-    exit 0
-  fi
+   if [ $env = "Q" ] || [ $env = "q" ]; then
+      exit 0
+   fi
 
-  export ENV=${ALL_ENVS[$env-1]}
-  echo "Setting ENV -> $ENV"
-  return 0
+   export ENV=$env
+   echo "Setting ENV -> $ENV"
+   return 0
 }
 
-gather_TENANTS () {
-  ALL_TENANTS=( $(cd tenants; ls -d */ | cut -f1 -d'/') )
+gather_TENANTS() {
+   ALL_TENANTS=($(
+      cd tenants
+      ls -d */ | cut -f1 -d'/'
+   ))
 
-  let counter=1
-  while [ $counter -le ${#ALL_TENANTS[@]} ]; do
-    echo "--- $counter. ${ALL_TENANTS[$counter-1]}"
-    let counter++
-  done
+   let counter=1
+   while [ $counter -le ${#ALL_TENANTS[@]} ]; do
+      echo "--- ${ALL_TENANTS[$counter - 1]}"
+      let counter++
+   done
 
-  echo "Enter number of TENANT to apply (enter Q to quit): [1]"
-  read env
-  env=${env:-1}
+   echo "Enter name of TENANT to apply (enter Q to quit): [1]"
+   read tenant
+   tenant=${tenant:-base}
 
-  if [ $env = "Q" ] || [ $env = "q" ]; then
-    exit 0
-  fi
+   if [ $tenant = "Q" ] || [ $tenant = "q" ]; then
+      exit 0
+   fi
 
-  export TENANT=${ALL_TENANTS[$env-1]}
-  echo $TENANT
-  return 0
+   export TENANT=$tenant
+   echo $TENANT
+   return 0
 }
-
 
 function usage() {
    clear
@@ -118,6 +116,7 @@ function usage() {
    echo " --release_version --version [string] --notes [string]"
    echo " --renew"
    echo " --tenant_mapping --domain [string] --tenant [string]"
+   echo " --delete_tenant_mapping --tenant [string]"
    echo " --delete_tenant_mapping --tenant [string]"
    echo " --work_exception --description [string] --date [yyyy-mm-dd] --employee_id [id] --work_exception_type_id [id] --hours [integer (1-8)]"
    echo " --work_exception_type --name [string]"
@@ -737,15 +736,20 @@ gather_HOST
 gather_TENANTS
 gather_DOMAIN
 
-envsubst < "tenants/$TENANT/data.dsl" > /tmp/file.tmp
+if test -f "tenants/$TENANT/data.dsl"; then
+   echo "$TENANT exists... continuing!"
+   envsubst <"tenants/$TENANT/data.dsl" >/tmp/file.tmp
 
-while IFS= read -r line; do
-  if [[ $line != /--* ]];
-  then
-     echo "-----------------------------------------------------------------------------------------"
-     echo "incoming line from file : $line"
-     process_input $line
-  else
-    echo "skipping $line"
-  fi
-done < "/tmp/file.tmp"
+   while IFS= read -r line; do
+      if [[ $line != /--* ]]; then
+         echo "-----------------------------------------------------------------------------------------"
+         echo "incoming line from file : $line"
+         process_input $line
+      else
+         echo "skipping $line"
+      fi
+   done <"/tmp/file.tmp"
+else
+   echo "$TENANT does not exist... exiting!"
+   exit 1
+fi
