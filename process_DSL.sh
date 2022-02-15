@@ -84,12 +84,10 @@ gather_TENANTS() {
    return 0
 }
 
-function usage() {
+function help() {
    clear
    echo "-----------------------------------------------------------------------------------------"
-   echo "This script will create necessary default entries when creating a new tenant."
-   echo ""
-   echo "usage: $PROGRAM_NAME input_file"
+   echo "The following DSL options are available."
    echo ""
    echo " --create_tenant --name [string]"
    echo " --customer --name [string] --is_active [true/false]"
@@ -125,17 +123,17 @@ function usage() {
    exit 1
 }
 
-# if less than one argument supplied, display usage
+# if less than one argument supplied, display help
 # if [ $# -lt 1 ]; then
-#    usage
+#    help
 #    exit 1
 # fi
 
-# check whether user supplied -h or --help . If yes display usage
-# if [[ ($1 == "--help") || $1 == "-h" ]]; then
-#    usage
-#    exit 0
-# fi
+# check whether user supplied -h or --help . If yes display help
+if [[ ($1 == "--help") || ($1 == "-h") || ($1 == "-H") ]]; then
+   help
+   exit 0
+fi
 
 function process_params() {
    shift
