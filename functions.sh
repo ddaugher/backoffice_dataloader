@@ -123,7 +123,10 @@ function process_delete_tenant_mapping() {
    http_code=$(tail -n1 <<<"$response")
    echo $http_code
 
-   if [[ "$http_code" -ne 200 ]]; then
+   if [[ "$http_code" -eq 422 ]]; then
+      MESSAGE=$(echo $response | jsonValue message)
+      echo "continuing : $http_code, $MESSAGE"
+   elif [[ "$http_code" -ne 200 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
       echo "Unable to continue : $http_code, $MESSAGE"
    else

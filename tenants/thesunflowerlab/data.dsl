@@ -1,0 +1,4 @@
+--host --url $HOST
+--login --username admin@$DOMAIN --password 123123123
+--registration --email dhruvin@thesunflowerlab.com --pass dhuvin123 --api_access true --role user --self_service_storage {'role':'Delivery Lead'}
+--registration --email vilesh.shah@thesunflowerlab.com --pass vilesh123 --api_access true --role user --self_service_storage {'role':'Account Manager'}

@@ -71,7 +71,7 @@ gather_TENANTS() {
       let counter++
    done
 
-   echo "Enter name of TENANT to apply (enter Q to quit): [1]"
+   echo "Enter name of TENANT to apply (enter Q to quit): [base]"
    read tenant
    tenant=${tenant:-base}
 
