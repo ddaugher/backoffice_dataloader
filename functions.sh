@@ -190,8 +190,7 @@ function process_registration() {
 
    if [[ "$http_code" -ne 200 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "Unable to continue : $http_code, $MESSAGE", $response
-      exit 1;
+      echo "User already exists... continuing! : $http_code, $MESSAGE", $response
    else
       echo "----- USER CREATED ----- $http_code"
    fi

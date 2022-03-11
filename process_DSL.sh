@@ -736,7 +736,12 @@ gather_DOMAIN
 
 if test -f "tenants/$TENANT/data.dsl"; then
    echo "$TENANT exists... continuing!"
-   envsubst <"tenants/$TENANT/data.dsl" >/tmp/file.tmp
+   cat "tenants/$TENANT/data.dsl" > /tmp/file1.tmp
+   perl -pe 's/HEADER/`cat data_header.dsl`/ge' -i /tmp/file1.tmp
+   perl -pe 's/LOGIN/`cat data_login.dsl`/ge' -i /tmp/file1.tmp
+   awk 'NF' /tmp/file1.tmp > /tmp/file2.tmp
+
+   envsubst < /tmp/file2.tmp > /tmp/file.tmp
 
    while IFS= read -r line; do
       if [[ $line != /--* ]]; then

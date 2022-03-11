@@ -1,15 +1,6 @@
---host --url $HOST
---tenant_login
---delete_tenant_mapping $TENANT
---tenant_mapping --domain $DOMAIN --tenant $TENANT
---delete_tenant --name $TENANT
---create_tenant --name $TENANT
---registration --email admin@$DOMAIN --pass 123123123 --api_access true --role admin --self_service_storage {'role':'admin'}
---login --username admin@$DOMAIN --password 123123123
---registration --email user@$DOMAIN --pass 123123123 --api_access true --role user --self_service_storage {'role':'user'}
---login --username admin@$DOMAIN --password 123123123
+HEADER
 --registration --email daryl.kulak@leadingagile.com --pass 123123123 --api_access true --role user --self_service_storage {'role':'Studio_User'}
---login --username admin@$DOMAIN --password 123123123
+LOGIN
 --region --name All
 --daily_expense_type --name Meals
 --daily_expense_type --name Parking

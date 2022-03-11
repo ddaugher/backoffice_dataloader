@@ -1,0 +1,1 @@
+--login --username admin@$DOMAIN --password 123123123
