@@ -1,3 +1,3 @@
 --host --url $HOST
 --tenant_login
---release_version --version v1.662.8 --notes updates to logic for hourly cost update and termination
+--release_version --version v1.662.30 --notes updating fixed bid plug controller to properly pass returned message

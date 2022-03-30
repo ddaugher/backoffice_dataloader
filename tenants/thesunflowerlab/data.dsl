@@ -1,4 +1,5 @@
 HEADER
+--registration --email dhaval@thesunflowerlab.com  --pass dhaval123 --api_access true --role admin --self_service_storage {'role':'admin'}
 LOGIN
 --region --name All
 --daily_expense_type --name Meals
@@ -22,167 +23,233 @@ LOGIN
 --work_exception_type --name Client Visit
 --work_exception_type --name Conference
 --work_exception_type --name Training
---holiday --date 2021-01-01 --description New Year's Day --hours 8 --work_exception_type_id 3
---holiday --date 2021-01-18 --description Martin Luther King Day --hours 8 --work_exception_type_id 3
---holiday --date 2021-05-31 --description Memorial Day --hours 8 --work_exception_type_id 3
---holiday --date 2021-06-19 --description Juneteenth --hours 8 --work_exception_type_id 3
---holiday --date 2021-07-04 --description July 4th --hours 8 --work_exception_type_id 3
---holiday --date 2021-09-06 --description Labor Day --hours 8 --work_exception_type_id 3
---holiday --date 2021-11-04 --description Diwali --hours 8 --work_exception_type_id 3
---holiday --date 2021-11-25 --description Thanksgiving Day --hours 8 --work_exception_type_id 3
---holiday --date 2021-12-24 --description Christmas Eve --hours 8 --work_exception_type_id 3
---holiday --date 2021-12-27 --description Christmas --hours 8 --work_exception_type_id 3
---holiday --date 2021-12-31 --description New Year's Eve --hours 8 --work_exception_type_id 3
 --holiday --date 2022-01-01 --description New Year's Day --hours 8 --work_exception_type_id 3
---holiday --date 2022-02-17 --description Martin Luther King Day --hours 8 --work_exception_type_id 3
---holiday --date 2022-05-30 --description Memorial Day --hours 8 --work_exception_type_id 3
---holiday --date 2022-06-19 --description Juneteenth --hours 8 --work_exception_type_id 3
---holiday --date 2022-07-04 --description July 4th --hours 8 --work_exception_type_id 3
---holiday --date 2022-09-05 --description Labor Day --hours 8 --work_exception_type_id 3
---holiday --date 2022-09-26 --description Rosh Hashanah --hours 8 --work_exception_type_id 3
---holiday --date 2022-09-27 --description Rosh Hashanah --hours 8 --work_exception_type_id 3
---holiday --date 2022-10-04 --description Diwali --hours 8 --work_exception_type_id 3
---holiday --date 2022-11-24 --description Thanksgiving Day --hours 8 --work_exception_type_id 3
---holiday --date 2022-12-24 --description Christmas Eve --hours 8 --work_exception_type_id 3
---holiday --date 2022-12-25 --description Christmas --hours 8 --work_exception_type_id 3
---holiday --date 2022-12-31 --description New Year's Eve --hours 8 --work_exception_type_id 3
+--holiday --date 2022-01-14 --description Uttrayan --hours 8 --work_exception_type_id 3
+--holiday --date 2022-01-15 --description Vasi Uttrayan --hours 8 --work_exception_type_id 3
+--holiday --date 2022-01-26 --description Republic Day --hours 8 --work_exception_type_id 3
+--holiday --date 2022-03-29 --description Dhuleti --hours 8 --work_exception_type_id 3
+--holiday --date 2022-05-14 --description Ramzan Eid --hours 8 --work_exception_type_id 3
+--holiday --date 2022-07-20 --description Bakari Eid --hours 8 --work_exception_type_id 3
+--holiday --date 2022-08-15 --description Independence Day --hours 8 --work_exception_type_id 3
+--holiday --date 2022-08-22 --description Raksha Bandhan --hours 8 --work_exception_type_id 3
+--holiday --date 2022-09-10 --description Ganesh Chaturthi --hours 8 --work_exception_type_id 3
+--holiday --date 2022-10-15 --description Dusshera --hours 8 --work_exception_type_id 3
+--holiday --date 2022-11-02 --description Dhanteras --hours 8 --work_exception_type_id 3
+--holiday --date 2022-11-04 --description Diwali --hours 8 --work_exception_type_id 3
+--holiday --date 2022-11-05 --description New Year --hours 8 --work_exception_type_id 3
+--holiday --date 2022-11-06 --description Bhai Duj --hours 8 --work_exception_type_id 3
+--position_type --name Polyglot Dev
 --position_type --name Engineer
---position_type --name Baker
---position_type --name SME
---position_type --name UX
---position_type --name Design
---position_type --name Product
---position_type --name Delivery
+--position_type --name UI/UX
+--position_type --name Delivery Lead
 --position_type --name Account Manager
---customer --name AM Jewels --is_active true
---customer --name DJs Dough Co --is_active true
---customer --name HHG2G --is_active true
---customer --name Phoenix Interactive --is_active true
---customer --name Vleet's Fleet --is_active true
---customer --name HCTerm --is_active true
---project_retainer --name Jewel Designer --customer_id 1 --region_id 1 --status Forecasted --monthly_amount 250000
---project_fixed_bid --name Bread Buddy --customer_id 2 --region_id 1 --status Booked --amount 1200000
---project_fixed_bid --name Project42 --customer_id 3 --region_id 1 --status Imminent --amount 1000000
---project_time_materials --name Daily Yoga App --customer_id 4 --region_id 1 --status Draft
---project_time_materials --name From The Ashes App --customer_id 4 --region_id 1 --status Draft
---project_time_materials --name Fleet Manager --customer_id 5 --region_id 1 --status Draft
---project_retainer --name Jewel Designer Extension --customer_id 1 --region_id 1 --status Draft --monthly_amount 300000
---project_fixed_bid --name Bread Buddy Phase 2 --customer_id 2 --region_id 1 --status Draft --amount 3200000
---project_retainer --name Project42 Extension --customer_id 3 --region_id 1 --status Draft --monthly_amount 350000
---project_retainer --name Project42 Draft --customer_id 3 --region_id 1 --status Draft --monthly_amount 350000
---project_fixed_bid --name Term Cases --customer_id 6 --region_id 1 --status Draft --amount 100000
---project_fixed_bid --name HC Update Cases --customer_id 6 --region_id 1 --status Draft --amount 100000
---employee --first_name Ada --last_name Lovelace --email adalovelace@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 200 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Andy --last_name Apprety --email andyapprety@nxogantrydemo.com --start_date 2021-01-02 --hourly_cost 89.74 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 2 --region_id 1
---employee --first_name Arnold --last_name Devmeier --email arnolddevmeier@nxogantrydemo.com --start_date 2021-01-03 --hourly_cost 98.42 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Arthur --last_name Dent --email arthurdent@nxogantrydemo.com --start_date 2021-01-04 --hourly_cost 53.56 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Chien-Shiung --last_name Wu --email chien-shiungwu@nxogantrydemo.com --start_date 2021-01-05 --hourly_cost 90.87 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 3 --region_id 1
---employee --first_name Claude --last_name Monet --email claudemonet@nxogantrydemo.com --start_date 2022-01-06 --hourly_cost 100.45 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name DeeDee --last_name Leadersing --email deedeeleadersing@nxogantrydemo.com --start_date 2011-08-07 --hourly_cost 176.87 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Edgar --last_name Enart --email edgarenart@nxogantrydemo.com --start_date 2011-08-08 --hourly_cost 123.32 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 2 --region_id 1
---employee --first_name Edith --last_name Clarke --email edithclarke@nxogantrydemo.com --start_date 2011-08-09 --hourly_cost 190.98 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 2 --region_id 1
---employee --first_name Ellen --last_name Ochoa --email ellenochoa@nxogantrydemo.com --start_date 2016-10-10 --hourly_cost 134.25 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 3 --region_id 1
---employee --first_name Ford --last_name Prefect --email fordprefect@nxogantrydemo.com --start_date 2011-08-11 --hourly_cost 29.98 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Frida --last_name Kahlo --email fridakahlo@nxogantrydemo.com --start_date 2018-07-20 --hourly_cost 160.87 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Georgia --last_name OKeeffe --email georgiaokeeffe@nxogantrydemo.com --start_date 2018-07-21 --hourly_cost 160.87 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 2 --region_id 1
---employee --first_name Jean-Michel --last_name Basquiat --email jean-michelbasquiat@nxogantrydemo.com --start_date 2018-07-22 --hourly_cost 160.87 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Joe --last_name Fre --email joefre@nxogantrydemo.com --start_date 2018-07-23 --hourly_cost 120.9 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Junio --last_name Artiland --email junioartiland@nxogantrydemo.com --start_date 2018-07-24 --hourly_cost 143.72 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Leonardo --last_name DaVinci --email leonardodavinci@nxogantrydemo.com --start_date 2018-07-25 --hourly_cost 220 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Louise --last_name Bourgeois --email louisebourgeois@nxogantrydemo.com --start_date 2010-07-26 --hourly_cost 123.21 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Marilyn --last_name Monroe --email marilynmonroe@nxogantrydemo.com --start_date 2018-07-27 --hourly_cost 230 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Pablo --last_name Picasso --email pablopicasso@nxogantrydemo.com --start_date 2010-12-07 --hourly_cost 189.9 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Seneca --last_name Englewood --email senecaenglewood@nxogantrydemo.com --start_date 2020-11-08 --hourly_cost 129.65 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Tricia --last_name McMillan --email triciamcmillan@nxogantrydemo.com --start_date 2021-12-09 --hourly_cost 130.98 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Vincent --last_name VanGogh --email vincentvangogh@nxogantrydemo.com --start_date 2001-12-10 --hourly_cost 200.25 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Zaphod --last_name Beeblebrox --email zaphodbeeblebrox@nxogantrydemo.com --start_date 2020-12-11 --hourly_cost 67.1 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Peeta --last_name Mellark --email peetamellark@nxogantrydemo.com --start_date 2008-09-14 --hourly_cost 150 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 3 --region_id 1
---employee --first_name Katniss --last_name Everdeen --email katnisseverdeen@nxogantrydemo.com --start_date 2008-09-14 --hourly_cost 250 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 3 --region_id 1
---employee --first_name Anna --last_name Byler --email annabyler@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Billy --last_name Jones --email billyjones@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Ben --last_name Davidson --email bendavidson@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Carrie --last_name Edwards --email carrieedwards@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Donna --last_name Graham --email donnagraham@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Gerald --last_name Hershberger --email geraldhershberger@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Holly --last_name Jones --email hollyjones@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Roman --last_name Miller --email romanmiller@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Amos --last_name Hershberger --email amoshershberger@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Anne --last_name Phillips --email annephillips@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Henry --last_name Yoder --email henryyoder@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Jim --last_name Troyer --email jimtroyer@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Miriam --last_name Yoder --email miriamyoder@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Rosemary --last_name Yoder --email rosemaryyoder@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---open_position --name Apprentice Artisan --start_date 2021-06-21 --end_date 2021-10-14 --bill_rate 100 --cost 50 --daily_billable_hours 8 --project_id 6 --position_type_id 3
---open_position --name Artisan --start_date 2021-06-01 --end_date 2022-01-28 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 6 --position_type_id 1
---open_position --name Delivery Lead --start_date 2021-06-01 --end_date 2022-02-25 --bill_rate 200 --cost 150 --daily_billable_hours 8 --project_id 6 --position_type_id 7
---open_position --name Experience Lead --start_date 2021-06-07 --end_date 2022-01-28 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 6 --position_type_id 4
---open_position --name Senior Artisan --start_date 2021-07-05 --end_date 2022-01-28 --bill_rate 200 --cost 150 --daily_billable_hours 8 --project_id 6 --position_type_id 1
---open_position --name Tech Lead --start_date 2021-06-07 --end_date 2022-02-18 --bill_rate 175 --cost 125 --daily_billable_hours 8 --project_id 6 --position_type_id 1
---open_position --name Apprentice --start_date 2021-08-02 --end_date 2022-06-03 --bill_rate 100 --cost 75.25 --daily_billable_hours 8 --project_id 5 --position_type_id 7
---position_with_employee --name Master Artisan --start_date 2021-10-25 --end_date 2022-03-25 --bill_rate 0 --cost 190.98 --daily_billable_hours 8 --project_id 1 --position_type_id 1 --employee_id 9
---position_with_employee --name Physicist --start_date 2021-10-25 --end_date 2022-03-25 --bill_rate 0 --cost 90.87 --daily_billable_hours 8 --project_id 1 --position_type_id 3 --employee_id 5
---position_with_employee --name Artisan 3 --start_date 2021-10-25 --end_date 2022-03-26 --bill_rate 0 --cost 98.42 --daily_billable_hours 5 --project_id 1 --position_type_id 1 --employee_id 3
---position_with_employee --name Delivery Lead --start_date 2021-10-25 --end_date 2022-02-25 --bill_rate 0 --cost 176.87 --daily_billable_hours 8 --project_id 1 --position_type_id 7 --employee_id 7
---position_with_employee --name Experience Lead --start_date 2021-10-25 --end_date 2022-03-25 --bill_rate 0 --cost 160.87 --daily_billable_hours 8 --project_id 1 --position_type_id 4 --employee_id 12
---position_with_employee --name Jewelry Expert --start_date 2021-10-25 --end_date 2021-10-29 --bill_rate 0 --cost 230 --daily_billable_hours 4 --project_id 1 --position_type_id 3 --employee_id 19
---position_with_employee --name Tech Lead --start_date 2021-10-25 --end_date 2022-02-25 --bill_rate 0 --cost 200 --daily_billable_hours 8 --project_id 1 --position_type_id 1 --employee_id 1
---position_with_employee --name Artisan 2 --start_date 2021-06-14 --end_date 2021-12-17 --bill_rate 0 --cost 100.45 --daily_billable_hours 8 --project_id 2 --position_type_id 1 --employee_id 6
---position_with_employee --name Baker --start_date 2021-06-14 --end_date 2021-12-17 --bill_rate 0 --cost 150 --daily_billable_hours 8 --project_id 2 --position_type_id 2 --employee_id 25
---position_with_employee --name Chef_ --start_date 2021-06-14 --end_date 2021-12-17 --bill_rate 0 --cost 130.98 --daily_billable_hours 8 --project_id 2 --position_type_id 3 --employee_id 22
---position_with_employee --name Delivery Lead --start_date 2021-06-14 --end_date 2021-12-17 --bill_rate 0 --cost 129.65 --daily_billable_hours 8 --project_id 2 --position_type_id 7 --employee_id 21
---position_with_employee --name Master Artisan --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 190.98 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 9
---position_with_employee --name Physicist --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 90.87 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 5
---position_with_employee --name Artisan 3 --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 98.42 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 3
---position_with_employee --name Delivery Lead --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 176.87 --daily_billable_hours 8 --project_id 7 --position_type_id 7 --employee_id 7
---position_with_employee --name Experience Lead --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 160.87 --daily_billable_hours 8 --project_id 7 --position_type_id 4 --employee_id 12
---position_with_employee --name Jewelry Expert --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 230 --daily_billable_hours 4 --project_id 7 --position_type_id 3 --employee_id 19
---position_with_employee --name Tech Lead --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 200 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 1
---position_with_employee --name Artisan 2 --start_date 2021-12-20 --end_date 2022-05-27 --bill_rate 0 --cost 100.45 --daily_billable_hours 8 --project_id 8 --position_type_id 1 --employee_id 6
---position_with_employee --name Baker --start_date 2021-12-20 --end_date 2022-05-27 --bill_rate 0 --cost 150 --daily_billable_hours 8 --project_id 8 --position_type_id 2 --employee_id 25
---position_with_employee --name Chef_ --start_date 2021-12-20 --end_date 2022-05-27 --bill_rate 0 --cost 130.98 --daily_billable_hours 8 --project_id 8 --position_type_id 3 --employee_id 22
---position_with_employee --name Delivery Lead --start_date 2021-12-20 --end_date 2022-05-27 --bill_rate 0 --cost 129.65 --daily_billable_hours 8 --project_id 8 --position_type_id 7 --employee_id 21
---position_with_employee --name Assistant Baker --start_date 2021-12-20 --end_date 2022-05-27 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id 8 --position_type_id 2 --employee_id 4
---position_with_employee --name Artisan --start_date 2021-05-03 --end_date 2021-10-01 --bill_rate 0 --cost 67.1 --daily_billable_hours 8 --project_id 3 --position_type_id 7 --employee_id 24
---position_with_employee --name Chief Engineer --start_date 2021-05-03 --end_date 2021-10-01 --bill_rate 0 --cost 29.98 --daily_billable_hours 8 --project_id 3 --position_type_id 1 --employee_id 11
---position_with_employee --name Delivery --start_date 2021-05-03 --end_date 2021-10-29 --bill_rate 0 --cost 130.98 --daily_billable_hours 8 --project_id 3 --position_type_id 7 --employee_id 22
---position_with_employee --name Tester --start_date 2021-05-03 --end_date 2021-10-01 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id 3 --position_type_id 7 --employee_id 4
---position_with_employee --name Artisan --start_date 2021-10-04 --end_date 2021-12-31 --bill_rate 0 --cost 67.1 --daily_billable_hours 8 --project_id 9 --position_type_id 7 --employee_id 24
---position_with_employee --name Chief Engineer --start_date 2021-10-04 --end_date 2021-12-31 --bill_rate 0 --cost 29.98 --daily_billable_hours 8 --project_id 9 --position_type_id 1 --employee_id 11
---position_with_employee --name Delivery --start_date 2021-10-04 --end_date 2021-12-31 --bill_rate 0 --cost 130.98 --daily_billable_hours 8 --project_id 9 --position_type_id 7 --employee_id 22
---position_with_employee --name Tester --start_date 2021-10-04 --end_date 2021-12-31 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id 9 --position_type_id 7 --employee_id 4
---position_with_employee --name Assistant Engineer --start_date 2021-10-04 --end_date 2021-12-31 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id 9 --position_type_id 1 --employee_id 4
---position_with_employee --name Artisan --start_date 2022-01-03 --end_date 2023-01-13 --bill_rate 0 --cost 67.1 --daily_billable_hours 8 --project_id 10 --position_type_id 7 --employee_id 24
---position_with_employee --name Chief Engineer --start_date 2022-01-03 --end_date 2023-01-13 --bill_rate 0 --cost 29.98 --daily_billable_hours 8 --project_id 10 --position_type_id 1 --employee_id 11
---position_with_employee --name Delivery --start_date 2022-01-03 --end_date 2023-01-13 --bill_rate 0 --cost 130.98 --daily_billable_hours 8 --project_id 10 --position_type_id 7 --employee_id 22
---position_with_employee --name Tester --start_date 2022-01-03 --end_date 2023-01-13 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id 10 --position_type_id 7 --employee_id 4
---position_with_employee --name Assistant Engineer --start_date 2022-01-03 --end_date 2023-01-13 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id 10 --position_type_id 1 --employee_id 4
---position_with_employee --name Apprentice Artisan --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 100 --cost 123.32 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 8
---position_with_employee --name Artisan --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 150 --cost 143.72 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 16
---position_with_employee --name Artisan 02 --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 150 --cost 120.9 --daily_billable_hours 8 --project_id 4 --position_type_id 7 --employee_id 15
---position_with_employee --name Artisan 03 --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 150 --cost 53.56 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 4
---position_with_employee --name Delivery --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 200 --cost 189.9 --daily_billable_hours 8 --project_id 4 --position_type_id 7 --employee_id 20
---position_with_employee --name Tech Lead --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 250 --cost 200.25 --daily_billable_hours 8 --project_id 4 --position_type_id 7 --employee_id 23
---position_with_employee --name Artisan --start_date 2021-08-02 --end_date 2021-08-20 --bill_rate 125 --cost 134.25 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 10
---position_with_employee --name Delivery Lead --start_date 2021-08-02 --end_date 2022-06-03 --bill_rate 150 --cost 160.87 --daily_billable_hours 8 --project_id 5 --position_type_id 7 --employee_id 13
---position_with_employee --name Artisan 2 --start_date 2021-08-02 --end_date 2022-06-03 --bill_rate 150 --cost 160.87 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 14
---position_with_employee --name Design --start_date 2021-07-05 --end_date 2022-07-22 --bill_rate 250 --cost 220 --daily_billable_hours 8 --project_id 5 --position_type_id 5 --employee_id 17
---position_with_employee --name DX Lead --start_date 2021-07-05 --end_date 2022-07-22 --bill_rate 200 --cost 123.21 --daily_billable_hours 8 --project_id 5 --position_type_id 4 --employee_id 18
---position_with_employee --name Tech Lead --start_date 2021-07-05 --end_date 2022-06-17 --bill_rate 200 --cost 130.98 --daily_billable_hours 8 --project_id 5 --position_type_id 7 --employee_id 22
---position_with_employee --name TermSetup#1 --start_date 2021-02-01 --end_date 2021-02-02 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 1 --employee_id 34
---position_with_employee --name TermSetup#2 --start_date 2021-07-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 5 --employee_id 35
---position_with_employee --name TermSetup#3 --start_date 2021-02-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 4 --employee_id 36
---position_with_employee --name TermSetup#4 --start_date 2021-02-01 --end_date 2021-06-01 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 7 --employee_id 37
---position_with_employee --name TermSetup#5 --start_date 2021-06-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 1 --employee_id 38
---position_with_employee --name TermSetup#6a --start_date 2021-02-01 --end_date 2021-04-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 5 --employee_id 39
---position_with_employee --name TermSetup#6b --start_date 2021-07-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 4 --employee_id 39
---position_with_employee --name TermSetup#7a --start_date 2021-02-01 --end_date 2021-06-01 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 7 --employee_id 40
---position_with_employee --name TermCSetup#7b --start_date 2021-06-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 1 --employee_id 40
---position_with_employee --name HCSetup#1 --start_date 2021-02-01 --end_date 2021-04-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 5 --employee_id 27
---position_with_employee --name HCSetup#2 --start_date 2021-07-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 4 --employee_id 28
---position_with_employee --name HCSetup#3 --start_date 2021-02-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 7 --employee_id 29
---position_with_employee --name HCSetup#4 --start_date 2021-02-01 --end_date 2021-06-01 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 3 --employee_id 30
---position_with_employee --name HCSetup#5 --start_date 2021-06-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 1 --employee_id 31
---position_with_employee --name HCSetup#6a --start_date 2021-02-01 --end_date 2021-02-02 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 5 --employee_id 32
---position_with_employee --name HCSetup#6b --start_date 2021-07-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 4 --employee_id 32
---position_with_employee --name HCSetup#7a --start_date 2021-02-01 --end_date 2021-06-01 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 7 --employee_id 33
---position_with_employee --name HCSetup#7b --start_date 2021-06-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 3 --employee_id 33
+--position_type --name Solution Architecture 
+--position_type --name QA Engineer
+--position_type --name DevOps
+--customer --name QE Solar  --is_active true
+--customer --name Nomad Bite --is_active true
+--customer --name OGantry --is_active true
+--customer --name VICI --is_active true
+--customer --name ResolvedX --is_active true
+--customer --name Vishay Lab --is_active true
+--customer --name BriskHeat --is_active true
+--customer --name eHumanize --is_active true
+--customer --name SoAct --is_active true
+--customer --name Groove --is_active true
+--customer --name Aura --is_active true
+--customer --name Capex --is_active true
+--customer --name DPH --is_active true
+--customer --name Peerzle --is_active true
+--customer --name Spex  --is_active true
+--customer --name Turk --is_active true
+--customer --name Olah --is_active true
+--customer --name Breaker Paradise --is_active true
+--customer --name Teachers on Reserve --is_active true
+--customer --name Covest --is_active true
+--customer --name Legacy Vault --is_active true
+--customer --name RideTrip --is_active true
+--customer --name CNG --is_active true
+--customer --name Hilliard School --is_active true
+--customer --name WorthPoint --is_active true
+--customer --name Wearable Device  --is_active true
+--project_retainer --name QE Solar Tools --customer_id 1 --region_id 1 --status Booked --monthly_amount 17375
+--project_time_materials --name Nomad Bite --customer_id 2 --region_id 1 --status Booked
+--project_retainer --name OGantry --customer_id 3 --region_id 1 --status Booked --monthly_amount 675
+--project_time_materials --name VICI T3 Athlete --customer_id 4 --region_id 1 --status Booked
+--project_retainer --name ResolvedX --customer_id 5 --region_id 1 --status Booked --monthly_amount 2000
+--project_time_materials --name Vishay --customer_id 6 --region_id 1 --status Booked
+--project_fixed_bid --name BriskHeat --customer_id 7 --region_id 1 --status Booked --amount 1000
+--project_fixed_bid --name eHumanize (Support) --customer_id 8 --region_id 1 --status Booked --amount 5000
+--project_time_materials --name SoAct --customer_id 9 --region_id 1 --status Booked
+--project_retainer --name Groove Studio --customer_id 10 --region_id 1 --status Booked --monthly_amount 4000
+--project_retainer --name Aura Wireless --customer_id 11 --region_id 1 --status Booked --monthly_amount 8000
+--project_retainer --name Storopack --customer_id 12 --region_id 1 --status Booked --monthly_amount 4750
+--project_time_materials --name Think Like a Girl  --customer_id 13 --region_id 1 --status Booked
+--project_time_materials --name PEERZLE --customer_id 14 --region_id 1 --status Booked
+--project_retainer --name Groove redesign --customer_id 10 --region_id 1 --status Booked --monthly_amount 8000
+--project_retainer --name Spex Local --customer_id 15 --region_id 1 --status Booked --monthly_amount 5500
+--project_time_materials --name Turk_ --customer_id 16 --region_id 1 --status Booked
+--project_retainer --name Olah_ --customer_id 17 --region_id 1 --status Booked --monthly_amount 30000
+--project_time_materials --name Breaker Paradise --customer_id 18 --region_id 1 --status Booked
+--project_time_materials --name Teachers on Reserve --customer_id 19 --region_id 1 --status Booked
+--project_retainer --name Covest --customer_id 20 --region_id 1 --status Booked --monthly_amount 4875
+--project_fixed_bid --name eHumanize (development) --customer_id 8 --region_id 1 --status Booked --amount 5000
+--project_time_materials --name Legacy Vault --customer_id 21 --region_id 1 --status Booked
+--project_fixed_bid --name RideTrip --customer_id 22 --region_id 1 --status Imminent --amount 50000
+--project_time_materials --name Charter Next Generatin  --customer_id 23 --region_id 1 --status Booked
+--project_time_materials --name Hilliard School --customer_id 24 --region_id 1 --status Booked
+--project_fixed_bid --name WorthPoint --customer_id 25 --region_id 1 --status Draft --amount 50000
+--project_fixed_bid --name Wearable Device Application  --customer_id 26 --region_id 1 --status Draft --amount 50000
+--project_retainer --name QE Solar Automation --customer_id 1 --region_id 1 --status Booked --monthly_amount 20000
+--employee --first_name Vilesh --last_name Shah --email vilesh.shah@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Banti --last_name Parikh --email banti.parikh@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nirav --last_name Shah --email nirav@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Shailendra --last_name Parmar --email shailendra.parmar@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Dhruvin --last_name Patel --email dhruvin.patel@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Purvik --last_name Rana --email purvik.rana@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Aditi --last_name Banerjee --email aditi.banerjee@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ashish --last_name Kumar --email ashish.kumar@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Prashant --last_name Gameti --email prashant.gameti@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ankit --last_name Patel --email ankit@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Kandarp --last_name Bhatt --email kandarp.bhatt@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Antony --last_name Mathew --email antony.mathew@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Bhavani --last_name Pandey --email bhavani.pandey@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jinal --last_name Jaguwala --email jinal.jaguwala@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Sagar --last_name Kapadia --email sagar.kapadia@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Vishal --last_name Goswami --email vishal.goswami@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Kalyan --last_name Patel --email kalyan.patel@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Dhaval --last_name Pancholi --email dhaval.pancholi@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jigar --last_name Tewar --email jigar.tewar@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Mitesh --last_name Bhanushali --email mitesh.bhanushali@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Krunal --last_name Shah --email krunal.shah@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Devang --last_name Purohit --email devang.purohit@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Arpita --last_name Patel --email arpita.patel@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nitin --last_name Raval --email nitin.raval@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Mayur --last_name Gohel --email mayur.gohel@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Richa --last_name Shah --email richa.shah@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ridham --last_name Desai --email ridham.desai@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Monik --last_name Kacha --email monik.kacha@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jaydeep --last_name Dave --email jaydeep.dave@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Siddhi --last_name Shah --email siddhi.shah@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Faisal --last_name Saiyed --email faisal.saiyed@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Dhruv --last_name Prajapati --email dhruv.prajapati@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Akhil --last_name Patel --email akhil.patel@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Sakshee --last_name Ajwalia --email sakshee.ajwalia@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Vishva --last_name Shah --email vishva.shah@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Bansari --last_name Shah --email bansari.shah@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Rucha --last_name Mer --email rucha.mer@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Yogita --last_name Jain --email yogita.jain@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nandini --last_name Dalal --email nandini.dalal@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Hiral --last_name Tamboli --email hiral.tamboli@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Kishan --last_name Bagiya --email kishan.bagiya@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Hardeep --last_name Yadav --email hardeep.yadav@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ronak --last_name Trivedi --email ronak.trivedi@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Maitri --last_name Soni --email maitri.soni@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Bhavesh --last_name Desai --email bhavesh.desai@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Pratik --last_name Rajmin --email pratik.rajmin@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nikunj --last_name Patel --email nikunj.patel@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Namaskar --last_name Shah --email namaskar.shah@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nency --last_name Patel --email nency.patel@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Krishalsinh --last_name Raj --email krishalsinh.raj@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Bijal --last_name Tailor --email bijal.tailor@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Purvi --last_name Shah --email purvi.shah@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nimit --last_name Tamboli --email nimit@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Arjun --last_name Kaushal --email arjun.kaushal@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Nufail --last_name LNLeftBlank --email nufail@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Kamil --last_name Patel --email kamil.patel@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Sneha --last_name Jaiswal --email sneha.jaiswal@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Faizan --last_name Saiyed --email faizan.saiyed@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ishan --last_name Mohan --email ishan.mohan@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Piyush --last_name Chokshi --email piyush.chokshi@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jay --last_name Patel --email jay.patel@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Khushali --last_name Shah --email khushali.shah@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Mihir --last_name Patel --email mihir.patel@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Aayushi --last_name Shah --email aayushi.shah@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Mrugesh --last_name Shah --email mrugesh.shah@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Deepak --last_name Pandey --email deepak.pandey@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Aamir --last_name Vahora --email aamir.vahora@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Urmil --last_name Patel --email urmil.patel@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Shubham --last_name Pagare --email shubham.pagare@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Jagadish --last_name Alle --email jagadish.alle@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--employee --first_name Ashish --last_name Prajapati --email ashish.prajapati@thesunflowerlab.com --start_date 2022-01-01 --hourly_cost 15 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2023-03-05 --bill_rate 60 --cost 15 --daily_billable_hours 2 --project_id 18 --position_type_id 4 --employee_id 5
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2023-03-05 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 18 --position_type_id 2 --employee_id 17
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2023-03-05 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 18 --position_type_id 2 --employee_id 20
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2023-03-05 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 18 --position_type_id 2 --employee_id 21
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2023-03-05 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 18 --position_type_id 2 --employee_id 22
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2023-03-05 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 18 --position_type_id 2 --employee_id 23
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2023-03-05 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 18 --position_type_id 2 --employee_id 24
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-04-01 --bill_rate 60 --cost 15 --daily_billable_hours 2 --project_id 16 --position_type_id 4 --employee_id 5
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-04-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 16 --position_type_id 2 --employee_id 26
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-04-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 16 --position_type_id 2 --employee_id 28
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 60 --cost 15 --daily_billable_hours 2 --project_id 25 --position_type_id 4 --employee_id 5
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 25 --position_type_id 2 --employee_id 35
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 25 --position_type_id 2 --employee_id 25
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 1 --project_id 25 --position_type_id 2 --employee_id 37
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2023-01-01 --bill_rate 60 --cost 15 --daily_billable_hours 1 --project_id 6 --position_type_id 4 --employee_id 5
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2023-01-01 --bill_rate 25 --cost 15 --daily_billable_hours 4 --project_id 6 --position_type_id 2 --employee_id 31
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2023-01-01 --bill_rate 25 --cost 15 --daily_billable_hours 4 --project_id 6 --position_type_id 2 --employee_id 33
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2023-04-01 --bill_rate 25 --cost 15 --daily_billable_hours 1 --project_id 2 --position_type_id 4 --employee_id 7
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 1 --project_id 3 --position_type_id 4 --employee_id 4
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 2 --project_id 3 --position_type_id 2 --employee_id 8
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 3 --position_type_id 2 --employee_id 36
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 1 --project_id 3 --position_type_id 3 --employee_id 19
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 5 --position_type_id 4 --employee_id 6
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 5 --position_type_id 2 --employee_id 40
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 5 --position_type_id 2 --employee_id 42
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 2 --project_id 5 --position_type_id 2 --employee_id 28
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 22 --position_type_id 4 --employee_id 4
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 1 --project_id 22 --position_type_id 2 --employee_id 9
+--position_with_employee --name Ui/UX --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 1 --project_id 22 --position_type_id 2 --employee_id 14
+--position_with_employee --name Ui/UX --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 1 --project_id 22 --position_type_id 3 --employee_id 19
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 22 --position_type_id 2 --employee_id 44
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-03-30 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 11 --position_type_id 4 --employee_id 7
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-03-30 --bill_rate 25 --cost 15 --daily_billable_hours 2 --project_id 11 --position_type_id 2 --employee_id 71
+--position_with_employee --name DevOps --start_date 2022-01-01 --end_date 2022-03-30 --bill_rate 25 --cost 15 --daily_billable_hours 2 --project_id 11 --position_type_id 8 --employee_id 18
+--position_with_employee --name QA___ --start_date 2022-01-01 --end_date 2022-03-30 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 11 --position_type_id 7 --employee_id 66
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 2 --project_id 12 --position_type_id 4 --employee_id 1
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 12 --position_type_id 2 --employee_id 29
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 12 --position_type_id 2 --employee_id 15
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 12 --position_type_id 2 --employee_id 30
+--position_with_employee --name QA___ --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 4 --project_id 12 --position_type_id 7 --employee_id 13
+--position_with_employee --name DevOps --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 1 --project_id 12 --position_type_id 8 --employee_id 61
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 3 --project_id 10 --position_type_id 4 --employee_id 10
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 10 --position_type_id 2 --employee_id 63
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 10 --position_type_id 2 --employee_id 52
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 2 --project_id 21 --position_type_id 4 --employee_id 4
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 2 --project_id 21 --position_type_id 2 --employee_id 8
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 7 --project_id 21 --position_type_id 2 --employee_id 37
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 21 --position_type_id 2 --employee_id 48
+--position_with_employee --name Ui/UX --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 21 --position_type_id 3 --employee_id 38
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 2 --project_id 23 --position_type_id 4 --employee_id 1
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 2 --project_id 23 --position_type_id 4 --employee_id 7
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 23 --position_type_id 2 --employee_id 67
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 23 --position_type_id 2 --employee_id 27
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 23 --position_type_id 2 --employee_id 68
+--position_with_employee --name QA___ --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 4 --project_id 23 --position_type_id 7 --employee_id 13
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 2 --project_id 24 --position_type_id 4 --employee_id 2
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 1 --project_id 24 --position_type_id 2 --employee_id 6
+--position_with_employee --name UI/UX --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 24 --position_type_id 3 --employee_id 49
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 2 --project_id 27 --position_type_id 4 --employee_id 2
+--position_with_employee --name UI/UX --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 4 --project_id 27 --position_type_id 3 --employee_id 19
+--position_with_employee --name UI/UX --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 2 --project_id 27 --position_type_id 3 --employee_id 49
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 2 --project_id 28 --position_type_id 4 --employee_id 2
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 1 --project_id 9 --position_type_id 4 --employee_id 3
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 9 --position_type_id 2 --employee_id 27
+--position_with_employee --name QA___ --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 9 --position_type_id 7 --employee_id 34
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 1 --project_id 4 --position_type_id 4 --employee_id 3
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 4 --project_id 4 --position_type_id 2 --employee_id 31
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 4 --project_id 4 --position_type_id 2 --employee_id 27
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 1 --project_id 13 --position_type_id 4 --employee_id 3
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 1 --project_id 14 --position_type_id 4 --employee_id 3
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 1 --project_id 17 --position_type_id 4 --employee_id 3
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 1 --project_id 19 --position_type_id 4 --employee_id 3
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 19 --position_type_id 2 --employee_id 37
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 19 --position_type_id 2 --employee_id 25
+--position_with_employee --name QA___ --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 19 --position_type_id 7 --employee_id 34
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 1 --project_id 20 --position_type_id 4 --employee_id 4
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-09-01 --bill_rate 25 --cost 15 --daily_billable_hours 4 --project_id 20 --position_type_id 2 --employee_id 45
+--position_with_employee --name Delivery Lead --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 2 --project_id 1 --position_type_id 4 --employee_id 4
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 1 --position_type_id 2 --employee_id 50
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 1 --position_type_id 2 --employee_id 43
+--position_with_employee --name Engineer --start_date 2022-01-01 --end_date 2022-12-01 --bill_rate 25 --cost 15 --daily_billable_hours 8 --project_id 1 --position_type_id 2 --employee_id 51
