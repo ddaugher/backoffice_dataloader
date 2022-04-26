@@ -1,6 +1,4 @@
 HEADER
---registration --email sunflower_admin_uat@nxdomain.com --pass 123123123 --api_access true --role admin --self_service_storage {'role':'admin'}
---registration --email sunflower_user_uat@nxdomain.com --pass 123123123 --api_access true --role user --self_service_storage {'role':'user'}
 LOGIN
 --region --name All
 --daily_expense_type --name Meals
