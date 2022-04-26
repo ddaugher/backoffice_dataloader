@@ -19,13 +19,13 @@ gather_HOST() {
    if [ "$ENV" == LOCAL ]; then
       export HOST="http://localhost:4000"
    elif [ "$ENV" == DEV ]; then
-      export HOST="https://backoffice.gigalixirapp.com"
+      export HOST="https://backofficedev.gigalixirapp.com"
    elif [ "$ENV" == STAGE ]; then
       export HOST="https://backofficestaging.gigalixirapp.com"
    elif [ "$ENV" == PROD ]; then
       export HOST="https://backofficeprod.gigalixirapp.com"
    else
-      export HOST="https://backoffice.gigalixirapp.com"
+      export HOST="https://backofficedev.gigalixirapp.com"
    fi
 }
 
