@@ -1,4 +1,6 @@
 HEADER
+--registration --email sunflower_admin_uat@$DOMAIN --pass 123123123 --api_access true --role admin --self_service_storage {'role':'admin'}
+--registration --email sunflower_user_uat@$DOMAIN --pass 123123123 --api_access true --role user --self_service_storage {'role':'user'}
 LOGIN
 --region --name All --uuid region1
 --daily_expense_type --name Meals --uuid daily_expense_type1
