@@ -10,7 +10,7 @@ function create_session() {
    URL="$HOST/api/v1/session"
    IFS=' '
 
-   echo "--- Creating session -> $1 $2"
+   log_info "--- Creating session -> $1 $2"
 
    response=$($CURL -i -s --silent -w "\n%{http_code} " --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -20,15 +20,15 @@ function create_session() {
 
    if [[ "$http_code" -ne 200 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "Unable to continue : $http_code, $MESSAGE"
+      log_warn "Unable to continue : $http_code, $MESSAGE"
       exit 1;
    else
       ACCESS_TOKEN=$(echo $response | jsonValue access_token)
       RENEWAL_TOKEN=$(echo $response | jsonValue renewal_token)
 
-      echo "----- ACTIVE SESSION ----- $http_code"
-      echo "ACCESS_TOKEN -> $ACCESS_TOKEN"
-      echo "RENEWAL_TOKEN -> $RENEWAL_TOKEN"
+      log_info "----- ACTIVE SESSION ----- $http_code"
+      log_info "ACCESS_TOKEN -> $ACCESS_TOKEN"
+      log_info "RENEWAL_TOKEN -> $RENEWAL_TOKEN"
    fi
 }
 
@@ -36,7 +36,7 @@ function process_create_tenant() {
    URL="$HOST/api/v1/tenants"
    IFS=' '
 
-   echo "--- Creating tenant -> $1"
+   log_info "--- Creating tenant -> $1"
 
    response=$($CURL -i -s --silent -w "\n%{http_code} " --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -47,13 +47,13 @@ function process_create_tenant() {
 
    if [[ "$http_code" -eq 422 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "continuing : $http_code, $MESSAGE"
+      log_warn "continuing : $http_code, $MESSAGE"
    elif [[ "$http_code" -ne 201 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "Unable to continue : $http_code, $MESSAGE"
+      log_warn "Unable to continue : $http_code, $MESSAGE"
       exit 1;
    else
-      echo "----- TENANT CREATED ----- $http_code"
+      log_info "----- TENANT CREATED ----- $http_code"
    fi
 }
 
@@ -61,7 +61,7 @@ function process_delete_tenant() {
    URL="$HOST/api/v1/tenants/$1"
    IFS=' '
 
-   echo "--- Deleting tenant -> $1"
+   log_info "--- Deleting tenant -> $1"
 
    response=$($CURL -i -s --silent -w "\n%{http_code} " --location -X "DELETE" $URL \
       -H "Content-Type: application/json" \
@@ -71,13 +71,13 @@ function process_delete_tenant() {
 
    if [[ "$http_code" -eq 422 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "continuing : $http_code, $MESSAGE"
+      log_info "continuing : $http_code, $MESSAGE"
    elif [[ "$http_code" -ne 200 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "Unable to continue : $http_code, $MESSAGE"
+      log_warn "Unable to continue : $http_code, $MESSAGE"
       exit 1;
    else
-      echo "----- TENANT DELETED ----- $http_code"
+      log_info "----- TENANT DELETED ----- $http_code"
    fi
 }
 
@@ -85,9 +85,9 @@ function process_tenant_mapping() {
    URL="$HOST/api/v1/tenant_mappings"
    IFS=' '
 
-   echo $DOMAIN
+   log_debug $DOMAIN
 
-   echo "--- Creating tenant mapping -> $1 $2"
+   log_info "--- Creating tenant mapping -> $1 $2"
 
    response=$($CURL -i -s --silent -w "\n%{http_code} " --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -98,13 +98,13 @@ function process_tenant_mapping() {
 
    if [[ "$http_code" -eq 422 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "continuing : $http_code, $MESSAGE"
+      log_info "continuing : $http_code, $MESSAGE"
    elif [[ "$http_code" -ne 201 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "Unable to continue : $http_code, $MESSAGE"
+      log_warn "Unable to continue : $http_code, $MESSAGE"
       exit 1;
    else
-      echo "----- TENANT MAPPING CREATED ----- $http_code"
+      log_info "----- TENANT MAPPING CREATED ----- $http_code"
    fi
 }
 
@@ -112,26 +112,26 @@ function process_delete_tenant_mapping() {
    URL="$HOST/api/v1/tenant_mappings?tenant=$1"
    IFS=' '
 
-   echo $DOMAIN
+   log_debug $DOMAIN
 
-   echo "--- Deleting tenant mapping -> $1"
+   log_info "--- Deleting tenant mapping -> $1"
 
    response=$($CURL -i -s --silent -w "\n%{http_code} " --location --request GET $URL \
       -H "Content-Type: application/json" \
       --header "Authorization: $ACCESS_TOKEN")
 
    http_code=$(tail -n1 <<<"$response")
-   echo $http_code
+   log_debug $http_code
 
    if [[ "$http_code" -eq 422 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "continuing : $http_code, $MESSAGE"
+      log_info "continuing : $http_code, $MESSAGE"
    elif [[ "$http_code" -ne 200 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "Unable to continue : $http_code, $MESSAGE"
+      log_warn "Unable to continue : $http_code, $MESSAGE"
    else
       ID=$(echo $response | jsonValue id)
-      echo "id -> $ID"
+      log_debug "id -> $ID"
    fi
 
    URL="$HOST/api/v1/tenant_mappings/$ID"
@@ -140,16 +140,16 @@ function process_delete_tenant_mapping() {
       --header "Authorization: $ACCESS_TOKEN")
 
    http_code=$(tail -n1 <<<"$response")
-   echo $http_code
+   log_debug $http_code
 
    if [[ "$http_code" -eq 422 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "continuing : $http_code, $MESSAGE"
+      log_info "continuing : $http_code, $MESSAGE"
    elif [[ "$http_code" -ne 200 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "Unable to continue : $http_code, $MESSAGE"
+      log_warn "Unable to continue : $http_code, $MESSAGE"
    else
-      echo "----- TENANT MAPPING DELETED ----- $http_code"
+      log_info "----- TENANT MAPPING DELETED ----- $http_code"
    fi
 }
 
@@ -157,7 +157,7 @@ function process_global_detail() {
    URL="$HOST/api/v1/global_details"
    IFS=' '
 
-   echo "--- Creating global detail-> $1 $2"
+   log_info "--- Creating global detail-> $1 $2"
 
    response=$($CURL -i -s --silent -w "\n%{http_code} " --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -168,10 +168,10 @@ function process_global_detail() {
 
    if [[ "$http_code" -ne 201 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "Unable to continue : $http_code, $MESSAGE"
+      log_warn "Unable to continue : $http_code, $MESSAGE"
       exit 1;
    else
-      echo "----- GLOBAL DETAIL CREATED ----- $http_code"
+      log_info "----- GLOBAL DETAIL CREATED ----- $http_code"
    fi
 }
 
@@ -179,7 +179,7 @@ function process_registration() {
    URL="$HOST/api/v1/registration"
    IFS=' '
 
-   echo "--- Inserting user -> $1 $2 $3 $4 $5"
+   log_debug "--- Inserting user -> $1 $2 $3 $4 $5"
 
    response=$($CURL -i --silent -w "\n%{http_code} " --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -190,9 +190,9 @@ function process_registration() {
 
    if [[ "$http_code" -ne 200 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "User already exists... continuing! : $http_code, $MESSAGE", $response
+      log_info "User already exists... continuing! : $http_code, $MESSAGE", $response
    else
-      echo "----- USER CREATED ----- $http_code"
+      log_info "----- USER CREATED ----- $http_code"
    fi
 }
 
@@ -200,7 +200,7 @@ function process_renewal() {
    URL="$HOST/api/v1/session/renew"
    IFS=' '
 
-   echo "--- renewing token -> $RENEWAL_TOKEN"
+   log_info "--- renewing token -> $RENEWAL_TOKEN"
 
    response=$($CURL -i --silent -w "\n%{http_code} " --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -210,15 +210,15 @@ function process_renewal() {
 
    if [[ "$http_code" -ne 200 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "Unable to continue : $http_code, $MESSAGE", $response
+      log_warn "Unable to continue : $http_code, $MESSAGE", $response
       exit 1;
    else
       ACCESS_TOKEN=$(echo $response | jsonValue access_token)
       RENEWAL_TOKEN=$(echo $response | jsonValue renewal_token)
 
-      echo "----- ACTIVE RENEWAL ----- $http_code"
-      echo "ACCESS_TOKEN -> $ACCESS_TOKEN"
-      echo "RENEWAL_TOKEN -> $RENEWAL_TOKEN"
+      log_info "----- ACTIVE RENEWAL ----- $http_code"
+      log_info "ACCESS_TOKEN -> $ACCESS_TOKEN"
+      log_info "RENEWAL_TOKEN -> $RENEWAL_TOKEN"
    fi
 }
 
@@ -226,9 +226,9 @@ function process_work_exception() {
    URL="$HOST/api/v1/work_exceptions"
    IFS=' '
 
-   echo $@
+   log_debug $@
 
-   echo "--- Inserting work exception -> $1 $2 $3 $4 $5"
+   log_debug "--- Inserting work exception -> $1 $2 $3 $4 $5"
 
    response=$($CURL -i --silent -w "\n%{http_code} " --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -239,10 +239,10 @@ function process_work_exception() {
 
    if [[ "$http_code" -ne 201 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "Unable to continue : $http_code, $MESSAGE", $response
+      log_warn "Unable to continue : $http_code, $MESSAGE", $response
       exit 1;
    else
-      echo "----- WORK EXCEPTION CREATED ----- $http_code"
+      log_info "----- WORK EXCEPTION CREATED ----- $http_code"
    fi
 }
 
@@ -250,7 +250,7 @@ function process_release_version() {
    URL="$HOST/api/v1/release_versions"
    IFS=' '
 
-   echo "--- Inserting Release Version -> $1 $2"
+   log_debug "--- Inserting Release Version -> $1 $2"
 
    response=$($CURL -i --silent -w "\n%{http_code} " --location --request POST \
       $URL \
@@ -262,10 +262,10 @@ function process_release_version() {
 
    if [[ "$http_code" -ne 201 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "Unable to continue : $http_code, $MESSAGE", $response
+      log_warn "Unable to continue : $http_code, $MESSAGE", $response
       exit 1;
    else
-      echo "----- RELEASE VERSION CREATED ----- $http_code"
+      log_info "----- RELEASE VERSION CREATED ----- $http_code"
    fi
 }
 
@@ -273,7 +273,7 @@ function process_position_monthly_expense() {
    URL="$HOST/api/v1/monthly_expenses/position"
    IFS=' '
 
-   echo "--- Inserting position_monthly_expense -> $1 $2 $3 $4 $5 $6"
+   log_debug "--- Inserting position_monthly_expense -> $1 $2 $3 $4 $5 $6"
 
    response=$($CURL -i --silent -w "\n%{http_code} " --location --request POST \
       $URL \
@@ -296,7 +296,7 @@ function process_position_daily_expense() {
    URL="$HOST/api/v1/daily_expenses/position"
    IFS=' '
 
-   echo "--- Inserting position_daily_expense -> $1 $2 $3 $4"
+   log_debug "--- Inserting position_daily_expense -> $1 $2 $3 $4"
 
    response=$($CURL -i --silent -w "\n%{http_code} " --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -307,10 +307,10 @@ function process_position_daily_expense() {
 
    if [[ "$http_code" -ne 201 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      echo "Unable to continue : $http_code, $MESSAGE", $response
+      log_warn "Unable to continue : $http_code, $MESSAGE", $response
       exit 1;
    else
-      echo "----- POSITION DAILY EXPENSE CREATED ----- $http_code"
+      log_info "----- POSITION DAILY EXPENSE CREATED ----- $http_code"
    fi
 }
 
@@ -320,7 +320,7 @@ function process_project_time_materials() {
 
    CUSTOMER_ID=$(kvget $2)
    REGION_ID=$(kvget $3)
-   echo "--- Inserting project -> $1 $CUSTOMER_ID $REGION_ID $4 $5 $6"
+   log_debug "--- Inserting project -> $1 $CUSTOMER_ID $REGION_ID $4 $5 $6"
 
    response=$($CURL --silent --location --request POST \
       $URL \
@@ -333,10 +333,10 @@ function process_project_time_materials() {
    ID=$(echo $response | jq ."data.project.id")
 
    if [[ $SUCCESS != true ]]; then
-      echo "Unable to continue : $SUCCESS, $MESSAGE", $response
+      log_warn "Unable to continue : $SUCCESS, $MESSAGE", $response
       exit 1;
    else
-      echo "----- TIME MATERIALS PROJECT CREATED $ID ----- $SUCCESS"
+      log_info "----- TIME MATERIALS PROJECT CREATED $ID ----- $SUCCESS"
       kvset $6 $ID
    fi
 }
@@ -347,7 +347,7 @@ function process_project_retainer() {
 
    CUSTOMER_ID=$(kvget $2)
    REGION_ID=$(kvget $3)
-   echo "--- Inserting project -> $1 $CUSTOMER_ID $REGION_ID $4 $5 $6 $7"
+   log_debug "--- Inserting project -> $1 $CUSTOMER_ID $REGION_ID $4 $5 $6 $7"
 
    response=$($CURL --silent --location --request POST \
       $URL \
@@ -360,10 +360,10 @@ function process_project_retainer() {
    ID=$(echo $response | jq ."data.project.id")
 
    if [[ $SUCCESS != true ]]; then
-      echo "Unable to continue : $SUCCESS, $MESSAGE", $response
+      log_warn "Unable to continue : $SUCCESS, $MESSAGE", $response
       exit 1;
    else
-      echo "----- RETAINER PROJECT CREATED $ID ----- $SUCCESS"
+      log_info "----- RETAINER PROJECT CREATED $ID ----- $SUCCESS"
       kvset $7 $ID
    fi
 }
@@ -374,7 +374,7 @@ function process_holiday() {
 
    WORK_EXCEPTION_TYPE_ID=$(kvget $4)
 
-   echo "--- Inserting holiday -> $1 $2 $3 $WORK_EXCEPTION_TYPE_ID $5"
+   log_debug "--- Inserting holiday -> $1 $2 $3 $WORK_EXCEPTION_TYPE_ID $5"
 
    response=$($CURL --silent --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -386,10 +386,10 @@ function process_holiday() {
    ID=$(echo $response | jq ."data.holiday.id")
 
    if [[ $SUCCESS != true ]]; then
-      echo "Unable to continue : $SUCCESS, $MESSAGE", $response
+      log_warn "Unable to continue : $SUCCESS, $MESSAGE", $response
       exit 1;
    else
-      echo "----- HOLIDAY CREATED $ID ----- $SUCCESS"
+      log_info "----- HOLIDAY CREATED $ID ----- $SUCCESS"
       kvset $5 $ID
    fi
 }
@@ -400,22 +400,22 @@ function process_project_fixed_bid() {
 
    CUSTOMER_ID=$(kvget $2)
    REGION_ID=$(kvget $3)
-   echo "--- Inserting project -> $1 $CUSTOMER_ID $REGION_ID $4 $5 $6 $7"
+   log_debug "--- Inserting project -> $1 $CUSTOMER_ID $REGION_ID $4 $5 $6 $7"
 
    response=$($CURL --silent --location --request POST $URL \
       -H "Content-Type: application/json" \
       --header "Authorization: $ACCESS_TOKEN" \
       --data-raw "{ \"project\": { \"name\": \"$1\", \"customer_id\": $CUSTOMER_ID, \"region_id\": $REGION_ID, \"status\": \"$4\", \"amount\": \"$5\", \"billing_type\": \"$6\"} }")
-      
+
    SUCCESS=$(echo $response | jq ."success")
    MESSAGE=$(echo $response | jq ."message")
    ID=$(echo $response | jq ."data.project.id")
 
    if [[ $SUCCESS != true ]]; then
-      echo "Unable to continue : $SUCCESS, $MESSAGE", $response
+      log_warn "Unable to continue : $SUCCESS, $MESSAGE", $response
       exit 1;
    else
-      echo "----- FIXED BID PROJECT CREATED $ID ----- $SUCCESS"
+      log_info "----- FIXED BID PROJECT CREATED $ID ----- $SUCCESS"
       kvset $7 $ID
    fi
 }
@@ -424,7 +424,7 @@ function process_region() {
    URL="$HOST/api/v1/regions"
    IFS=' '
 
-   echo "--- Inserting region -> $1 $2"
+   log_debug "--- Inserting region -> $1 $2"
 
    response=$($CURL --silent --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -436,10 +436,10 @@ function process_region() {
    ID=$(echo $response | jq ."data.region.id")
 
    if [[ $SUCCESS != true ]]; then
-      echo "Unable to continue : $SUCCESS, $MESSAGE", $response
+      log_warn "Unable to continue : $SUCCESS, $MESSAGE", $response
       exit 1;
    else
-      echo "----- REGION CREATED $ID ----- $SUCCESS"
+      log_info "----- REGION CREATED $ID ----- $SUCCESS"
       kvset $2 $ID
    fi
 }
@@ -448,7 +448,7 @@ function process_work_exception_type() {
    URL="$HOST/api/v1/work_exception_types"
    IFS=' '
 
-   echo "--- Inserting Work Exception Type -> $1 $2"
+   log_debug "--- Inserting Work Exception Type -> $1 $2"
 
    response=$($CURL --silent --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -460,10 +460,10 @@ function process_work_exception_type() {
    ID=$(echo $response | jq ."data.work_exception_type.id")
 
    if [[ $SUCCESS != true ]]; then
-      echo "Unable to continue : $SUCCESS, $MESSAGE", $response
+      log_warn "Unable to continue : $SUCCESS, $MESSAGE", $response
       exit 1;
    else
-      echo "----- WORK EXCEPTION TYPE CREATED $ID ----- $SUCCESS"
+      log_info "----- WORK EXCEPTION TYPE CREATED $ID ----- $SUCCESS"
       kvset $2 $ID
    fi
 }
@@ -472,7 +472,7 @@ function process_position_type() {
    URL="$HOST/api/v1/position_types"
    IFS=' '
 
-   echo "--- Inserting Position Type -> $1 $2"
+   log_debug "--- Inserting Position Type -> $1 $2"
 
    response=$($CURL --silent --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -484,10 +484,10 @@ function process_position_type() {
    ID=$(echo $response | jq ."data.position_type.id")
 
    if [[ $SUCCESS != true ]]; then
-      echo "Unable to continue : $SUCCESS, $MESSAGE", $response
+      log_warn "Unable to continue : $SUCCESS, $MESSAGE", $response
       exit 1;
    else
-      echo "----- POSITION TYPE CREATED $ID ----- $SUCCESS"
+      log_info "----- POSITION TYPE CREATED $ID ----- $SUCCESS"
       kvset $2 $ID
    fi
 }
@@ -495,11 +495,11 @@ function process_position_type() {
 function process_open_position() {
    URL="$HOST/api/v1/positions"
    IFS=' '
-   
+
    PROJECT_ID=$(kvget $7)
    POSITION_TYPE_ID=$(kvget $8)
 
-   echo "--- Inserting position -> $1 $2 $3 $4 $5 $6 $PROJECT_ID $POSITION_TYPE_ID $9"
+   log_debug "--- Inserting position -> $1 $2 $3 $4 $5 $6 $PROJECT_ID $POSITION_TYPE_ID $9"
 
    response=$($CURL --silent --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -511,10 +511,10 @@ function process_open_position() {
    ID=$(echo $response | jq ."data.position.id")
 
    if [[ $SUCCESS != true ]]; then
-      echo "Unable to continue : $SUCCESS, $MESSAGE", $response
+      log_warn "Unable to continue : $SUCCESS, $MESSAGE", $response
       exit 1;
    else
-      echo "----- POSITION CREATED $ID ----- $SUCCESS"
+      log_info "----- POSITION CREATED $ID ----- $SUCCESS"
       kvset $9 $ID
    fi
 }
@@ -523,7 +523,7 @@ function process_daily_expense_type() {
    URL="$HOST/api/v1/daily_expense_types"
    IFS=' '
 
-   echo "--- Inserting daily_expense_type -> $1 $2"
+   log_debug "--- Inserting daily_expense_type -> $1 $2"
 
    response=$($CURL --silent --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -535,10 +535,10 @@ function process_daily_expense_type() {
    ID=$(echo $response | jq ."data.daily_expense_type.id")
 
    if [[ $SUCCESS != true ]]; then
-      echo "Unable to continue : $SUCCESS, $MESSAGE", $response
+      log_warn "Unable to continue : $SUCCESS, $MESSAGE", $response
       exit 1;
    else
-      echo "----- DAILY EXPENSE TYPE CREATED $ID ----- $SUCCESS"
+      log_info "----- DAILY EXPENSE TYPE CREATED $ID ----- $SUCCESS"
       kvset $2 $ID
    fi
 }
@@ -547,7 +547,7 @@ function process_monthly_expense_type() {
    URL="$HOST/api/v1/monthly_expense_types"
    IFS=' '
 
-   echo "--- Inserting monthly expense type -> $1 $2"
+   log_debug "--- Inserting monthly expense type -> $1 $2"
 
    response=$($CURL --silent --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -559,10 +559,10 @@ function process_monthly_expense_type() {
    ID=$(echo $response | jq ."data.monthly_expense_type.id")
 
    if [[ $SUCCESS != true ]]; then
-      echo "Unable to continue : $SUCCESS, $MESSAGE", $response
+      log_warn "Unable to continue : $SUCCESS, $MESSAGE", $response
       exit 1;
    else
-      echo "----- MONTHLY EXPENSE TYPE CREATED $ID ----- $SUCCESS"
+      log_info "----- MONTHLY EXPENSE TYPE CREATED $ID ----- $SUCCESS"
       kvset $2 $ID
    fi
 }
@@ -571,7 +571,7 @@ function process_employee_type() {
    URL="$HOST/api/v1/employee_types"
    IFS=' '
 
-   echo "--- Inserting Employee Type -> $1 $2 $3 $4"
+   log_debug "--- Inserting Employee Type -> $1 $2 $3 $4"
 
    response=$($CURL --silent --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -583,10 +583,10 @@ function process_employee_type() {
    ID=$(echo $response | jq ."data.employee_type.id")
 
    if [[ $SUCCESS != true ]]; then
-      echo "Unable to continue : $SUCCESS, $MESSAGE", $response
+      log_warn "Unable to continue : $SUCCESS, $MESSAGE", $response
       exit 1;
    else
-      echo "----- EMPLOYEE TYPE CREATED $ID ----- $SUCCESS"
+      log_info "----- EMPLOYEE TYPE CREATED $ID ----- $SUCCESS"
       kvset $4 $ID
    fi
 }
@@ -594,12 +594,12 @@ function process_employee_type() {
 function process_position_with_employee() {
    URL="$HOST/api/v1/positions"
    IFS=' '
-   
+
    PROJECT_ID=$(kvget $7)
    POSITION_TYPE_ID=$(kvget $8)
    EMPLOYEE_ID=$(kvget $9)
 
-   echo "--- Inserting position -> $1 $2 $3 $4 $5 $6 $PROJECT_ID $POSITION_TYPE_ID $EMPLOYEE_ID ${10}"
+   log_debug "--- Inserting position -> $1 $2 $3 $4 $5 $6 $PROJECT_ID $POSITION_TYPE_ID $EMPLOYEE_ID ${10}"
 
    response=$($CURL --silent --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -611,10 +611,10 @@ function process_position_with_employee() {
    ID=$(echo $response | jq ."data.position.id")
 
    if [[ $SUCCESS != true ]]; then
-      echo "Unable to continue : $SUCCESS, $MESSAGE", $response
+      log_warn "Unable to continue : $SUCCESS, $MESSAGE", $response
       exit 1;
    else
-      echo "----- POSITION CREATED $ID ----- $SUCCESS"
+      log_info "----- POSITION CREATED $ID ----- $SUCCESS"
       kvset ${10} $ID
    fi
 }
@@ -623,7 +623,7 @@ function process_customer() {
    URL="$HOST/api/v1/customers"
    IFS=' '
 
-   echo "--- Inserting Customer -> $1 $2 $3"
+   log_debug "--- Inserting Customer -> $1 $2 $3"
 
    response=$($CURL --silent --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -635,10 +635,10 @@ function process_customer() {
    ID=$(echo $response | jq ."data.customer.id")
 
    if [[ $SUCCESS != true ]]; then
-      echo "Unable to continue : $SUCCESS, $MESSAGE", $response
+      log_warn "Unable to continue : $SUCCESS, $MESSAGE", $response
       exit 1;
    else
-      echo "----- CUSTOMER CREATED $ID ----- $SUCCESS"
+      log_info "----- CUSTOMER CREATED $ID ----- $SUCCESS"
       kvset $3 $ID
    fi
 }
@@ -648,12 +648,12 @@ function process_employee() {
    URL="$HOST/api/v1/employees"
    IFS=' '
 
-   echo "--------------------------------- ${10}"
-   
+   log_debug "--------------------------------- ${10}"
+
    EMPLOYEE_TYPE_ID=$(kvget $8)
    REGION_ID=$(kvget $9)
 
-   echo "--- Inserting employee -> $1 $2 $3 $4 $5 $6 $7 $EMPLOYEE_TYPE_ID $REGION_ID ${10}"
+   log_debug "--- Inserting employee -> $1 $2 $3 $4 $5 $6 $7 $EMPLOYEE_TYPE_ID $REGION_ID ${10}"
 
    response=$($CURL --silent --location --request POST $URL \
       -H "Content-Type: application/json" \
@@ -665,10 +665,10 @@ function process_employee() {
    ID=$(echo $response | jq ."data.employee.id")
 
    if [[ $SUCCESS != true ]]; then
-      echo "Unable to continue : $SUCCESS, $MESSAGE", $response
+      log_warn "Unable to continue : $SUCCESS, $MESSAGE", $response
       exit 1;
    else
-      echo "----- EMPLOYEE CREATED $ID ----- $SUCCESS"
+      log_info "----- EMPLOYEE CREATED $ID ----- $SUCCESS"
       kvset ${10} $ID
    fi
 }

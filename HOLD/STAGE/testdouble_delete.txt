@@ -1,3 +1,0 @@
---host --url https://backofficestaging.gigalixirapp.com
---login --username superuser@testdouble.com --password Eiswein87!
---delete_tenant --name testdouble

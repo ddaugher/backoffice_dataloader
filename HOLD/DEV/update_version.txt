@@ -1,3 +1,0 @@
---host --url https://backoffice.gigalixirapp.com
---login --username admin@augustwenty.com --password Eiswein87!
---release_version --version v1.660.0 --notes
