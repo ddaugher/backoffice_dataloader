@@ -1,188 +1,190 @@
 HEADER
+--registration --email sunflower_admin_uat@nxdomain.com --pass 123123123 --api_access true --role admin --self_service_storage {'role':'admin'}
+--registration --email sunflower_user_uat@nxdomain.com --pass 123123123 --api_access true --role user --self_service_storage {'role':'user'}
 LOGIN
---region --name All
---daily_expense_type --name Meals
---daily_expense_type --name Parking
---daily_expense_type --name Per Diem
---daily_expense_type --name Hotel
---daily_expense_type --name Mileage
---monthly_expense_type --name Computer
---monthly_expense_type --name Parking
---monthly_expense_type --name Mileage
---monthly_expense_type --name Meals
---monthly_expense_type --name Team Health
---employee_type --name 1099 --is_employee false --is_utilized false
---employee_type --name Hourly --is_employee false --is_utilized false
---employee_type --name Corp2Corp --is_employee false --is_utilized false
---employee_type --name W2 --is_employee true --is_utilized true
---work_exception_type --name PTO
---work_exception_type --name Bereavement
---work_exception_type --name Holiday
---work_exception_type --name UPTO
---work_exception_type --name Client Visit
---work_exception_type --name Conference
---work_exception_type --name Training
---holiday --date 2021-01-01 --description New Year's Day --hours 8 --work_exception_type_id 3
---holiday --date 2021-01-18 --description Martin Luther King Day --hours 8 --work_exception_type_id 3
---holiday --date 2021-05-31 --description Memorial Day --hours 8 --work_exception_type_id 3
---holiday --date 2021-06-19 --description Juneteenth --hours 8 --work_exception_type_id 3
---holiday --date 2021-07-04 --description July 4th --hours 8 --work_exception_type_id 3
---holiday --date 2021-09-06 --description Labor Day --hours 8 --work_exception_type_id 3
---holiday --date 2021-11-04 --description Diwali --hours 8 --work_exception_type_id 3
---holiday --date 2021-11-25 --description Thanksgiving Day --hours 8 --work_exception_type_id 3
---holiday --date 2021-12-24 --description Christmas Eve --hours 8 --work_exception_type_id 3
---holiday --date 2021-12-27 --description Christmas --hours 8 --work_exception_type_id 3
---holiday --date 2021-12-31 --description New Year's Eve --hours 8 --work_exception_type_id 3
---holiday --date 2022-01-01 --description New Year's Day --hours 8 --work_exception_type_id 3
---holiday --date 2022-02-17 --description Martin Luther King Day --hours 8 --work_exception_type_id 3
---holiday --date 2022-05-30 --description Memorial Day --hours 8 --work_exception_type_id 3
---holiday --date 2022-06-19 --description Juneteenth --hours 8 --work_exception_type_id 3
---holiday --date 2022-07-04 --description July 4th --hours 8 --work_exception_type_id 3
---holiday --date 2022-09-05 --description Labor Day --hours 8 --work_exception_type_id 3
---holiday --date 2022-09-26 --description Rosh Hashanah --hours 8 --work_exception_type_id 3
---holiday --date 2022-09-27 --description Rosh Hashanah --hours 8 --work_exception_type_id 3
---holiday --date 2022-10-04 --description Diwali --hours 8 --work_exception_type_id 3
---holiday --date 2022-11-24 --description Thanksgiving Day --hours 8 --work_exception_type_id 3
---holiday --date 2022-12-24 --description Christmas Eve --hours 8 --work_exception_type_id 3
---holiday --date 2022-12-25 --description Christmas --hours 8 --work_exception_type_id 3
---holiday --date 2022-12-31 --description New Year's Eve --hours 8 --work_exception_type_id 3
---position_type --name Engineer
---position_type --name Baker
---position_type --name SME
---position_type --name UX
---position_type --name Design
---position_type --name Product
---position_type --name Delivery
---position_type --name Account Manager
---customer --name AM Jewels --is_active true
---customer --name DJs Dough Co --is_active true
---customer --name HHG2G --is_active true
---customer --name Phoenix Interactive --is_active true
---customer --name Vleet's Fleet --is_active true
---customer --name HCTerm --is_active true
---project_retainer --name Jewel Designer --customer_id 1 --region_id 1 --status Forecasted --monthly_amount 250000
---project_fixed_bid --name Bread Buddy --customer_id 2 --region_id 1 --status Booked --amount 1200000
---project_fixed_bid --name Project42 --customer_id 3 --region_id 1 --status Imminent --amount 1000000
---project_time_materials --name Daily Yoga App --customer_id 4 --region_id 1 --status Draft
---project_time_materials --name From The Ashes App --customer_id 4 --region_id 1 --status Draft
---project_time_materials --name Fleet Manager --customer_id 5 --region_id 1 --status Draft
---project_retainer --name Jewel Designer Extension --customer_id 1 --region_id 1 --status Draft --monthly_amount 300000
---project_fixed_bid --name Bread Buddy Phase 2 --customer_id 2 --region_id 1 --status Draft --amount 3200000
---project_retainer --name Project42 Extension --customer_id 3 --region_id 1 --status Draft --monthly_amount 350000
---project_retainer --name Project42 Draft --customer_id 3 --region_id 1 --status Draft --monthly_amount 350000
---project_fixed_bid --name Term Cases --customer_id 6 --region_id 1 --status Draft --amount 100000
---project_fixed_bid --name HC Update Cases --customer_id 6 --region_id 1 --status Draft --amount 100000
---employee --first_name Ada --last_name Lovelace --email adalovelace@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 200 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Andy --last_name Apprety --email andyapprety@nxogantrydemo.com --start_date 2021-01-02 --hourly_cost 89.74 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 2 --region_id 1
---employee --first_name Arnold --last_name Devmeier --email arnolddevmeier@nxogantrydemo.com --start_date 2021-01-03 --hourly_cost 98.42 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Arthur --last_name Dent --email arthurdent@nxogantrydemo.com --start_date 2021-01-04 --hourly_cost 53.56 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Chien-Shiung --last_name Wu --email chien-shiungwu@nxogantrydemo.com --start_date 2021-01-05 --hourly_cost 90.87 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 3 --region_id 1
---employee --first_name Claude --last_name Monet --email claudemonet@nxogantrydemo.com --start_date 2022-01-06 --hourly_cost 100.45 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name DeeDee --last_name Leadersing --email deedeeleadersing@nxogantrydemo.com --start_date 2011-08-07 --hourly_cost 176.87 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Edgar --last_name Enart --email edgarenart@nxogantrydemo.com --start_date 2011-08-08 --hourly_cost 123.32 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 2 --region_id 1
---employee --first_name Edith --last_name Clarke --email edithclarke@nxogantrydemo.com --start_date 2011-08-09 --hourly_cost 190.98 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 2 --region_id 1
---employee --first_name Ellen --last_name Ochoa --email ellenochoa@nxogantrydemo.com --start_date 2016-10-10 --hourly_cost 134.25 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 3 --region_id 1
---employee --first_name Ford --last_name Prefect --email fordprefect@nxogantrydemo.com --start_date 2011-08-11 --hourly_cost 29.98 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Frida --last_name Kahlo --email fridakahlo@nxogantrydemo.com --start_date 2018-07-20 --hourly_cost 160.87 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Georgia --last_name OKeeffe --email georgiaokeeffe@nxogantrydemo.com --start_date 2018-07-21 --hourly_cost 160.87 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 2 --region_id 1
---employee --first_name Jean-Michel --last_name Basquiat --email jean-michelbasquiat@nxogantrydemo.com --start_date 2018-07-22 --hourly_cost 160.87 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Joe --last_name Fre --email joefre@nxogantrydemo.com --start_date 2018-07-23 --hourly_cost 120.9 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Junio --last_name Artiland --email junioartiland@nxogantrydemo.com --start_date 2018-07-24 --hourly_cost 143.72 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Leonardo --last_name DaVinci --email leonardodavinci@nxogantrydemo.com --start_date 2018-07-25 --hourly_cost 220 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Louise --last_name Bourgeois --email louisebourgeois@nxogantrydemo.com --start_date 2010-07-26 --hourly_cost 123.21 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Marilyn --last_name Monroe --email marilynmonroe@nxogantrydemo.com --start_date 2018-07-27 --hourly_cost 230 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Pablo --last_name Picasso --email pablopicasso@nxogantrydemo.com --start_date 2010-12-07 --hourly_cost 189.9 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Seneca --last_name Englewood --email senecaenglewood@nxogantrydemo.com --start_date 2020-11-08 --hourly_cost 129.65 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Tricia --last_name McMillan --email triciamcmillan@nxogantrydemo.com --start_date 2021-12-09 --hourly_cost 130.98 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Vincent --last_name VanGogh --email vincentvangogh@nxogantrydemo.com --start_date 2001-12-10 --hourly_cost 200.25 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Zaphod --last_name Beeblebrox --email zaphodbeeblebrox@nxogantrydemo.com --start_date 2020-12-11 --hourly_cost 67.1 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 1 --region_id 1
---employee --first_name Peeta --last_name Mellark --email peetamellark@nxogantrydemo.com --start_date 2008-09-14 --hourly_cost 150 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 3 --region_id 1
---employee --first_name Katniss --last_name Everdeen --email katnisseverdeen@nxogantrydemo.com --start_date 2008-09-14 --hourly_cost 250 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 3 --region_id 1
---employee --first_name Anna --last_name Byler --email annabyler@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Billy --last_name Jones --email billyjones@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Ben --last_name Davidson --email bendavidson@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Carrie --last_name Edwards --email carrieedwards@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Donna --last_name Graham --email donnagraham@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Gerald --last_name Hershberger --email geraldhershberger@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Holly --last_name Jones --email hollyjones@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Roman --last_name Miller --email romanmiller@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Amos --last_name Hershberger --email amoshershberger@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Anne --last_name Phillips --email annephillips@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Henry --last_name Yoder --email henryyoder@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Jim --last_name Troyer --email jimtroyer@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Miriam --last_name Yoder --email miriamyoder@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---employee --first_name Rosemary --last_name Yoder --email rosemaryyoder@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id 4 --region_id 1
---open_position --name Apprentice Artisan --start_date 2021-06-21 --end_date 2021-10-14 --bill_rate 100 --cost 50 --daily_billable_hours 8 --project_id 6 --position_type_id 3
---open_position --name Artisan --start_date 2021-06-01 --end_date 2022-01-28 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 6 --position_type_id 1
---open_position --name Delivery Lead --start_date 2021-06-01 --end_date 2022-02-25 --bill_rate 200 --cost 150 --daily_billable_hours 8 --project_id 6 --position_type_id 7
---open_position --name Experience Lead --start_date 2021-06-07 --end_date 2022-01-28 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id 6 --position_type_id 4
---open_position --name Senior Artisan --start_date 2021-07-05 --end_date 2022-01-28 --bill_rate 200 --cost 150 --daily_billable_hours 8 --project_id 6 --position_type_id 1
---open_position --name Tech Lead --start_date 2021-06-07 --end_date 2022-02-18 --bill_rate 175 --cost 125 --daily_billable_hours 8 --project_id 6 --position_type_id 1
---open_position --name Apprentice --start_date 2021-08-02 --end_date 2022-06-03 --bill_rate 100 --cost 75.25 --daily_billable_hours 8 --project_id 5 --position_type_id 7
---position_with_employee --name Master Artisan --start_date 2021-10-25 --end_date 2022-03-25 --bill_rate 0 --cost 190.98 --daily_billable_hours 8 --project_id 1 --position_type_id 1 --employee_id 9
---position_with_employee --name Physicist --start_date 2021-10-25 --end_date 2022-03-25 --bill_rate 0 --cost 90.87 --daily_billable_hours 8 --project_id 1 --position_type_id 3 --employee_id 5
---position_with_employee --name Artisan 3 --start_date 2021-10-25 --end_date 2022-03-26 --bill_rate 0 --cost 98.42 --daily_billable_hours 5 --project_id 1 --position_type_id 1 --employee_id 3
---position_with_employee --name Delivery Lead --start_date 2021-10-25 --end_date 2022-02-25 --bill_rate 0 --cost 176.87 --daily_billable_hours 8 --project_id 1 --position_type_id 7 --employee_id 7
---position_with_employee --name Experience Lead --start_date 2021-10-25 --end_date 2022-03-25 --bill_rate 0 --cost 160.87 --daily_billable_hours 8 --project_id 1 --position_type_id 4 --employee_id 12
---position_with_employee --name Jewelry Expert --start_date 2021-10-25 --end_date 2021-10-29 --bill_rate 0 --cost 230 --daily_billable_hours 4 --project_id 1 --position_type_id 3 --employee_id 19
---position_with_employee --name Tech Lead --start_date 2021-10-25 --end_date 2022-02-25 --bill_rate 0 --cost 200 --daily_billable_hours 8 --project_id 1 --position_type_id 1 --employee_id 1
---position_with_employee --name Artisan 2 --start_date 2021-06-14 --end_date 2021-12-17 --bill_rate 0 --cost 100.45 --daily_billable_hours 8 --project_id 2 --position_type_id 1 --employee_id 6
---position_with_employee --name Baker --start_date 2021-06-14 --end_date 2021-12-17 --bill_rate 0 --cost 150 --daily_billable_hours 8 --project_id 2 --position_type_id 2 --employee_id 25
---position_with_employee --name Chef_ --start_date 2021-06-14 --end_date 2021-12-17 --bill_rate 0 --cost 130.98 --daily_billable_hours 8 --project_id 2 --position_type_id 3 --employee_id 22
---position_with_employee --name Delivery Lead --start_date 2021-06-14 --end_date 2021-12-17 --bill_rate 0 --cost 129.65 --daily_billable_hours 8 --project_id 2 --position_type_id 7 --employee_id 21
---position_with_employee --name Master Artisan --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 190.98 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 9
---position_with_employee --name Physicist --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 90.87 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 5
---position_with_employee --name Artisan 3 --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 98.42 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 3
---position_with_employee --name Delivery Lead --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 176.87 --daily_billable_hours 8 --project_id 7 --position_type_id 7 --employee_id 7
---position_with_employee --name Experience Lead --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 160.87 --daily_billable_hours 8 --project_id 7 --position_type_id 4 --employee_id 12
---position_with_employee --name Jewelry Expert --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 230 --daily_billable_hours 4 --project_id 7 --position_type_id 3 --employee_id 19
---position_with_employee --name Tech Lead --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 200 --daily_billable_hours 8 --project_id 7 --position_type_id 1 --employee_id 1
---position_with_employee --name Artisan 2 --start_date 2021-12-20 --end_date 2022-05-27 --bill_rate 0 --cost 100.45 --daily_billable_hours 8 --project_id 8 --position_type_id 1 --employee_id 6
---position_with_employee --name Baker --start_date 2021-12-20 --end_date 2022-05-27 --bill_rate 0 --cost 150 --daily_billable_hours 8 --project_id 8 --position_type_id 2 --employee_id 25
---position_with_employee --name Chef_ --start_date 2021-12-20 --end_date 2022-05-27 --bill_rate 0 --cost 130.98 --daily_billable_hours 8 --project_id 8 --position_type_id 3 --employee_id 22
---position_with_employee --name Delivery Lead --start_date 2021-12-20 --end_date 2022-05-27 --bill_rate 0 --cost 129.65 --daily_billable_hours 8 --project_id 8 --position_type_id 7 --employee_id 21
---position_with_employee --name Assistant Baker --start_date 2021-12-20 --end_date 2022-05-27 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id 8 --position_type_id 2 --employee_id 4
---position_with_employee --name Artisan --start_date 2021-05-03 --end_date 2021-10-01 --bill_rate 0 --cost 67.1 --daily_billable_hours 8 --project_id 3 --position_type_id 7 --employee_id 24
---position_with_employee --name Chief Engineer --start_date 2021-05-03 --end_date 2021-10-01 --bill_rate 0 --cost 29.98 --daily_billable_hours 8 --project_id 3 --position_type_id 1 --employee_id 11
---position_with_employee --name Delivery --start_date 2021-05-03 --end_date 2021-10-29 --bill_rate 0 --cost 130.98 --daily_billable_hours 8 --project_id 3 --position_type_id 7 --employee_id 22
---position_with_employee --name Tester --start_date 2021-05-03 --end_date 2021-10-01 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id 3 --position_type_id 7 --employee_id 4
---position_with_employee --name Artisan --start_date 2021-10-04 --end_date 2021-12-31 --bill_rate 0 --cost 67.1 --daily_billable_hours 8 --project_id 9 --position_type_id 7 --employee_id 24
---position_with_employee --name Chief Engineer --start_date 2021-10-04 --end_date 2021-12-31 --bill_rate 0 --cost 29.98 --daily_billable_hours 8 --project_id 9 --position_type_id 1 --employee_id 11
---position_with_employee --name Delivery --start_date 2021-10-04 --end_date 2021-12-31 --bill_rate 0 --cost 130.98 --daily_billable_hours 8 --project_id 9 --position_type_id 7 --employee_id 22
---position_with_employee --name Tester --start_date 2021-10-04 --end_date 2021-12-31 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id 9 --position_type_id 7 --employee_id 4
---position_with_employee --name Assistant Engineer --start_date 2021-10-04 --end_date 2021-12-31 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id 9 --position_type_id 1 --employee_id 4
---position_with_employee --name Artisan --start_date 2022-01-03 --end_date 2023-01-13 --bill_rate 0 --cost 67.1 --daily_billable_hours 8 --project_id 10 --position_type_id 7 --employee_id 24
---position_with_employee --name Chief Engineer --start_date 2022-01-03 --end_date 2023-01-13 --bill_rate 0 --cost 29.98 --daily_billable_hours 8 --project_id 10 --position_type_id 1 --employee_id 11
---position_with_employee --name Delivery --start_date 2022-01-03 --end_date 2023-01-13 --bill_rate 0 --cost 130.98 --daily_billable_hours 8 --project_id 10 --position_type_id 7 --employee_id 22
---position_with_employee --name Tester --start_date 2022-01-03 --end_date 2023-01-13 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id 10 --position_type_id 7 --employee_id 4
---position_with_employee --name Assistant Engineer --start_date 2022-01-03 --end_date 2023-01-13 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id 10 --position_type_id 1 --employee_id 4
---position_with_employee --name Apprentice Artisan --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 100 --cost 123.32 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 8
---position_with_employee --name Artisan --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 150 --cost 143.72 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 16
---position_with_employee --name Artisan 02 --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 150 --cost 120.9 --daily_billable_hours 8 --project_id 4 --position_type_id 7 --employee_id 15
---position_with_employee --name Artisan 03 --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 150 --cost 53.56 --daily_billable_hours 8 --project_id 4 --position_type_id 1 --employee_id 4
---position_with_employee --name Delivery --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 200 --cost 189.9 --daily_billable_hours 8 --project_id 4 --position_type_id 7 --employee_id 20
---position_with_employee --name Tech Lead --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 250 --cost 200.25 --daily_billable_hours 8 --project_id 4 --position_type_id 7 --employee_id 23
---position_with_employee --name Artisan --start_date 2021-08-02 --end_date 2021-08-20 --bill_rate 125 --cost 134.25 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 10
---position_with_employee --name Delivery Lead --start_date 2021-08-02 --end_date 2022-06-03 --bill_rate 150 --cost 160.87 --daily_billable_hours 8 --project_id 5 --position_type_id 7 --employee_id 13
---position_with_employee --name Artisan 2 --start_date 2021-08-02 --end_date 2022-06-03 --bill_rate 150 --cost 160.87 --daily_billable_hours 8 --project_id 5 --position_type_id 1 --employee_id 14
---position_with_employee --name Design --start_date 2021-07-05 --end_date 2022-07-22 --bill_rate 250 --cost 220 --daily_billable_hours 8 --project_id 5 --position_type_id 5 --employee_id 17
---position_with_employee --name DX Lead --start_date 2021-07-05 --end_date 2022-07-22 --bill_rate 200 --cost 123.21 --daily_billable_hours 8 --project_id 5 --position_type_id 4 --employee_id 18
---position_with_employee --name Tech Lead --start_date 2021-07-05 --end_date 2022-06-17 --bill_rate 200 --cost 130.98 --daily_billable_hours 8 --project_id 5 --position_type_id 7 --employee_id 22
---position_with_employee --name TermSetup#1 --start_date 2021-02-01 --end_date 2021-02-02 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 1 --employee_id 34
---position_with_employee --name TermSetup#2 --start_date 2021-07-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 5 --employee_id 35
---position_with_employee --name TermSetup#3 --start_date 2021-02-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 4 --employee_id 36
---position_with_employee --name TermSetup#4 --start_date 2021-02-01 --end_date 2021-06-01 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 7 --employee_id 37
---position_with_employee --name TermSetup#5 --start_date 2021-06-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 1 --employee_id 38
---position_with_employee --name TermSetup#6a --start_date 2021-02-01 --end_date 2021-04-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 5 --employee_id 39
---position_with_employee --name TermSetup#6b --start_date 2021-07-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 4 --employee_id 39
---position_with_employee --name TermSetup#7a --start_date 2021-02-01 --end_date 2021-06-01 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 7 --employee_id 40
---position_with_employee --name TermCSetup#7b --start_date 2021-06-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 11 --position_type_id 1 --employee_id 40
---position_with_employee --name HCSetup#1 --start_date 2021-02-01 --end_date 2021-04-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 5 --employee_id 27
---position_with_employee --name HCSetup#2 --start_date 2021-07-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 4 --employee_id 28
---position_with_employee --name HCSetup#3 --start_date 2021-02-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 7 --employee_id 29
---position_with_employee --name HCSetup#4 --start_date 2021-02-01 --end_date 2021-06-01 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 3 --employee_id 30
---position_with_employee --name HCSetup#5 --start_date 2021-06-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 1 --employee_id 31
---position_with_employee --name HCSetup#6a --start_date 2021-02-01 --end_date 2021-02-02 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 5 --employee_id 32
---position_with_employee --name HCSetup#6b --start_date 2021-07-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 4 --employee_id 32
---position_with_employee --name HCSetup#7a --start_date 2021-02-01 --end_date 2021-06-01 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 7 --employee_id 33
---position_with_employee --name HCSetup#7b --start_date 2021-06-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id 12 --position_type_id 3 --employee_id 33
+--region --name All --uuid region1
+--daily_expense_type --name Meals --uuid daily_expense_type1
+--daily_expense_type --name Parking --uuid daily_expense_type2
+--daily_expense_type --name Per Diem --uuid daily_expense_type3
+--daily_expense_type --name Hotel --uuid daily_expense_type4
+--daily_expense_type --name Mileage --uuid daily_expense_type5
+--monthly_expense_type --name Computer --uuid monthly_expense_type1
+--monthly_expense_type --name Parking --uuid monthly_expense_type3
+--monthly_expense_type --name Mileage --uuid monthly_expense_type4
+--monthly_expense_type --name Meals --uuid monthly_expense_type5
+--monthly_expense_type --name Team Health --uuid monthly_expense_type6
+--employee_type --name 1099 --is_employee false --is_utilized false --uuid employee_type1
+--employee_type --name Hourly --is_employee false --is_utilized false --uuid employee_type2
+--employee_type --name Corp2Corp --is_employee false --is_utilized false --uuid employee_type3
+--employee_type --name W2 --is_employee true --is_utilized true --uuid employee_type4
+--work_exception_type --name PTO --uuid work_exception_type1
+--work_exception_type --name Bereavement --uuid work_exception_type2
+--work_exception_type --name Holiday --uuid work_exception_type3
+--work_exception_type --name UPTO --uuid work_exception_type4
+--work_exception_type --name Client Visit --uuid work_exception_type5
+--work_exception_type --name Conference --uuid work_exception_type6
+--work_exception_type --name Training --uuid work_exception_type7
+--holiday --date 2021-01-01 --description New Year's Day --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday1
+--holiday --date 2021-01-18 --description Martin Luther King Day --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday2
+--holiday --date 2021-05-31 --description Memorial Day --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday3
+--holiday --date 2021-06-19 --description Juneteenth --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday4
+--holiday --date 2021-07-04 --description July 4th --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday5
+--holiday --date 2021-09-06 --description Labor Day --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday6
+--holiday --date 2021-11-04 --description Diwali --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday7
+--holiday --date 2021-11-25 --description Thanksgiving Day --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday8
+--holiday --date 2021-12-24 --description Christmas Eve --hours 8 --work_exception_type_id work_exception_type2 --uuid holiday9
+--holiday --date 2021-12-27 --description Christmas --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday10
+--holiday --date 2021-12-31 --description New Year's Eve --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday11
+--holiday --date 2022-01-01 --description New Year's Day --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday12
+--holiday --date 2022-02-17 --description Martin Luther King Day --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday13
+--holiday --date 2022-05-30 --description Memorial Day --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday14
+--holiday --date 2022-06-19 --description Juneteenth --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday15
+--holiday --date 2022-07-04 --description July 4th --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday16
+--holiday --date 2022-09-05 --description Labor Day --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday17
+--holiday --date 2022-09-26 --description Rosh Hashanah --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday18
+--holiday --date 2022-09-27 --description Rosh Hashanah --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday19
+--holiday --date 2022-10-04 --description Diwali --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday20
+--holiday --date 2022-11-24 --description Thanksgiving Day --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday21
+--holiday --date 2022-12-24 --description Christmas Eve --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday22
+--holiday --date 2022-12-25 --description Christmas --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday23
+--holiday --date 2022-12-31 --description New Year's Eve --hours 8 --work_exception_type_id work_exception_type3 --uuid holiday24
+--position_type --name Engineer --uuid position_type1
+--position_type --name Baker --uuid position_type2
+--position_type --name SME --uuid position_type3
+--position_type --name UX --uuid position_type4
+--position_type --name Design --uuid position_type5
+--position_type --name Product --uuid position_type6
+--position_type --name Delivery --uuid position_type7
+--position_type --name Account Manager --uuid position_type8
+--customer --name AM Jewels --is_active true --uuid customer1
+--customer --name DJs Dough Co --is_active true --uuid customer2
+--customer --name HHG2G --is_active true --uuid customer3
+--customer --name Phoenix Interactive --is_active true --uuid customer4
+--customer --name Vleet's Fleet --is_active true --uuid customer5
+--customer --name HCTerm --is_active true --uuid customer6
+--project_retainer --name Jewel Designer --customer_id customer1 --region_id region1 --status Forecasted --monthly_amount 250000 --uuid project1
+--project_fixed_bid --name Bread Buddy --customer_id customer2 --region_id region1 --status Booked --amount 1200000 --uuid project2
+--project_fixed_bid --name Project42 --customer_id customer3 --region_id region1 --status Imminent --amount 1000000 --uuid project3
+--project_time_materials --name Daily Yoga App --customer_id customer4 --region_id region1 --status Draft --uuid project4
+--project_time_materials --name From The Ashes App --customer_id customer4 --region_id region1 --status Draft --uuid project5
+--project_time_materials --name Fleet Manager --customer_id customer5 --region_id region1 --status Draft --uuid project6
+--project_retainer --name Jewel Designer Extension --customer_id customer1 --region_id region1 --status Draft --monthly_amount 300000 --uuid project7
+--project_fixed_bid --name Bread Buddy Phase 2 --customer_id customer2 --region_id region1 --status Draft --amount 3200000 --uuid project8
+--project_retainer --name Project42 Extension --customer_id customer3 --region_id region1 --status Draft --monthly_amount 350000 --uuid project9
+--project_retainer --name Project42 Draft --customer_id customer3 --region_id region1 --status Draft --monthly_amount 350000 --uuid project10
+--project_fixed_bid --name Term Cases --customer_id customer6 --region_id region1 --status Draft --amount 100000 --uuid project11
+--project_fixed_bid --name HC Update Cases --customer_id customer6 --region_id region1 --status Draft --amount 100000 --uuid project12
+--employee --first_name Ada --last_name Lovelace --email adalovelace@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 200 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee1
+--employee --first_name Andy --last_name Apprety --email andyapprety@nxogantrydemo.com --start_date 2021-01-02 --hourly_cost 89.74 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type2 --region_id region1 --uuid employee2
+--employee --first_name Arnold --last_name Devmeier --email arnolddevmeier@nxogantrydemo.com --start_date 2021-01-03 --hourly_cost 98.42 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type1 --region_id region1 --uuid employee3
+--employee --first_name Arthur --last_name Dent --email arthurdent@nxogantrydemo.com --start_date 2021-01-04 --hourly_cost 53.56 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee4
+--employee --first_name Chien-Shiung --last_name Wu --email chien-shiungwu@nxogantrydemo.com --start_date 2021-01-05 --hourly_cost 90.87 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type3 --region_id region1 --uuid employee5
+--employee --first_name Claude --last_name Monet --email claudemonet@nxogantrydemo.com --start_date 2022-01-06 --hourly_cost 100.45 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee6
+--employee --first_name DeeDee --last_name Leadersing --email deedeeleadersing@nxogantrydemo.com --start_date 2011-08-07 --hourly_cost 176.87 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee7
+--employee --first_name Edgar --last_name Enart --email edgarenart@nxogantrydemo.com --start_date 2011-08-08 --hourly_cost 123.32 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type2 --region_id region1 --uuid employee8
+--employee --first_name Edith --last_name Clarke --email edithclarke@nxogantrydemo.com --start_date 2011-08-09 --hourly_cost 190.98 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type2 --region_id region1 --uuid employee9
+--employee --first_name Ellen --last_name Ochoa --email ellenochoa@nxogantrydemo.com --start_date 2016-10-10 --hourly_cost 134.25 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type3 --region_id region1 --uuid employee10
+--employee --first_name Ford --last_name Prefect --email fordprefect@nxogantrydemo.com --start_date 2011-08-11 --hourly_cost 29.98 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee11
+--employee --first_name Frida --last_name Kahlo --email fridakahlo@nxogantrydemo.com --start_date 2018-07-20 --hourly_cost 160.87 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee12
+--employee --first_name Georgia --last_name OKeeffe --email georgiaokeeffe@nxogantrydemo.com --start_date 2018-07-21 --hourly_cost 160.87 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type2 --region_id region1 --uuid employee13
+--employee --first_name Jean-Michel --last_name Basquiat --email jean-michelbasquiat@nxogantrydemo.com --start_date 2018-07-22 --hourly_cost 160.87 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type1 --region_id region1 --uuid employee14
+--employee --first_name Joe --last_name Fre --email joefre@nxogantrydemo.com --start_date 2018-07-23 --hourly_cost 120.9 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type1 --region_id region1 --uuid employee15
+--employee --first_name Junio --last_name Artiland --email junioartiland@nxogantrydemo.com --start_date 2018-07-24 --hourly_cost 143.72 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee16
+--employee --first_name Leonardo --last_name DaVinci --email leonardodavinci@nxogantrydemo.com --start_date 2018-07-25 --hourly_cost 220 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type1 --region_id region1 --uuid employee17
+--employee --first_name Louise --last_name Bourgeois --email louisebourgeois@nxogantrydemo.com --start_date 2010-07-26 --hourly_cost 123.21 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type1 --region_id region1 --uuid employee18
+--employee --first_name Marilyn --last_name Monroe --email marilynmonroe@nxogantrydemo.com --start_date 2018-07-27 --hourly_cost 230 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type1 --region_id region1 --uuid employee19
+--employee --first_name Pablo --last_name Picasso --email pablopicasso@nxogantrydemo.com --start_date 2010-12-07 --hourly_cost 189.9 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee20
+--employee --first_name Seneca --last_name Englewood --email senecaenglewood@nxogantrydemo.com --start_date 2020-11-08 --hourly_cost 129.65 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type1 --region_id region1 --uuid employee21
+--employee --first_name Tricia --last_name McMillan --email triciamcmillan@nxogantrydemo.com --start_date 2021-12-09 --hourly_cost 130.98 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee22
+--employee --first_name Vincent --last_name VanGogh --email vincentvangogh@nxogantrydemo.com --start_date 2001-12-10 --hourly_cost 200.25 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee23
+--employee --first_name Zaphod --last_name Beeblebrox --email zaphodbeeblebrox@nxogantrydemo.com --start_date 2020-12-11 --hourly_cost 67.1 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type1 --region_id region1 --uuid employee24
+--employee --first_name Peeta --last_name Mellark --email peetamellark@nxogantrydemo.com --start_date 2008-09-14 --hourly_cost 150 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type3 --region_id region1 --uuid employee25
+--employee --first_name Katniss --last_name Everdeen --email katnisseverdeen@nxogantrydemo.com --start_date 2008-09-14 --hourly_cost 250 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type3 --region_id region1 --uuid employee26
+--employee --first_name Anna --last_name Byler --email annabyler@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee27
+--employee --first_name Billy --last_name Jones --email billyjones@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee28
+--employee --first_name Ben --last_name Davidson --email bendavidson@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee29
+--employee --first_name Carrie --last_name Edwards --email carrieedwards@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee30
+--employee --first_name Donna --last_name Graham --email donnagraham@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee31
+--employee --first_name Gerald --last_name Hershberger --email geraldhershberger@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee32
+--employee --first_name Holly --last_name Jones --email hollyjones@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee33
+--employee --first_name Roman --last_name Miller --email romanmiller@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee34
+--employee --first_name Amos --last_name Hershberger --email amoshershberger@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee35
+--employee --first_name Anne --last_name Phillips --email annephillips@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee36
+--employee --first_name Henry --last_name Yoder --email henryyoder@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee37
+--employee --first_name Jim --last_name Troyer --email jimtroyer@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee38
+--employee --first_name Miriam --last_name Yoder --email miriamyoder@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee39
+--employee --first_name Rosemary --last_name Yoder --email rosemaryyoder@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 50 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id region1 --uuid employee40
+--open_position --name Apprentice Artisan --start_date 2021-06-21 --end_date 2021-10-14 --bill_rate 100 --cost 50 --daily_billable_hours 8 --project_id project6 --position_type_id position_type3 --uuid open_position1
+--open_position --name Artisan --start_date 2021-06-01 --end_date 2022-01-28 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id project6 --position_type_id position_type1 --uuid open_position2
+--open_position --name Delivery Lead --start_date 2021-06-01 --end_date 2022-02-25 --bill_rate 200 --cost 150 --daily_billable_hours 8 --project_id project6 --position_type_id position_type7 --uuid open_position3
+--open_position --name Experience Lead --start_date 2021-06-07 --end_date 2022-01-28 --bill_rate 150 --cost 100 --daily_billable_hours 8 --project_id project6 --position_type_id position_type4 --uuid open_position4
+--open_position --name Senior Artisan --start_date 2021-07-05 --end_date 2022-01-28 --bill_rate 200 --cost 150 --daily_billable_hours 8 --project_id project6 --position_type_id position_type1 --uuid open_position5
+--open_position --name Tech Lead --start_date 2021-06-07 --end_date 2022-02-18 --bill_rate 175 --cost 125 --daily_billable_hours 8 --project_id project6 --position_type_id position_type1 --uuid open_position6
+--open_position --name Apprentice --start_date 2021-08-02 --end_date 2022-06-03 --bill_rate 100 --cost 75.25 --daily_billable_hours 8 --project_id project5 --position_type_id position_type7 --uuid open_position7
+--position_with_employee --name Master Artisan --start_date 2021-10-25 --end_date 2022-03-25 --bill_rate 0 --cost 190.98 --daily_billable_hours 8 --project_id project1 --position_type_id position_type1 --employee_id employee9 --uuid position_with_employee1
+--position_with_employee --name Physicist --start_date 2021-10-25 --end_date 2022-03-25 --bill_rate 0 --cost 90.87 --daily_billable_hours 8 --project_id project1 --position_type_id position_type3 --employee_id employee5 --uuid position_with_employee2
+--position_with_employee --name Artisan 3 --start_date 2021-10-25 --end_date 2022-03-26 --bill_rate 0 --cost 98.42 --daily_billable_hours 5 --project_id project1 --position_type_id position_type1 --employee_id employee3 --uuid position_with_employee3
+--position_with_employee --name Delivery Lead --start_date 2021-10-25 --end_date 2022-02-25 --bill_rate 0 --cost 176.87 --daily_billable_hours 8 --project_id project1 --position_type_id position_type7 --employee_id employee7 --uuid position_with_employee4
+--position_with_employee --name Experience Lead --start_date 2021-10-25 --end_date 2022-03-25 --bill_rate 0 --cost 160.87 --daily_billable_hours 8 --project_id project1 --position_type_id position_type4 --employee_id employee12 --uuid position_with_employee5
+--position_with_employee --name Jewelry Expert --start_date 2021-10-25 --end_date 2021-10-29 --bill_rate 0 --cost 230 --daily_billable_hours 4 --project_id project1 --position_type_id position_type3 --employee_id employee19 --uuid position_with_employee6
+--position_with_employee --name Tech Lead --start_date 2021-10-25 --end_date 2022-02-25 --bill_rate 0 --cost 200 --daily_billable_hours 8 --project_id project1 --position_type_id position_type1 --employee_id employee1 --uuid position_with_employee7
+--position_with_employee --name Artisan 2 --start_date 2021-06-14 --end_date 2021-12-17 --bill_rate 0 --cost 100.45 --daily_billable_hours 8 --project_id project2 --position_type_id position_type1 --employee_id employee6 --uuid position_with_employee8
+--position_with_employee --name Baker --start_date 2021-06-14 --end_date 2021-12-17 --bill_rate 0 --cost 150 --daily_billable_hours 8 --project_id project2 --position_type_id position_type2 --employee_id employee25 --uuid position_with_employee9
+--position_with_employee --name Chef_ --start_date 2021-06-14 --end_date 2021-12-17 --bill_rate 0 --cost 130.98 --daily_billable_hours 8 --project_id project2 --position_type_id position_type3 --employee_id employee22 --uuid position_with_employee10
+--position_with_employee --name Delivery Lead --start_date 2021-06-14 --end_date 2021-12-17 --bill_rate 0 --cost 129.65 --daily_billable_hours 8 --project_id project2 --position_type_id position_type7 --employee_id employee21 --uuid position_with_employee11
+--position_with_employee --name Master Artisan --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 190.98 --daily_billable_hours 8 --project_id project7 --position_type_id position_type1 --employee_id employee9 --uuid position_with_employee12
+--position_with_employee --name Physicist --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 90.87 --daily_billable_hours 8 --project_id project7 --position_type_id position_type1 --employee_id employee5 --uuid position_with_employee13
+--position_with_employee --name Artisan 3 --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 98.42 --daily_billable_hours 8 --project_id project7 --position_type_id position_type1 --employee_id employee3 --uuid position_with_employee14
+--position_with_employee --name Delivery Lead --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 176.87 --daily_billable_hours 8 --project_id project7 --position_type_id position_type7 --employee_id employee7 --uuid position_with_employee15
+--position_with_employee --name Experience Lead --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 160.87 --daily_billable_hours 8 --project_id project7 --position_type_id position_type4 --employee_id employee12 --uuid position_with_employee16
+--position_with_employee --name Jewelry Expert --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 230 --daily_billable_hours 4 --project_id project7 --position_type_id position_type3 --employee_id employee19 --uuid position_with_employee17
+--position_with_employee --name Tech Lead --start_date 2022-03-28 --end_date 2023-03-25 --bill_rate 0 --cost 200 --daily_billable_hours 8 --project_id project7 --position_type_id position_type1 --employee_id employee1 --uuid position_with_employee18
+--position_with_employee --name Artisan 2 --start_date 2021-12-20 --end_date 2022-05-27 --bill_rate 0 --cost 100.45 --daily_billable_hours 8 --project_id project8 --position_type_id position_type1 --employee_id employee6 --uuid position_with_employee19
+--position_with_employee --name Baker --start_date 2021-12-20 --end_date 2022-05-27 --bill_rate 0 --cost 150 --daily_billable_hours 8 --project_id project8 --position_type_id position_type2 --employee_id employee25 --uuid position_with_employee20
+--position_with_employee --name Chef_ --start_date 2021-12-20 --end_date 2022-05-27 --bill_rate 0 --cost 130.98 --daily_billable_hours 8 --project_id project8 --position_type_id position_type3 --employee_id employee22 --uuid position_with_employee21
+--position_with_employee --name Delivery Lead --start_date 2021-12-20 --end_date 2022-05-27 --bill_rate 0 --cost 129.65 --daily_billable_hours 8 --project_id project8 --position_type_id position_type7 --employee_id employee21 --uuid position_with_employee22
+--position_with_employee --name Assistant Baker --start_date 2021-12-20 --end_date 2022-05-27 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id project8 --position_type_id position_type2 --employee_id employee4 --uuid position_with_employee23
+--position_with_employee --name Artisan --start_date 2021-05-03 --end_date 2021-10-01 --bill_rate 0 --cost 67.1 --daily_billable_hours 8 --project_id project3 --position_type_id position_type7 --employee_id employee24 --uuid position_with_employee24
+--position_with_employee --name Chief Engineer --start_date 2021-05-03 --end_date 2021-10-01 --bill_rate 0 --cost 29.98 --daily_billable_hours 8 --project_id project3 --position_type_id position_type1 --employee_id employee11 --uuid position_with_employee25
+--position_with_employee --name Delivery --start_date 2021-05-03 --end_date 2021-10-29 --bill_rate 0 --cost 130.98 --daily_billable_hours 8 --project_id project3 --position_type_id position_type7 --employee_id employee22 --uuid position_with_employee26
+--position_with_employee --name Tester --start_date 2021-05-03 --end_date 2021-10-01 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id project3 --position_type_id position_type7 --employee_id employee4 --uuid position_with_employee27
+--position_with_employee --name Artisan --start_date 2021-10-04 --end_date 2021-12-31 --bill_rate 0 --cost 67.1 --daily_billable_hours 8 --project_id project9 --position_type_id position_type7 --employee_id employee24 --uuid position_with_employee28
+--position_with_employee --name Chief Engineer --start_date 2021-10-04 --end_date 2021-12-31 --bill_rate 0 --cost 29.98 --daily_billable_hours 8 --project_id project9 --position_type_id position_type1 --employee_id employee11 --uuid position_with_employee29
+--position_with_employee --name Delivery --start_date 2021-10-04 --end_date 2021-12-31 --bill_rate 0 --cost 130.98 --daily_billable_hours 8 --project_id project9 --position_type_id position_type7 --employee_id employee22 --uuid position_with_employee30
+--position_with_employee --name Tester --start_date 2021-10-04 --end_date 2021-12-31 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id project9 --position_type_id position_type7 --employee_id employee4 --uuid position_with_employee31
+--position_with_employee --name Assistant Engineer --start_date 2021-10-04 --end_date 2021-12-31 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id project9 --position_type_id position_type1 --employee_id employee4 --uuid position_with_employee32
+--position_with_employee --name Artisan --start_date 2022-01-03 --end_date 2023-01-13 --bill_rate 0 --cost 67.1 --daily_billable_hours 8 --project_id project10 --position_type_id position_type7 --employee_id employee24 --uuid position_with_employee33
+--position_with_employee --name Chief Engineer --start_date 2022-01-03 --end_date 2023-01-13 --bill_rate 0 --cost 29.98 --daily_billable_hours 8 --project_id project10 --position_type_id position_type1 --employee_id employee11 --uuid position_with_employee34
+--position_with_employee --name Delivery --start_date 2022-01-03 --end_date 2023-01-13 --bill_rate 0 --cost 130.98 --daily_billable_hours 8 --project_id project10 --position_type_id position_type7 --employee_id employee22 --uuid position_with_employee35
+--position_with_employee --name Tester --start_date 2022-01-03 --end_date 2023-01-13 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id project10 --position_type_id position_type7 --employee_id employee4 --uuid position_with_employee36
+--position_with_employee --name Assistant Engineer --start_date 2022-01-03 --end_date 2023-01-13 --bill_rate 0 --cost 53.56 --daily_billable_hours 8 --project_id project10 --position_type_id position_type1 --employee_id employee4 --uuid position_with_employee37
+--position_with_employee --name Apprentice Artisan --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 100 --cost 123.32 --daily_billable_hours 8 --project_id project4 --position_type_id position_type1 --employee_id employee8 --uuid position_with_employee38
+--position_with_employee --name Artisan --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 150 --cost 143.72 --daily_billable_hours 8 --project_id project4 --position_type_id position_type1 --employee_id employee16 --uuid position_with_employee39
+--position_with_employee --name Artisan 02 --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 150 --cost 120.9 --daily_billable_hours 8 --project_id project4 --position_type_id position_type7 --employee_id employee15 --uuid position_with_employee40
+--position_with_employee --name Artisan 03 --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 150 --cost 53.56 --daily_billable_hours 8 --project_id project4 --position_type_id position_type1 --employee_id employee4 --uuid position_with_employee41
+--position_with_employee --name Delivery --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 200 --cost 189.9 --daily_billable_hours 8 --project_id project4 --position_type_id position_type7 --employee_id employee20 --uuid position_with_employee42
+--position_with_employee --name Tech Lead --start_date 2021-12-06 --end_date 2022-04-29 --bill_rate 250 --cost 200.25 --daily_billable_hours 8 --project_id project4 --position_type_id position_type7 --employee_id employee23 --uuid position_with_employee43
+--position_with_employee --name Artisan --start_date 2021-08-02 --end_date 2021-08-20 --bill_rate 125 --cost 134.25 --daily_billable_hours 8 --project_id project5 --position_type_id position_type1 --employee_id employee10 --uuid position_with_employee44
+--position_with_employee --name Delivery Lead --start_date 2021-08-02 --end_date 2022-06-03 --bill_rate 150 --cost 160.87 --daily_billable_hours 8 --project_id project5 --position_type_id position_type7 --employee_id employee13 --uuid position_with_employee45
+--position_with_employee --name Artisan 2 --start_date 2021-08-02 --end_date 2022-06-03 --bill_rate 150 --cost 160.87 --daily_billable_hours 8 --project_id project5 --position_type_id position_type1 --employee_id employee14 --uuid position_with_employee46
+--position_with_employee --name Design --start_date 2021-07-05 --end_date 2022-07-22 --bill_rate 250 --cost 220 --daily_billable_hours 8 --project_id project5 --position_type_id position_type5 --employee_id employee17 --uuid position_with_employee47
+--position_with_employee --name DX Lead --start_date 2021-07-05 --end_date 2022-07-22 --bill_rate 200 --cost 123.21 --daily_billable_hours 8 --project_id project5 --position_type_id position_type4 --employee_id employee18 --uuid position_with_employee48
+--position_with_employee --name Tech Lead --start_date 2021-07-05 --end_date 2022-06-17 --bill_rate 200 --cost 130.98 --daily_billable_hours 8 --project_id project5 --position_type_id position_type7 --employee_id employee22 --uuid position_with_employee49
+--position_with_employee --name TermSetup#1 --start_date 2021-02-01 --end_date 2021-02-02 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project11 --position_type_id position_type1 --employee_id employee34 --uuid position_with_employee50
+--position_with_employee --name TermSetup#2 --start_date 2021-07-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project11 --position_type_id position_type5 --employee_id employee35 --uuid position_with_employee51
+--position_with_employee --name TermSetup#3 --start_date 2021-02-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project11 --position_type_id position_type4 --employee_id employee36 --uuid position_with_employee52
+--position_with_employee --name TermSetup#4 --start_date 2021-02-01 --end_date 2021-06-01 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project11 --position_type_id position_type7 --employee_id employee37 --uuid position_with_employee53
+--position_with_employee --name TermSetup#5 --start_date 2021-06-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project11 --position_type_id position_type1 --employee_id employee38 --uuid position_with_employee54
+--position_with_employee --name TermSetup#6a --start_date 2021-02-01 --end_date 2021-04-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project11 --position_type_id position_type5 --employee_id employee39 --uuid position_with_employee55
+--position_with_employee --name TermSetup#6b --start_date 2021-07-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project11 --position_type_id position_type4 --employee_id employee39 --uuid position_with_employee56
+--position_with_employee --name TermSetup#7a --start_date 2021-02-01 --end_date 2021-06-01 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project11 --position_type_id position_type7 --employee_id employee40 --uuid position_with_employee57
+--position_with_employee --name TermCSetup#7b --start_date 2021-06-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project11 --position_type_id position_type1 --employee_id employee40 --uuid position_with_employee58
+--position_with_employee --name HCSetup#1 --start_date 2021-02-01 --end_date 2021-04-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project12 --position_type_id position_type5 --employee_id employee27 --uuid position_with_employee59
+--position_with_employee --name HCSetup#2 --start_date 2021-07-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project12 --position_type_id position_type4 --employee_id employee28 --uuid position_with_employee60
+--position_with_employee --name HCSetup#3 --start_date 2021-02-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project12 --position_type_id position_type7 --employee_id employee29 --uuid position_with_employee61
+--position_with_employee --name HCSetup#4 --start_date 2021-02-01 --end_date 2021-06-01 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project12 --position_type_id position_type3 --employee_id employee30 --uuid position_with_employee62
+--position_with_employee --name HCSetup#5 --start_date 2021-06-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project12 --position_type_id position_type1 --employee_id employee31 --uuid position_with_employee63
+--position_with_employee --name HCSetup#6a --start_date 2021-02-01 --end_date 2021-02-02 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project12 --position_type_id position_type5 --employee_id employee32 --uuid position_with_employee64
+--position_with_employee --name HCSetup#6b --start_date 2021-07-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project12 --position_type_id position_type4 --employee_id employee32 --uuid position_with_employee65
+--position_with_employee --name HCSetup#7a --start_date 2021-02-01 --end_date 2021-06-01 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project12 --position_type_id position_type7 --employee_id employee33 --uuid position_with_employee66
+--position_with_employee --name HCSetup#7b --start_date 2021-06-01 --end_date 2021-09-30 --bill_rate 0 --cost 50 --daily_billable_hours 8 --project_id project12 --position_type_id position_type3 --employee_id employee33 --uuid position_with_employee67

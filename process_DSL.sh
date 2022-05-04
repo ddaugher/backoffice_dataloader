@@ -2,6 +2,7 @@
 
 source ./configs.sh
 source ./functions.sh
+source ./kv-sh
 
 ALL_ENVS=(LOCAL DEV STAGE PROD)
 export ENV=''
@@ -90,34 +91,34 @@ function help() {
    echo "The following DSL options are available."
    echo ""
    echo " --create_tenant --name [string]"
-   echo " --customer --name [string] --is_active [true/false]"
-   echo " --daily_expense_type --name [string]"
+   echo " --customer --name [string] --is_active [true/false] --uuid [string]"
+   echo " --daily_expense_type --name [string] --uuid [string]"
    echo " --delete_tenant --name [string]"
-   echo " --employee --first_name [string] --last_name [string] --email [string] --start_date [yyyy-mm-dd] --hourly_cost [decimal] --daily_billable_hours [integer (1-8)] --utilization_target [decimal] --employee_type_id [id] --region_id [id]"
-   echo " --employee_type --name [string] --is_employee [true/false] --is_utilized [true/false]"
+   echo " --employee --first_name [string] --last_name [string] --email [string] --start_date [yyyy-mm-dd] --hourly_cost [decimal] --daily_billable_hours [integer (1-8)] --utilization_target [decimal] --employee_type_id [id] --region_id [id] --uuid [string]"hhh
+   echo " --employee_type --name [string] --is_employee [true/false] --is_utilized [true/false] --uuid [string]"
    echo " --global_detail --name [string] --extended_fields [string]"
-   echo " --holiday --date [yyyy-mm-dd] --description [string] --hours [integer (1-8)] --work_exception_type_id [id]"
+   echo " --holiday --date [yyyy-mm-dd] --description [string] --hours [integer (1-8)] --work_exception_type_id [id] --uuid [string]" 
    echo " --host --url [url]"
    echo " --login --username [string] --password [string]]"
    echo " --tenant_login"
-   echo " --monthly_expense_type --name [string]"
-   echo " --open_position --name [string] --start_date [yyyy-mm-dd] --end_date [yyyy-mm-dd] --bill_rate [decimal] --cost [decimal] --daily_billable_hours [integer (1-8)] --project_id [id] --position_type_id [id]"
+   echo " --monthly_expense_type --name [string] --uuid [string]"
+   echo " --open_position --name [string] --start_date [yyyy-mm-dd] --end_date [yyyy-mm-dd] --bill_rate [decimal] --cost [decimal] --daily_billable_hours [integer (1-8)] --project_id [id] --position_type_id [id] --uuid [string]"
    echo " --position_monthly_expense --month [integer] --year [integer] --cost [decimal] --description [string] --position_id [id] --monthly_expense_type_id [id]"
    echo " --position_daily_expense --cost [decimal] --description [string] --position_id [id] --monthly_expense_type_id [id]"
-   echo " --position_type --name [string]"
-   echo " --position_with_employee --name [string] --start_date [yyyy-mm-dd] --end_date [yyyy-mm-dd] --bill_rate [decimal] --cost [decimal] --daily_billable_hours [integer (1-8)] --project_id [id] --position_type_id [id] --employee_id [id]"
-   echo " --project_time_material --name [string] --customer_id [id] --region_id [id] --status [string]"
-   echo " --project_retainer --name [string] --customer_id [id] --region_id [id] --status [string] --monthly_amount [decimal]"
-   echo " --project_fixed_bid --name [string] --customer_id [id] --region_id [id] --status [string] --amount [decimal]"
-   echo " --region --name [string]"
+   echo " --position_type --name [string] --uuid [string]" 
+   echo " --position_with_employee --name [string] --start_date [yyyy-mm-dd] --end_date [yyyy-mm-dd] --bill_rate [decimal] --cost [decimal] --daily_billable_hours [integer (1-8)] --project_id [id] --position_type_id [id] --employee_id [id] --uuid [string]"
+   echo " --project_time_material --name [string] --customer_id [id] --region_id [id] --status [string] --uuid [string]"
+   echo " --project_retainer --name [string] --customer_id [id] --region_id [id] --status [string] --monthly_amount [decimal] --uuid [string]"
+   echo " --project_fixed_bid --name [string] --customer_id [id] --region_id [id] --status [string] --amount [decimal] --uuid [string]"
+   echo " --region --name [string] --uuid [string]"
    echo " --registration --email [string] --pass [string] --api_access [true/false] --role [string (user/admin)] --self_service_storage [string]"
    echo " --release_version --version [string] --notes [string]"
    echo " --renew"
    echo " --tenant_mapping --domain [string] --tenant [string]"
    echo " --delete_tenant_mapping --tenant [string]"
    echo " --delete_tenant_mapping --tenant [string]"
-   echo " --work_exception --description [string] --date [yyyy-mm-dd] --employee_id [id] --work_exception_type_id [id] --hours [integer (1-8)]"
-   echo " --work_exception_type --name [string]"
+   echo " --work_exception --description [string] --date [yyyy-mm-dd] --employee_id [id] --work_exception_type_id [id] --hours [integer (1-8)] --uuid [string]"
+   echo " --work_exception_type --name [string] --uuid [string]"
    echo "-----------------------------------------------------------------------------------------"
 
    exit 1
@@ -336,6 +337,13 @@ function process_params() {
             shift
          done
          ;;
+      --uuid)
+         shift
+         while ! echo "$1" | egrep '^-' >/dev/null 2>&1 && [ ! -z "$1" ]; do
+            UUID="$UUID $1"
+            shift
+         done
+         ;;
       --extended_fields)
          shift
          while ! echo "$1" | egrep '^-' >/dev/null 2>&1 && [ ! -z "$1" ]; do
@@ -463,54 +471,63 @@ function process_input() {
       process_delete_tenant_mapping $TENANT
       unset TENANT
       ;;
-   --region)
-      process_params $@
-      NAME=$(echo $NAME)
-      echo "processing region -> $NAME"
-      process_region $NAME
-      unset NAME
-      ;;
    --monthly_expense_type)
       process_params $@
       NAME=$(echo $NAME)
+      UUID=$(echo $UUID)
       echo "processing monthly_expense_type -> $NAME"
-      process_monthly_expense_type $NAME
+      echo "processing uuid -> $UUID"
+      process_monthly_expense_type "$NAME" "$UUID"
       unset NAME
+      unset UUID
       ;;
    --daily_expense_type)
       process_params $@
       NAME=$(echo $NAME)
+      UUID=$(echo $UUID)
       echo "processing daily_expense_types -> $NAME"
-      process_daily_expense_type $NAME
+      echo "processing uuid -> $UUID"
+      process_daily_expense_type "$NAME" "$UUID"
       unset NAME
+      unset UUID
       ;;
    --position_type)
+      echo "processing position types ---"
       process_params $@
       NAME=$(echo $NAME)
+      UUID=$(echo $UUID)
       echo "processing position_types -> $NAME"
-      process_position_type "$NAME"
+      echo "processing uuid -> $UUID"
+      process_position_type "$NAME" "$UUID"
       unset NAME
+      unset UUID
       ;;
    --employee_type)
       process_params $@
       NAME=$(echo $NAME)
+      UUID=$(echo $UUID)
       echo "processing employee type -> $NAME"
       echo "processing is_employee -> $IS_EMPLOYEE"
       echo "processing is_utilized -> $IS_UTILIZED"
-      process_employee_type "$NAME" $IS_EMPLOYEE $IS_UTILIZED
+      echo "processing uuid -> $UUID"
+      process_employee_type "$NAME" $IS_EMPLOYEE $IS_UTILIZED "$UUID"
       unset NAME
       unset IS_EMPLOYEE
       unset IS_UTILIZED
+      unset UUID
       ;;
    --customer)
       echo "processing customers ---"
       process_params $@
       NAME=$(echo $NAME)
+      UUID=$(echo $UUID)
       echo "processing customer -> $NAME"
       echo "processing is_active -> $IS_ACTIVE"
-      process_customer "$NAME" $IS_ACTIVE
+      echo "processing uuid -> $UUID"
+      process_customer "$NAME" $IS_ACTIVE "$UUID"
       unset NAME
       unset IS_ACTIVE
+      unset UUID
       ;;
    --sleep)
       echo "processing sleeping ---"
@@ -534,6 +551,31 @@ function process_input() {
       unset POSITION_ID
       unset MONTHLY_EXPENSE_TYPE_ID
       ;;
+   --open_position)
+      echo "processing positions ---"
+      process_params $@
+      NAME=$(echo $NAME)
+      UUID=$(echo $UUID)
+      echo "processing position -> $NAME"
+      echo "processing start_date -> $START_DATE"
+      echo "processing end_date -> $END_DATE"
+      echo "processing bill_rate -> $BILL_RATE"
+      echo "processing cost -> $COST"
+      echo "processing daily_billable_hours -> $DAILY_BILLABLE_HOURS"
+      echo "processing project_id -> $PROJECT_ID"
+      echo "processing position_type_id -> $POSITION_TYPE_ID"
+      echo "processing uuid -> $UUID"
+      process_open_position "$NAME" $START_DATE $END_DATE $BILL_RATE $COST $DAILY_BILLABLE_HOURS $PROJECT_ID $POSITION_TYPE_ID "$UUID"
+      unset NAME
+      unset START_DATE
+      unset END_DATE
+      unset BILL_RATE
+      unset COST
+      unset DAILY_BILLABLE_HOURS
+      unset PROJECT_ID
+      unset POSITION_TYPE_ID
+      unset UUID
+      ;;
    --position_daily_expense)
       echo "processing position daily expenses ---"
       process_params $@
@@ -552,6 +594,7 @@ function process_input() {
       echo "processing positions ---"
       process_params $@
       NAME=$(echo $NAME)
+      UUID=$(echo $UUID)
       echo "processing position -> $NAME"
       echo "processing start_date -> $START_DATE"
       echo "processing end_date -> $END_DATE"
@@ -561,7 +604,8 @@ function process_input() {
       echo "processing project_id -> $PROJECT_ID"
       echo "processing position_type_id -> $POSITION_TYPE_ID"
       echo "processing employee_id -> $EMPLOYEE_ID"
-      process_position_with_employee "$NAME" $START_DATE $END_DATE $BILL_RATE $COST $DAILY_BILLABLE_HOURS $PROJECT_ID $POSITION_TYPE_ID $EMPLOYEE_ID
+      echo "processing uuid -> $UUID"
+      process_position_with_employee "$NAME" $START_DATE $END_DATE $BILL_RATE $COST $DAILY_BILLABLE_HOURS $PROJECT_ID $POSITION_TYPE_ID $EMPLOYEE_ID "$UUID"
       unset NAME
       unset START_DATE
       unset END_DATE
@@ -571,35 +615,16 @@ function process_input() {
       unset PROJECT_ID
       unset POSITION_TYPE_ID
       unset EMPLOYEE_ID
-      ;;
-   --open_position)
-      echo "processing positions ---"
-      process_params $@
-      NAME=$(echo $NAME)
-      echo "processing position -> $NAME"
-      echo "processing start_date -> $START_DATE"
-      echo "processing end_date -> $END_DATE"
-      echo "processing bill_rate -> $BILL_RATE"
-      echo "processing cost -> $COST"
-      echo "processing daily_billable_hours -> $DAILY_BILLABLE_HOURS"
-      echo "processing project_id -> $PROJECT_ID"
-      echo "processing position_type_id -> $POSITION_TYPE_ID"
-      process_open_position "$NAME" $START_DATE $END_DATE $BILL_RATE $COST $DAILY_BILLABLE_HOURS $PROJECT_ID $POSITION_TYPE_ID
-      unset NAME
-      unset START_DATE
-      unset END_DATE
-      unset BILL_RATE
-      unset COST
-      unset DAILY_BILLABLE_HOURS
-      unset PROJECT_ID
-      unset POSITION_TYPE_ID
+      unset UUID
       ;;
    --employee)
       echo "processing employees ---"
       process_params $@
       FIRST_NAME=$(echo $FIRST_NAME)
       LAST_NAME=$(echo $LAST_NAME)
-      echo "processing employee -> $FIRST_NAME $LAST_NAME"
+      UUID=$(echo $UUID)
+      echo "processing first name -> $FIRST_NAME"
+      echo "processing last name -> $LAST_NAME"
       echo "processing email -> $EMAIL"
       echo "processing start_date -> $START_DATE"
       echo "processing hourly_cost -> $HOURLY_COST"
@@ -607,7 +632,8 @@ function process_input() {
       echo "processing utilization_target -> $UTILIZATION_TARGET"
       echo "processing employee_type_id -> $EMPLOYEE_TYPE_ID"
       echo "processing region_id -> $REGION_ID"
-      process_employee "$FIRST_NAME" "$LAST_NAME" $EMAIL $START_DATE $HOURLY_COST $DAILY_BILLABLE_HOURS $UTILIZATION_TARGET $EMPLOYEE_TYPE_ID $REGION_ID
+      echo "processing uuid -> $UUID"
+      process_employee "$FIRST_NAME" "$LAST_NAME" "$EMAIL" $START_DATE $HOURLY_COST $DAILY_BILLABLE_HOURS $UTILIZATION_TARGET $EMPLOYEE_TYPE_ID $REGION_ID "$UUID"
       unset DAILY_BILLABLE_HOURS
       unset EMAIL
       unset EMPLOYEE_TYPE_ID
@@ -617,66 +643,89 @@ function process_input() {
       unset REGION_ID
       unset START_DATE
       unset UTILIZATION_TARGET
+      unset UUID
+      ;;
+   --region)
+      process_params $@
+      NAME=$(echo $NAME)
+      UUID=$(echo $UUID)
+      echo "processing region -> $NAME"
+      echo "processing uuid -> $UUID"
+      process_region "$NAME" "$UUID"
+      unset NAME
+      unset UUID
       ;;
    --project_fixed_bid)
       echo "processing projects ---"
       process_params $@
       NAME=$(echo $NAME)
       STATUS=$(echo $STATUS)
+      UUID=$(echo $UUID)
       echo "processing project -> $NAME"
       echo "processing customer_id -> $CUSTOMER_ID"
       echo "processing region_id -> $REGION_ID"
       echo "processing status -> $STATUS"
       echo "processing amount -> $AMOUNT"
       echo "processing billing_type -> Fixed Bid"
-      process_project_fixed_bid "$NAME" $CUSTOMER_ID $REGION_ID "$STATUS" $AMOUNT "Fixed Bid"
-      unset AMOUNT
-      unset CUSTOMER_ID
+      echo "processing uuid -> $UUID"
+      process_project_fixed_bid "$NAME" $CUSTOMER_ID $REGION_ID "$STATUS" $AMOUNT "Fixed Bid" "$UUID"
       unset NAME
+      unset CUSTOMER_ID
       unset REGION_ID
       unset STATUS
+      unset AMOUNT
+      unset UUID
       ;;
    --project_retainer)
       echo "processing projects ---"
       process_params $@
       NAME=$(echo $NAME)
       STATUS=$(echo $STATUS)
+      UUID=$(echo $UUID)
       echo "processing project -> $NAME"
       echo "processing customer_id -> $CUSTOMER_ID"
       echo "processing region_id -> $REGION_ID"
       echo "processing status -> $STATUS"
       echo "processing monthly_amount -> $MONTHLY_AMOUNT"
       echo "processing billing_type -> Retainer"
-      process_project_retainer "$NAME" $CUSTOMER_ID $REGION_ID "$STATUS" $MONTHLY_AMOUNT "Retainer"
-      unset CUSTOMER_ID
-      unset MONTHLY_AMOUNT
+      echo "processing uuid -> $UUID"
+      process_project_retainer "$NAME" $CUSTOMER_ID $REGION_ID "$STATUS" $MONTHLY_AMOUNT "Retainer" "$UUID"
       unset NAME
+      unset CUSTOMER_ID
       unset REGION_ID
       unset STATUS
+      unset MONTHLY_AMOUNT
+      unset UUID
       ;;
    --project_time_materials)
       echo "processing projects ---"
       process_params $@
       NAME=$(echo $NAME)
       STATUS=$(echo $STATUS)
+      UUID=$(echo $UUID)
       echo "processing project -> $NAME"
       echo "processing customer_id -> $CUSTOMER_ID"
       echo "processing region_id -> $REGION_ID"
       echo "processing status -> $STATUS"
       echo "processing billing_type -> Time and Materials"
-      process_project_time_materials "$NAME" $CUSTOMER_ID $REGION_ID "$STATUS" "Time and Materials"
-      unset CUSTOMER_ID
+      echo "processing uuid -> $UUID"
+      process_project_time_materials "$NAME" $CUSTOMER_ID $REGION_ID "$STATUS" "Time and Materials" "$UUID"
       unset NAME
+      unset CUSTOMER_ID
       unset REGION_ID
       unset STATUS
+      unset UUID
       ;;
    --work_exception_type)
       echo "processing work execption types ---"
       process_params $@
       NAME=$(echo $NAME)
+      UUID=$(echo $UUID)
       echo "processing work_exception_types -> $NAME"
-      process_work_exception_type "$NAME"
+      echo "processing uuid -> $UUID"
+      process_work_exception_type "$NAME" "$UUID"
       unset NAME
+      unset UUID
       ;;
    --work_exception)
       echo "processing work exception ---"
@@ -707,15 +756,18 @@ function process_input() {
       echo "processing holidays ---"
       process_params $@
       DESCRIPTION=$(echo $DESCRIPTION)
+      UUID=$(echo $UUID)
       echo "processing date -> $DATE"
       echo "processing name -> $DESCRIPTION"
       echo "processing hours -> $HOURS"
       echo "processing type -> $WORK_EXCEPTION_TYPE_ID"
-      process_holiday $DATE "$DESCRIPTION" $HOURS $WORK_EXCEPTION_TYPE_ID
+      echo "processing uuid -> $UUID"
+      process_holiday $DATE "$DESCRIPTION" $HOURS $WORK_EXCEPTION_TYPE_ID "$UUID"
       unset DATE
       unset DESCRIPTION
       unset HOURS
       unset WORK_EXCEPTION_TYPE_ID
+      unset UUID
       ;;
    -*)
       # Unexpected option
