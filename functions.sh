@@ -147,7 +147,7 @@ function process_delete_tenant_mapping() {
       log_info "continuing : $http_code, $MESSAGE"
    elif [[ "$http_code" -ne 200 ]]; then
       MESSAGE=$(echo $response | jsonValue message)
-      log_warn "Unable to continue : $http_code, $MESSAGE"
+      log_error "Unable to continue : $http_code, $MESSAGE"
    else
       log_info "----- TENANT MAPPING DELETED ----- $http_code"
    fi

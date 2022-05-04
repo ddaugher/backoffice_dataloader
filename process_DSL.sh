@@ -805,11 +805,11 @@ function process_input() {
       ;;
    -*)
       # Unexpected option
-      log_warning "unexpected option"
+      log_error "unexpected option"
       #exit 1
       ;;
    *)
-      log_warning "break"
+      log_error "break"
       break
       ;;
    esac
@@ -840,6 +840,6 @@ if test -f "tenants/$TENANT/data.dsl"; then
       fi
    done <"/tmp/file.tmp"
 else
-   log_warning "$TENANT does not exist... exiting!"
+   log_error "$TENANT does not exist... exiting!"
    exit 1
 fi
