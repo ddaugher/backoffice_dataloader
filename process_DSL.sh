@@ -465,7 +465,7 @@ function process_input() {
       process_params $@
       NAME=$(echo $NAME)
       log_debug "processing tenant -> $NAME"
-      process_create_tenant $NAME
+      process_create_tenant "$NAME"
       unset NAME
       ;;
    --delete_tenant)
@@ -473,7 +473,7 @@ function process_input() {
       process_params $@
       NAME=$(echo $NAME)
       log_debug "processing tenant -> $NAME"
-      process_delete_tenant $NAME
+      process_delete_tenant "$NAME"
       unset NAME
       ;;
    --global_detail)
