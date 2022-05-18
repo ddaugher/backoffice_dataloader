@@ -16,7 +16,7 @@ log_execute() {
 
 log_fatal()   { (( _log_level >= ${_log_levels[FATAL]} ))   && echo "$(date) FATAL  $*";  }
 log_error()   { (( _log_level >= ${_log_levels[ERROR]} ))   && echo "$(date) ERROR  $*";  }
-log_warning() { (( _log_level >= ${_log_levels[WARNING]} )) && echo "$(date) WARNING  $*";  }
+log_warn()    { (( _log_level >= ${_log_levels[WARN]} )) && echo "$(date) WARN  $*";  }
 log_info()    { (( _log_level >= ${_log_levels[INFO]} ))    && echo "$(date) INFO   $*";  }
 log_debug()   { (( _log_level >= ${_log_levels[DEBUG]} ))   && echo "$(date) DEBUG  $*";  }
 log_verbose() { (( _log_level >= ${_log_levels[VERBOSE]} )) && echo "$(date) VERBOSE $*"; }

@@ -42,8 +42,8 @@ gather_DOMAIN() {
 }
 
 publish_SLACK() {
-   curl -X POST -H 'Content-type: application/json' --data "{'text':'Deploying Backoffice (${ENV})'}" https://hooks.slack.com/services/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
-   curl -X POST -H 'Content-type: application/json' --data "{'text':'Setting revision: ${REV}'}" https://hooks.slack.com/services/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
+   curl -X POST -H 'Content-type: application/json' --data "{'text':'Deploying Backoffice (${ENV})'}" https://hooks.slack.com/services/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
+   curl -X POST -H 'Content-type: application/json' --data "{'text':'Setting revision: ${REV}'}" https://hooks.slack.com/services/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
    return 0
 }
 
@@ -784,7 +784,7 @@ function process_input() {
       NOTES=$(echo $NOTES)
       log_debug "processing release_versions -> $VERSION"
       log_debug "processing notes -> $NOTES"
-      process_release_version $VERSION $NOTES
+      process_release_version $VERSION "$NOTES"
       ;;
    --holiday)
       log_debug "processing holiday ---"

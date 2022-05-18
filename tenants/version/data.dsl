@@ -1,3 +1,3 @@
 --host --url $HOST
 --tenant_login
---release_version --version v1.662.30 --notes updating fixed bid plug controller to properly pass returned message
+--release_version --version v1.664.18 --notes updating logic to set effective_start_date same as entity
