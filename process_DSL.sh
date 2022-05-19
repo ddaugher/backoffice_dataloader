@@ -67,6 +67,34 @@ gather_ENV() {
    return 0
 }
 
+gather_VERSION() {
+   echo "Enter name of VERSION to apply (enter Q to quit): [v1.0.0]"
+   read version
+   version=${version:-v1.0.0}
+
+   if [ $version = "Q" ] || [ $version = "q" ]; then
+      exit 0
+   fi
+
+   export VERSION=$version
+   log_info "Setting VERSION -> $VERSION"
+   return 0
+}
+
+gather_NOTES() {
+   echo "Enter NOTES for $VERSION to apply (enter Q to quit): []"
+   read notes
+   notes=${notes:-}
+
+   if [ $notes = "Q" ] || [ $notes = "q" ]; then
+      exit 0
+   fi
+
+   export NOTES="$notes"
+   log_info "NOTES -> $NOTES"
+   return 0
+}
+
 gather_LOGGING() {
    let counter=1
    while [ $counter -le ${#ALL_LOGGING[@]} ]; do
@@ -74,9 +102,9 @@ gather_LOGGING() {
       let counter++
    done
 
-   echo "Enter LOGGING LEVEL to apply (enter Q to quit): [ERROR]"
+   echo "Enter LOGGING LEVEL to apply (enter Q to quit): [INFO]"
    read logging
-   logging=${logging:-ERROR}
+   logging=${logging:-INFO}
 
    if [ $logging = "Q" ] || [ $logging = "q" ]; then
       exit 0
@@ -341,16 +369,18 @@ function process_params() {
       --version)
          shift
          while ! echo "$1" | egrep '^-' >/dev/null 2>&1 && [ ! -z "$1" ]; do
-            VERSION="$VERSION $1"
+            VERSION="$1"
             shift
          done
          ;;
       --notes)
          shift
          while ! echo "$1" | egrep '^-' >/dev/null 2>&1 && [ ! -z "$1" ]; do
-            NOTES="$NOTES $1"
+            TEMP="$TEMP $1"
             shift
          done
+         NOTES=$TEMP
+         echo $NOTES
          ;;
       --name)
          shift
@@ -431,6 +461,17 @@ function process_input() {
       log_debug "processing username -> $TENANT_USERNAME"
       log_debug "processing password -> $TENANT_PASSWORD"
       create_session $TENANT_USERNAME $TENANT_PASSWORD
+      ;;
+   --release_version)
+      log_debug "processing release_version ---"
+      process_params $@
+      VERSION=$(echo "$VERSION")
+      NOTES=$(echo $NOTES)
+      log_debug "processing release_versions -> $VERSION"
+      log_debug "processing notes -> $NOTES"
+      process_release_version "$VERSION" "$NOTES"
+      unset VERSION
+      unset NOTES
       ;;
    --login)
       log_debug "processing login ---"
@@ -777,15 +818,6 @@ function process_input() {
       unset WORK_EXCEPTION_TYPE_ID
       unset HOURS
       ;;
-   --release_version)
-      log_debug "processing release_version ---"
-      process_params $@
-      VERSION=$(echo $VERSION)
-      NOTES=$(echo $NOTES)
-      log_debug "processing release_versions -> $VERSION"
-      log_debug "processing notes -> $NOTES"
-      process_release_version $VERSION "$NOTES"
-      ;;
    --holiday)
       log_debug "processing holiday ---"
       process_params $@
@@ -815,12 +847,7 @@ function process_input() {
    esac
 }
 
-gather_ENV
-gather_HOST
-gather_TENANTS
-gather_DOMAIN
-gather_LOGGING
-
+process_data_dsl() {
 if test -f "tenants/$TENANT/data.dsl"; then
    log_info "$TENANT exists... continuing!"
    cat "tenants/$TENANT/data.dsl" > /tmp/file1.tmp
@@ -842,4 +869,52 @@ if test -f "tenants/$TENANT/data.dsl"; then
 else
    log_error "$TENANT does not exist... exiting!"
    exit 1
+fi
+}
+
+process_version_dsl() {
+   touch /tmp/file.tmp
+   touch /tmp/file1.tmp
+   touch /tmp/file2.tmp
+
+    if test -f "tenants/version/data.dsl"; then
+       log_info "VERSION file exists... continuing!"
+       cat "tenants/version/data.dsl" > /tmp/file1.tmp
+       awk 'NF' /tmp/file1.tmp > /tmp/file2.tmp
+
+       envsubst < /tmp/file2.tmp > /tmp/file.tmp
+
+       while IFS= read -r line; do
+          if [[ $line != /--* ]]; then
+             log_debug "-----------------------------------------------------------------------------------------"
+             log_debug "incoming line from file : $line"
+             process_input $line
+          else
+             log_debug "skipping $line"
+          fi
+       done <"/tmp/file.tmp"
+    else
+       log_error "VERSION file does not exist... exiting!"
+       exit 1
+    fi
+}
+
+echo "Do you want to update the application version? (enter Q to quit): [y/N]"
+read update_version
+update_version=${update_version:-N}
+
+if [ $update_version = "N" ] || [ $update_version = "n" ]; then
+    gather_ENV
+    gather_HOST
+    gather_TENANTS
+    gather_DOMAIN
+    gather_LOGGING
+    process_data_dsl
+else
+    gather_ENV
+    gather_HOST
+    gather_VERSION
+    gather_NOTES
+    gather_LOGGING
+    process_version_dsl
 fi

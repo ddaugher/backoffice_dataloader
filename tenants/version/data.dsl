@@ -1,3 +1,3 @@
 --host --url $HOST
 --tenant_login
---release_version --version v1.664.18 --notes updating logic to set effective_start_date same as entity
+--release_version --version $VERSION --notes $NOTES
