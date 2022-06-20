@@ -1,0 +1,223 @@
+HEADER
+LOGIN
+--region --uuid Region1 --name All
+--daily_expense_type --uuid DailyExpenseTypes1 --name Meals
+--daily_expense_type --uuid DailyExpenseTypes2 --name Parking
+--daily_expense_type --uuid DailyExpenseTypes3 --name Per Diem
+--daily_expense_type --uuid DailyExpenseTypes4 --name Hotel
+--daily_expense_type --uuid DailyExpenseTypes5 --name Mileage
+--monthly_expense_type --uuid MonthlyExpenseTypes1 --name Computer
+--monthly_expense_type --uuid MonthlyExpenseTypes2 --name Parking
+--monthly_expense_type --uuid MonthlyExpenseTypes3 --name Mileage
+--monthly_expense_type --uuid MonthlyExpenseTypes4 --name Meals
+--monthly_expense_type --uuid MonthlyExpenseTypes5 --name Team Health
+--employee_type --uuid EmployeeType1 --name 1099 --is_employee false --is_utilized false
+--employee_type --uuid EmployeeType2 --name Hourly --is_employee false --is_utilized false
+--employee_type --uuid EmployeeType3 --name Corp2Corp --is_employee false --is_utilized false
+--employee_type --uuid EmployeeType4 --name W2 --is_employee true --is_utilized true
+--work_exception_type --uuid WorkExceptionType1 --name PTO
+--work_exception_type --uuid WorkExceptionType2 --name Bereavement
+--work_exception_type --uuid WorkExceptionType3 --name Holiday
+--work_exception_type --uuid WorkExceptionType4 --name UPTO
+--work_exception_type --uuid WorkExceptionType5 --name Client Visit
+--work_exception_type --uuid WorkExceptionType6 --name Conference
+--work_exception_type --uuid WorkExceptionType7 --name Training
+--holiday --uuid Holiday1 --date 2021-01-01 --description New Year's Day --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday2 --date 2021-01-18 --description Martin Luther King Day --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday3 --date 2021-05-31 --description Memorial Day --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday4 --date 2021-06-19 --description Juneteenth --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday5 --date 2021-07-04 --description July 4th --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday6 --date 2021-09-06 --description Labor Day --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday7 --date 2021-11-04 --description Diwali --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday8 --date 2021-11-25 --description Thanksgiving Day --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday9 --date 2021-12-24 --description Christmas Eve --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday10 --date 2021-12-27 --description Christmas --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday11 --date 2021-12-31 --description New Year's Eve --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday12 --date 2022-01-01 --description New Year's Day --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday13 --date 2022-02-17 --description Martin Luther King Day --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday14 --date 2022-05-30 --description Memorial Day --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday15 --date 2022-06-19 --description Juneteenth --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday16 --date 2022-07-04 --description July 4th --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday17 --date 2022-09-05 --description Labor Day --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday18 --date 2022-09-26 --description Rosh Hashanah --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday19 --date 2022-09-27 --description Rosh Hashanah --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday20 --date 2022-10-04 --description Diwali --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday21 --date 2022-11-24 --description Thanksgiving Day --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday22 --date 2022-12-24 --description Christmas Eve --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday23 --date 2022-12-25 --description Christmas --hours 8 --work_exception_type_id WorkExceptionType3
+--holiday --uuid Holiday24 --date 2022-12-31 --description New Year's Eve --hours 8 --work_exception_type_id WorkExceptionType3
+--position_type --uuid PositionType1 --name Engineer
+--position_type --uuid PositionType2 --name Baker
+--position_type --uuid PositionType3 --name SME
+--position_type --uuid PositionType4 --name UX
+--position_type --uuid PositionType5 --name Design
+--position_type --uuid PositionType6 --name Product
+--position_type --uuid PositionType7 --name Delivery
+--position_type --uuid PositionType8 --name Account Manager
+--customer --uuid Client1 --name PLC: Project Level Changes --is_active true
+--customer --uuid Client2 --name PLC: Fixed Bid Lock Changes --is_active true
+--customer --uuid Client3 --name PLC: Position Changes --is_active true
+--customer --uuid Client4 --name PLC: Employee Changes --is_active true
+--project_fixed_bid --uuid Project1 --name PLC Project Removed FB --customer_id Client1 --region_id Region1 --status Booked --amount 1000000
+--project_retainer --uuid Project2 --name PLC Project Removed MR --customer_id Client1 --region_id Region1 --status Booked --monthly_amount 100000
+--project_time_materials --uuid Project3 --name PLC Project Removed TM --customer_id Client1 --region_id Region1 --status Booked
+--project_fixed_bid --uuid Project4 --name PLC Project Changed FB --customer_id Client1 --region_id Region1 --status Booked --amount 1000000
+--project_retainer --uuid Project5 --name PLC Project Changed MR --customer_id Client1 --region_id Region1 --status Booked --monthly_amount 100000
+--project_fixed_bid --uuid Project6 --name PLC Fixed Bid Lock Added --customer_id Client2 --region_id Region1 --status Booked --amount 1000000
+--project_fixed_bid --uuid Project7 --name PLC Fixed Bid Lock Removed --customer_id Client2 --region_id Region1 --status Booked --amount 1000000
+--project_fixed_bid --uuid Project8 --name PLC Fixed Bid Lock Changed --customer_id Client2 --region_id Region1 --status Booked --amount 1000000
+--project_fixed_bid --uuid Project9 --name PLC Pos in new not old FB --customer_id Client3 --region_id Region1 --status Booked --amount 1000000
+--project_retainer --uuid Project10 --name PLC Pos in new not old MR --customer_id Client3 --region_id Region1 --status Booked --monthly_amount 100000
+--project_time_materials --uuid Project11 --name PLC Pos in new not old TM --customer_id Client3 --region_id Region1 --status Booked
+--project_fixed_bid --uuid Project12 --name PLC Pos in old not new FB --customer_id Client3 --region_id Region1 --status Booked --amount 1000000
+--project_retainer --uuid Project13 --name PLC Pos in old not new MR --customer_id Client3 --region_id Region1 --status Booked --monthly_amount 100000
+--project_time_materials --uuid Project14 --name PLC Pos in old not new TM --customer_id Client3 --region_id Region1 --status Booked
+--project_fixed_bid --uuid Project15 --name PLC Pos in both change rate FB --customer_id Client3 --region_id Region1 --status Booked --amount 1000000
+--project_retainer --uuid Project16 --name PLC Pos in both change rate MR --customer_id Client3 --region_id Region1 --status Booked --monthly_amount 100000
+--project_time_materials --uuid Project17 --name PLC Pos in both change rate TM --customer_id Client3 --region_id Region1 --status Booked
+--project_fixed_bid --uuid Project18 --name PLC Pos in both change cost FB --customer_id Client3 --region_id Region1 --status Booked --amount 1000000
+--project_retainer --uuid Project19 --name PLC Pos in both change cost MR --customer_id Client3 --region_id Region1 --status Booked --monthly_amount 100000
+--project_time_materials --uuid Project20 --name PLC Pos in both change cost TM --customer_id Client3 --region_id Region1 --status Booked
+--project_fixed_bid --uuid Project21 --name PLC Extend Position FB --customer_id Client3 --region_id Region1 --status Booked --amount 1000000
+--project_retainer --uuid Project22 --name PLC Extend Position MR --customer_id Client3 --region_id Region1 --status Booked --monthly_amount 100000
+--project_time_materials --uuid Project23 --name PLC Extend Position TM --customer_id Client3 --region_id Region1 --status Booked
+--project_fixed_bid --uuid Project24 --name PLC Shorten Position FB --customer_id Client3 --region_id Region1 --status Booked --amount 1000000
+--project_retainer --uuid Project25 --name PLC Shorten Position MR --customer_id Client3 --region_id Region1 --status Booked --monthly_amount 100000
+--project_time_materials --uuid Project26 --name PLC Shorten Position TM --customer_id Client3 --region_id Region1 --status Booked
+--project_fixed_bid --uuid Project27 --name PLC Delay Position FB --customer_id Client3 --region_id Region1 --status Booked --amount 1000000
+--project_retainer --uuid Project28 --name PLC Delay Position MR --customer_id Client3 --region_id Region1 --status Booked --monthly_amount 100000
+--project_time_materials --uuid Project29 --name PLC Delay Position TM --customer_id Client3 --region_id Region1 --status Booked
+--project_fixed_bid --uuid Project30 --name PLC Accelerate Position FB --customer_id Client3 --region_id Region1 --status Booked --amount 1000000
+--project_retainer --uuid Project31 --name PLC Accelerate Position MR --customer_id Client3 --region_id Region1 --status Booked --monthly_amount 100000
+--project_time_materials --uuid Project32 --name PLC Accelerate Position TM --customer_id Client3 --region_id Region1 --status Booked
+--project_fixed_bid --uuid Project33 --name PLC Pos change allocation FB --customer_id Client3 --region_id Region1 --status Booked --amount 1000000
+--project_retainer --uuid Project34 --name PLC Pos change allocation MR --customer_id Client3 --region_id Region1 --status Booked --monthly_amount 100000
+--project_time_materials --uuid Project35 --name PLC Pos change allocation TM --customer_id Client3 --region_id Region1 --status Booked
+--project_fixed_bid --uuid Project36 --name PLC Pos Open old staff new FB --customer_id Client3 --region_id Region1 --status Booked --amount 1000000
+--project_retainer --uuid Project37 --name PLC Pos Open old staff new MR --customer_id Client3 --region_id Region1 --status Booked --monthly_amount 100000
+--project_time_materials --uuid Project38 --name PLC Pos Open old staff new TM --customer_id Client3 --region_id Region1 --status Booked
+--project_fixed_bid --uuid Project39 --name PLC Pos staff old open new FB --customer_id Client3 --region_id Region1 --status Booked --amount 1000000
+--project_retainer --uuid Project40 --name PLC Pos staff old open new MR --customer_id Client3 --region_id Region1 --status Booked --monthly_amount 100000
+--project_time_materials --uuid Project41 --name PLC Pos staff old open new TM --customer_id Client3 --region_id Region1 --status Booked
+--project_fixed_bid --uuid Project42 --name PLC Emp in old term new FB --customer_id Client4 --region_id Region1 --status Booked --amount 1000000
+--project_retainer --uuid Project43 --name PLC Emp in old term new MR --customer_id Client4 --region_id Region1 --status Booked --monthly_amount 100000
+--project_time_materials --uuid Project44 --name PLC Emp in old term new TM --customer_id Client4 --region_id Region1 --status Booked
+--project_fixed_bid --uuid Project45 --name PLC Emp in old HCupdate new FB --customer_id Client4 --region_id Region1 --status Booked --amount 1000000
+--project_retainer --uuid Project46 --name PLC Emp in old HC update new MR --customer_id Client4 --region_id Region1 --status Booked --monthly_amount 100000
+--project_time_materials --uuid Project47 --name PLC Emp in old HC update new TM --customer_id Client4 --region_id Region1 --status Booked
+--project_fixed_bid --uuid Project48 --name PLC Emp chnge util target FB --customer_id Client4 --region_id Region1 --status Booked --amount 1000000
+--project_retainer --uuid Project49 --name PLC Emp chnge util target MR --customer_id Client4 --region_id Region1 --status Booked --monthly_amount 100000
+--project_time_materials --uuid Project50 --name PLC Emp chnge util target TM --customer_id Client4 --region_id Region1 --status Booked
+--employee --uuid Employee1 --first_name Proj --last_name PLC01 --email projplc01@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee2 --first_name Proj --last_name PLC02 --email projplc02@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee3 --first_name Proj --last_name PLC03 --email projplc03@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee4 --first_name Proj --last_name PLC04 --email projplc04@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee5 --first_name Proj --last_name PLC05 --email projplc05@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee6 --first_name Proj --last_name PLC06 --email projplc06@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee7 --first_name Proj --last_name PLC07 --email projplc07@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee8 --first_name Proj --last_name PLC08 --email projplc08@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee9 --first_name FBL --last_name PLC09 --email fblplc09@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee10 --first_name FBL --last_name PLC10 --email fblplc10@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee11 --first_name FBL --last_name PLC11 --email fblplc11@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee12 --first_name Pos --last_name PLC12 --email posplc12@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee13 --first_name Pos --last_name PLC13 --email posplc13@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee14 --first_name Pos --last_name PLC14 --email posplc14@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee15 --first_name Pos --last_name PLC15 --email posplc15@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee16 --first_name Pos --last_name PLC16 --email posplc16@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee17 --first_name Pos --last_name PLC17 --email posplc17@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee18 --first_name Pos --last_name PLC18 --email posplc18@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee19 --first_name Pos --last_name PLC19 --email posplc19@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee20 --first_name Pos --last_name PLC20 --email posplc20@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee21 --first_name Pos --last_name PLC21 --email posplc21@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee22 --first_name Pos --last_name PLC22 --email posplc22@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee23 --first_name Pos --last_name PLC23 --email posplc23@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee24 --first_name Pos --last_name PLC24 --email posplc24@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee25 --first_name Pos --last_name PLC25 --email posplc25@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee26 --first_name Pos --last_name PLC26 --email posplc26@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee27 --first_name Pos --last_name PLC27 --email posplc27@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee28 --first_name Pos --last_name PLC28 --email posplc28@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee29 --first_name Pos --last_name PLC29 --email posplc29@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee30 --first_name Pos --last_name PLC30 --email posplc30@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee31 --first_name Pos --last_name PLC31 --email posplc31@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee32 --first_name Pos --last_name PLC32 --email posplc32@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee33 --first_name Pos --last_name PLC33 --email posplc33@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee34 --first_name Pos --last_name PLC34 --email posplc34@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee35 --first_name Pos --last_name PLC35 --email posplc35@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee36 --first_name Pos --last_name PLC36 --email posplc36@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee37 --first_name Pos --last_name PLC37 --email posplc37@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee38 --first_name Pos --last_name PLC38 --email posplc38@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee39 --first_name Pos --last_name PLC39 --email posplc39@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee40 --first_name Pos --last_name PLC40 --email posplc40@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee41 --first_name Pos --last_name PLC41 --email posplc41@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee42 --first_name Emp --last_name PLC42 --email empplc42@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee43 --first_name Emp --last_name PLC43 --email empplc43@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee44 --first_name Emp --last_name PLC44 --email empplc44@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee45 --first_name Emp --last_name PLC45 --email empplc45@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee46 --first_name Emp --last_name PLC46 --email empplc46@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee47 --first_name Emp --last_name PLC47 --email empplc47@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee48 --first_name Emp --last_name PLC48 --email empplc48@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee49 --first_name Emp --last_name PLC49 --email empplc49@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee50 --first_name Emp --last_name PLC50 --email empplc50@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee51 --first_name Emp --last_name PLC51 --email empplc51@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee52 --first_name Pos --last_name PLC52 --email posplc52@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee53 --first_name Pos --last_name PLC53 --email posplc53@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee54 --first_name Pos --last_name PLC54 --email posplc54@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee55 --first_name Pos --last_name PLC12_02 --email posplc12_02@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee56 --first_name Pos --last_name PLC13_02 --email posplc13_02@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee57 --first_name Pos --last_name PLC14_02 --email posplc14_02@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee58 --first_name Pos --last_name PLC15_02 --email posplc15_02@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee59 --first_name Pos --last_name PLC16_02 --email posplc16_02@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--employee --uuid Employee60 --first_name Pos --last_name PLC17_02 --email posplc17_02@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id EmployeeType4 --region_id Region1
+--open_position --uuid OpenPosition1 --name Pos Open old staff new FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project39 --position_type_id PositionType3
+--open_position --uuid OpenPosition2 --name Pos Open old staff new MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project40 --position_type_id PositionType1
+--open_position --uuid OpenPosition3 --name Pos Open old staff new TM --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 200 --cost 100 --daily_billable_hours 8 --project_id Project41 --position_type_id PositionType7
+--position_with_employee  --uuid Position1 --name Project Removed FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project1 --position_type_id PositionType3 --employee_id Employee4
+--position_with_employee  --uuid Position2 --name Project Removed MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project2 --position_type_id PositionType3 --employee_id Employee5
+--position_with_employee  --uuid Position3 --name Project Removed TM --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 200 --cost 100 --daily_billable_hours 8 --project_id Project3 --position_type_id PositionType3 --employee_id Employee6
+--position_with_employee  --uuid Position4 --name Project Changed FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project4 --position_type_id PositionType3 --employee_id Employee7
+--position_with_employee  --uuid Position5 --name Project Changed MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project5 --position_type_id PositionType3 --employee_id Employee8
+--position_with_employee  --uuid Position6 --name Fixed Bid Lock Added --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project6 --position_type_id PositionType3 --employee_id Employee9
+--position_with_employee  --uuid Position7 --name Fixed Bid Lock Removed --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project7 --position_type_id PositionType3 --employee_id Employee10
+--position_with_employee  --uuid Position8 --name Fixed Bid Lock Changed --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project8 --position_type_id PositionType3 --employee_id Employee11
+--position_with_employee  --uuid Position9 --name new not old FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project9 --position_type_id PositionType3 --employee_id Employee12
+--position_with_employee  --uuid Position10 --name new not old MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project10 --position_type_id PositionType3 --employee_id Employee13
+--position_with_employee  --uuid Position11 --name new not old TM --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 200 --cost 100 --daily_billable_hours 8 --project_id Project11 --position_type_id PositionType3 --employee_id Employee14
+--position_with_employee  --uuid Position12 --name old not new FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project12 --position_type_id PositionType3 --employee_id Employee15
+--position_with_employee  --uuid Position13 --name old not new MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project13 --position_type_id PositionType3 --employee_id Employee16
+--position_with_employee  --uuid Position14 --name old not new TM --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 200 --cost 100 --daily_billable_hours 8 --project_id Project14 --position_type_id PositionType3 --employee_id Employee17
+--position_with_employee  --uuid Position15 --name both change rate FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project15 --position_type_id PositionType3 --employee_id Employee18
+--position_with_employee  --uuid Position16 --name both change rate MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project16 --position_type_id PositionType3 --employee_id Employee19
+--position_with_employee  --uuid Position17 --name both change rate TM --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 200 --cost 100 --daily_billable_hours 4 --project_id Project17 --position_type_id PositionType3 --employee_id Employee20
+--position_with_employee  --uuid Position18 --name both change cost FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project18 --position_type_id PositionType3 --employee_id Employee21
+--position_with_employee  --uuid Position19 --name both change cost MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project19 --position_type_id PositionType3 --employee_id Employee22
+--position_with_employee  --uuid Position20 --name both change cost TM --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 200 --cost 100 --daily_billable_hours 8 --project_id Project20 --position_type_id PositionType3 --employee_id Employee23
+--position_with_employee  --uuid Position21 --name Extend Position FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project21 --position_type_id PositionType3 --employee_id Employee24
+--position_with_employee  --uuid Position22 --name Extend Position MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project22 --position_type_id PositionType3 --employee_id Employee25
+--position_with_employee  --uuid Position23 --name Extend Position TM --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 200 --cost 100 --daily_billable_hours 8 --project_id Project23 --position_type_id PositionType3 --employee_id Employee26
+--position_with_employee  --uuid Position24 --name Shorten Position FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project24 --position_type_id PositionType3 --employee_id Employee27
+--position_with_employee  --uuid Position25 --name Shorten Position MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project25 --position_type_id PositionType3 --employee_id Employee28
+--position_with_employee  --uuid Position26 --name Shorten Position TM --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 200 --cost 100 --daily_billable_hours 8 --project_id Project26 --position_type_id PositionType3 --employee_id Employee29
+--position_with_employee  --uuid Position27 --name Delay Position FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project27 --position_type_id PositionType3 --employee_id Employee30
+--position_with_employee  --uuid Position28 --name Delay Position MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project28 --position_type_id PositionType3 --employee_id Employee31
+--position_with_employee  --uuid Position29 --name Delay Position TM --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 200 --cost 100 --daily_billable_hours 8 --project_id Project29 --position_type_id PositionType3 --employee_id Employee32
+--position_with_employee  --uuid Position30 --name Accelerate Position FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project30 --position_type_id PositionType3 --employee_id Employee33
+--position_with_employee  --uuid Position31 --name Accelerate Position MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project31 --position_type_id PositionType3 --employee_id Employee34
+--position_with_employee  --uuid Position32 --name Accelerate Position TM --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 200 --cost 100 --daily_billable_hours 8 --project_id Project32 --position_type_id PositionType3 --employee_id Employee35
+--position_with_employee  --uuid Position33 --name Pos change allocation FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project33 --position_type_id PositionType3 --employee_id Employee36
+--position_with_employee  --uuid Position34 --name Pos change allocation MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project34 --position_type_id PositionType3 --employee_id Employee37
+--position_with_employee  --uuid Position35 --name Pos change allocation Tm --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 200 --cost 100 --daily_billable_hours 8 --project_id Project35 --position_type_id PositionType3 --employee_id Employee38
+--position_with_employee  --uuid Position36 --name Pos staff old open new FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project39 --position_type_id PositionType3 --employee_id Employee39
+--position_with_employee  --uuid Position37 --name Pos staff old open new MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project40 --position_type_id PositionType3 --employee_id Employee40
+--position_with_employee  --uuid Position38 --name Pos staff old open new TM --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 200 --cost 100 --daily_billable_hours 8 --project_id Project41 --position_type_id PositionType3 --employee_id Employee41
+--position_with_employee  --uuid Position39 --name Emp in old term new FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project42 --position_type_id PositionType3 --employee_id Employee42
+--position_with_employee  --uuid Position40 --name Emp in old term new MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project43 --position_type_id PositionType3 --employee_id Employee43
+--position_with_employee  --uuid Position41 --name Emp in old term new TM --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 200 --cost 100 --daily_billable_hours 8 --project_id Project44 --position_type_id PositionType3 --employee_id Employee44
+--position_with_employee  --uuid Position42 --name Emp in old HC update new FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project45 --position_type_id PositionType3 --employee_id Employee45
+--position_with_employee  --uuid Position43 --name Emp in old HC update new MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project46 --position_type_id PositionType3 --employee_id Employee46
+--position_with_employee  --uuid Position44 --name Emp in old HC update new TM --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 200 --cost 100 --daily_billable_hours 8 --project_id Project47 --position_type_id PositionType3 --employee_id Employee47
+--position_with_employee  --uuid Position45 --name Emp chnge util target FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project48 --position_type_id PositionType3 --employee_id Employee48
+--position_with_employee  --uuid Position46 --name Emp chnge util target MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project49 --position_type_id PositionType3 --employee_id Employee49
+--position_with_employee  --uuid Position47 --name Emp chnge util target TM --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 200 --cost 100 --daily_billable_hours 8 --project_id Project50 --position_type_id PositionType3 --employee_id Employee50
+--position_with_employee  --uuid Position48 --name Pos2 old not new FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project12 --position_type_id PositionType3 --employee_id Employee58
+--position_with_employee  --uuid Position49 --name Pos2 old not new MR --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 0 --cost 100 --daily_billable_hours 8 --project_id Project13 --position_type_id PositionType3 --employee_id Employee59
+--position_with_employee  --uuid Position50 --name Pos2 old not new TM --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 200 --cost 100 --daily_billable_hours 8 --project_id Project14 --position_type_id PositionType3 --employee_id Employee60
