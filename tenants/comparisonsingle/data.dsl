@@ -1,0 +1,53 @@
+HEADER
+LOGIN
+--region --uuid Region1 --name All
+--daily_expense_type --uuid daily_expense_type1 --name Meals
+--daily_expense_type --uuid daily_expense_type2 --name Parking
+--daily_expense_type --uuid daily_expense_type3 --name Per Diem
+--daily_expense_type --uuid daily_expense_type4 --name Hotel
+--daily_expense_type --uuid daily_expense_type5 --name Mileage
+--monthly_expense_type --uuid monthly_expense_type1 --name Computer
+--monthly_expense_type --uuid monthly_expense_type2 --name Parking
+--monthly_expense_type --uuid monthly_expense_type3 --name Mileage
+--monthly_expense_type --uuid monthly_expense_type4 --name Meals
+--monthly_expense_type --uuid monthly_expense_type5 --name Team Health
+--employee_type --uuid employee_type1 --name 1099 --is_employee false --is_utilized false
+--employee_type --uuid employee_type2 --name Hourly --is_employee false --is_utilized false
+--employee_type --uuid employee_type3 --name Corp2Corp --is_employee false --is_utilized false
+--employee_type --uuid employee_type4 --name W2 --is_employee true --is_utilized true
+--work_exception_type --uuid work_exception_type1 --name PTO
+--work_exception_type --uuid work_exception_type2 --name Bereavement
+--work_exception_type --uuid work_exception_type3 --name Holiday
+--work_exception_type --uuid work_exception_type4 --name UPTO
+--holiday --uuid holiday1 --date 2021-01-01 --description New Year's Day --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday2 --date 2021-01-18 --description Martin Luther King Day --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday3 --date 2021-05-31 --description Memorial Day --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday4 --date 2021-06-19 --description Juneteenth --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday5 --date 2021-07-04 --description July 4th --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday6 --date 2021-09-06 --description Labor Day --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday7 --date 2021-11-04 --description Diwali --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday8 --date 2021-11-25 --description Thanksgiving Day --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday9 --date 2021-12-24 --description Christmas Eve --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday10 --date 2021-12-27 --description Christmas --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday11 --date 2021-12-31 --description New Year's Eve --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday12 --date 2022-01-01 --description New Year's Day --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday13 --date 2022-02-17 --description Martin Luther King Day --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday14 --date 2022-05-30 --description Memorial Day --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday15 --date 2022-06-19 --description Juneteenth --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday16 --date 2022-07-04 --description July 4th --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday17 --date 2022-09-05 --description Labor Day --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday18 --date 2022-09-26 --description Rosh Hashanah --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday19 --date 2022-09-27 --description Rosh Hashanah --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday20 --date 2022-10-04 --description Diwali --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday21 --date 2022-11-24 --description Thanksgiving Day --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday22 --date 2022-12-24 --description Christmas Eve --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday23 --date 2022-12-25 --description Christmas --hours 8 --work_exception_type_id work_exception_type3
+--holiday --uuid holiday24 --date 2022-12-31 --description New Year's Eve --hours 8 --work_exception_type_id work_exception_type3
+--position_type --uuid position_type1 --name Engineer
+--position_type --uuid position_type2 --name UX
+--position_type --uuid position_type3 --name Delivery
+--position_type --uuid position_type4 --name Product
+--customer --uuid customer1 --name PLC: Project Level Changes --is_active true
+--project_fixed_bid --uuid project1 --name PLC Project Changed FB --customer_id customer1 --region_id Region1 --status Booked --amount 1000000
+--employee --uuid employee1 --first_name Proj --last_name PLC01 --email projplc01@nxogantrydemo.com --start_date 2021-01-01 --hourly_cost 100 --daily_billable_hours 8 --utilization_target 100 --employee_type_id employee_type4 --region_id Region1
+--position_with_employee  --uuid position_with_employee1 --name Project Changed FB --start_date 2022-06-01 --end_date 2023-06-01 --bill_rate 1 --cost 100 --daily_billable_hours 8 --project_id project1 --position_type_id position_type3 --employee_id employee1
